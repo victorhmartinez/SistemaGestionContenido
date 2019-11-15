@@ -1,0 +1,40 @@
+<!--ver mas-->
+
+<div id="nuevo">
+  <nav>   
+    <a *ngFor="let menu of  listMenu" routerLink="{{menu.url}}">{{menu.name}}</a>
+
+    <div class="animation start-home"></div>
+  </nav>
+</div>
+
+<section id="autoridades" class="bg-primary">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-11 mx-auto">
+        <br>
+        <h2 class="titulo titulo-grupos text-white">Mensajes</h2>
+        <div class="row">
+          <div class="col-md-12 box-autoridades bg-light">
+            <div class="row">
+              <div class="col-md-6 box-autoridad text-center" *ngFor="let mensaje of listMensajes;  let i=index">
+                <div class="card-autoridad bg-white">
+                  <div class="box-autoridad-cuerpo text-center">
+                    <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end text-center" id="evento3">
+                      <div class="mb-0 box-evento p-1">
+                        <h3>{{mensaje.title}}</h3>
+                        <p>{{mensaje.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

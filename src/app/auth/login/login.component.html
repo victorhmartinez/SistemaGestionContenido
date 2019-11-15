@@ -1,0 +1,94 @@
+<!--LOgin modal
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Ingreso Administración</h4>
+  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+    <input type="email" name="email" placeholder="Username" ngModel required>
+    <input type="password" name="password" placeholder="Password" ngModel required>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="submit" value="send" href="./administración.component.html" class="btn btn-outline-dark"
+    (click)="login()">Entrar</button>
+</div>
+
+1722822242 dni pass
+12345
+
+
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
+  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+
+    Usuario <input type="email" name="email" placeholder="Username" ngModel required><br><br>
+    Contraseña<input type="password" name="password" placeholder="Password" ngModel required><br>
+    <button type="submit" value="send" class="btn btn-light">Entrar</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary">Cancelar</button>
+</div>-->
+<div class="bg-gris">
+  <body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+    <div class="d-flex mx-auto mt-md-4">
+      <a class="navbar-brand" routerLink="/frontpage">Logo</a>
+      <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item mr-2">
+            <a class="nav-link py-2 px-4"  routerLink="/frontpage" >Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link py-2 px-4" routerLink="/frontpage">Eventos</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">¿Quiénes sómos?</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Autoridades</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Testimonios</a>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Contáctos</a>
+          </li>
+          <li class="nav-item active mr-2">
+            <a class="nav-link py-2 px-4" (click)="login()"   tabindex="-1" aria-disabled="true" >Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div id="login">
+  <img src="" class="img-fluid"
+    style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+  <form name='form-login' form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+    <p class="titulo">Ingreso Sistema</p>
+    <span class="fontawesome-user"></span>
+    <input type="text" id="user" name="username" placeholder="Username" ngModel required>
+    <span class="fontawesome-lock"></span>
+    <input type="password" name="password" placeholder="Password" ngModel required>
+    <input type="submit" value="Login" >
+  </form>
+  </div>
+
+</body>
+</div>
