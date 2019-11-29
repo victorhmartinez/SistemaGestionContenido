@@ -69,7 +69,7 @@ export class ItemcategoryComponent implements OnInit {
     this.updateListItemCategories();
   }
 
-  displayedColumns: string[] = ['nameItemCategory', 'active', 'category', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'active', 'category_id', 'delete', 'update'];
 
   //FORM ACTIONS
   //Create new form

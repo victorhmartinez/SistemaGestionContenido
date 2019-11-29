@@ -11,7 +11,11 @@
           <mat-label>Categoría</mat-label>
           <mat-select formControlName="category_id">
             <mat-option [value]="category.category_id" *ngFor="let category of listCategories">
+<<<<<<< HEAD
               {{cat.nameCategory}}
+=======
+              {{category.name}}
+>>>>>>> a1d1ec9312ef5e94b21487fcc3f93565bf0fd063
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -30,7 +34,7 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
         </mat-form-field>
     <mat-table [dataSource]="data" class="w100" cols="3">
-      <ng-container matColumnDef="nameItemCategory">
+      <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
         <mat-cell *matCellDef="let itemCategory"> {{itemCategory.name}} </mat-cell>
       </ng-container>
@@ -40,7 +44,7 @@
         <mat-cell *matCellDef="let itemCategory"> {{itemCategory.active}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="category">
+      <ng-container matColumnDef="category_id">
         <mat-header-cell *matHeaderCellDef> Categoría </mat-header-cell>
         <mat-cell *matCellDef="let itemCategory">{{itemCategory.category_id}} </mat-cell>
       </ng-container>

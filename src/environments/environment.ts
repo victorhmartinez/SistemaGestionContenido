@@ -8,7 +8,7 @@ export const environment = {
   frontUrl: 'http://localhost:4200/',
 };
 
-/*
+/*http://localhost:8000/
 *apiUrl: 'http://localhost:8000/ec2-3-14-4-46.us-east-2.compute.amazonaws.com/',
   frontUrl: 'http://localhost:4200/ec2-3-14-4-46.us-east-2.compute.amazonaws.com/',
 

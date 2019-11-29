@@ -9,5 +9,7 @@ export class Category {
         this.name = name,
         this.active = active
     }
-
+//category_id": 1,
+//"name": "Titulación",
+//"active": true
 }

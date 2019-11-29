@@ -22,7 +22,7 @@
                         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
                       </mat-form-field>
             <table mat-table [dataSource]="data" class="w100" cols="3">
-                <ng-container matColumnDef="nameCategory">
+                <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
                     <mat-cell *matCellDef="let category"> {{category.name}} </mat-cell>
                 </ng-container>

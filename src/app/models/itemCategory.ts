@@ -13,5 +13,8 @@ export class ItemCategory {
         this.active = active,
         this.category_id = category_id
     }
-
+/*"item_category_id": 3,
+"name": "Octubre 2019 - Febrero 2020",
+"active": true,
+"category_id": 3*/
 }

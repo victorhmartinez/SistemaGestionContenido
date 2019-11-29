@@ -53,7 +53,7 @@ export class CategoryComponent implements OnInit {
     
   }
 
-  displayedColumns: string[] = ['nameCategory', 'active', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'active', 'delete', 'update'];
 
   //FORM ACTIONS
   //Create new form
