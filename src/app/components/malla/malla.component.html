@@ -1,0 +1,50 @@
+<div id="nuevo">
+  <nav>
+    <a *ngFor="let menu of  listMenu" routerLink="{{menu.url}}">{{menu.name}}</a>
+
+    <div class="animation start-home"></div>
+  </nav>
+</div>
+
+
+<section id="autoridades" class="bg-primary">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-11 mx-auto">
+
+        <h2 class="titulos titulo-grupos text-white">Malla Curricular</h2>
+        <div class="row">
+          <div class="col-md-12 box-autoridades bg-light">
+<ul>
+  Requisitos
+  <li *ngFor="let requirements of listRequirements" >
+    {{requirements.subject_matter_requeriment_id}}
+   
+  </li>
+</ul>
+            <div>
+              <h2 class="titulo">Malla Curricular de Sistemas</h2>
+            </div>
+
+
+            <mat-grid-list cols="5" rowHeight="70px">
+            
+             
+              <mat-grid-tile *ngFor="let materias of listMaterias"  [ngbPopover]="popContent"
+                popoverTitle="{{materias.name}}" triggers="mouseenter:mouseleave">
+                <ng-template   #popContent> Ciclo Ademico: {{materias.semester}}
+                  <br>  <b>Cadena: {{materias.name}} </b>
+                </ng-template>
+                {{materias.name}}
+
+              </mat-grid-tile>
+            </mat-grid-list>
+            <br>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

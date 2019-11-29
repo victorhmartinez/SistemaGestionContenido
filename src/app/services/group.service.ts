@@ -31,6 +31,6 @@ export class GroupService {
   }
 
   public getGroup() { 
-    return this.httpClient.get<Group[]>(this.apiUrl+'/group/', this.httpOptions);
+    return this.httpClient.get<Group[]>(this.apiUrl+'group/', this.httpOptions);
   }
 }

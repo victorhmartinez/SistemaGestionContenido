@@ -21,18 +21,18 @@ export class ContentService {
 
   }
   public createContent(content: Content) {
-    return this.httpClient.post(this.apiUrl+'/content/', content, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'content/', content, this.httpOptions);
   }
     
   public updateContent(content: Content) {
-    return this.httpClient.put(this.apiUrl+'/content/'+content.content_id+'/', content,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'content/'+content.content_id+'/', content,this.httpOptions);
   }
 
   public deleteContent(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'/content/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'content/'+id+'/', this.httpOptions);
   }
 
   public getContent() { 
-    return this.httpClient.get<Content[]>(this.apiUrl+'/content/', this.httpOptions);
+    return this.httpClient.get<Content[]>(this.apiUrl+'content/', this.httpOptions);
   }
 }

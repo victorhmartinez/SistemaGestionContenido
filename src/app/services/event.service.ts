@@ -19,18 +19,18 @@ export class EventService {
     this.apiUrl = environment.apiUrl;
   }
   public createEvent(event: Event) {
-    return this.httpClient.post(this.apiUrl+'/event/', event, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'event/', event, this.httpOptions);
   }
 
   public updateEvent(event: Event) {
-    return this.httpClient.put(this.apiUrl+'/event/'+event.event_id+'/', event,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'event/'+event.event_id+'/', event,this.httpOptions);
   }
 
   public deleteEvent(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'/event/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'event/'+id+'/', this.httpOptions);
   }
 
   public getEvent() { 
-    return this.httpClient.get<Event[]>(this.apiUrl+'/event/', this.httpOptions);
+    return this.httpClient.get<Event[]>(this.apiUrl+'event/', this.httpOptions);
   }
 }

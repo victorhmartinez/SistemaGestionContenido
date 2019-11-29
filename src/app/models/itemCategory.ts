@@ -2,16 +2,16 @@ import { Category } from './category';
 
 export class ItemCategory {
 
-    idItemCategory: number;
-    nameItemCategory: string;
+    item_category_id: number;
+    name: string;
     active: boolean;
-    category: Category;
+    category_id: Category;
 
-    constructor(idItemCategory?: number, nameItemCategory?: string, active?: boolean, category?: Category){
-        this.idItemCategory = idItemCategory,
-        this.nameItemCategory = nameItemCategory,
+    constructor(item_category_id?: number, name?: string, active?: boolean, category_id?: Category){
+        this.item_category_id = item_category_id,
+        this.name = name,
         this.active = active,
-        this.category = category
+        this.category_id = category_id
     }
 
 }

@@ -28,7 +28,7 @@ export class CategoryService {
   }
     
   public updateCategory(category: Category) {
-    return this.httpClient.put(this.apiUrl+'category/'+category.idCategory+'/', category,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'category/'+category.category_id+'/', category,this.httpOptions);
   }
 
   public deleteCategory(id: number) { 
@@ -36,7 +36,7 @@ export class CategoryService {
   }
 
   public getCategories() { 
-    return this.httpClient.get<Category[]>(this.apiUrl+'category', this.httpOptions);
+    return this.httpClient.get<Category[]>(this.apiUrl+'category/', this.httpOptions);
   }
 
 }

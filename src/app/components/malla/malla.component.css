@@ -1,0 +1,371 @@
+@charset "utf-8";
+@import url(https://use.fontawesome.com/releases/v5.0.8/css/solid.css);
+
+@import url(https://use.fontawesome.com/releases/v5.0.7/js/all.js);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+body { font-family: 'PT Sans', sans-serif; }
+
+.bg-primary { background-color: #003F72 !important; }
+.bg-warning { background-color: #FDCB14 !important; }
+.bg-oscuro { background-color: #151515 !important; }
+.bg-gris { background-color: #9B9B9B !important; }
+
+.text-primary { color: #003F72 !important; }
+.text-warning { color: #FDCB14 !important; }
+.text-gray { color: #9B9B9B }
+.text-oscuro { color: #151515 }
+
+
+
+
+.linea { height: 3px; }
+
+.quienes-somos { padding: 6rem 0 6rem 0; }
+
+#slide1 { background-image: url('../../../../images/code-coding-computer-574071.jpg') }
+#slide2 { background-image: url('../../../../images/adult-business-close-up-1181263.jpg') }
+#slide3 { background-image: url('../../../../images/blurred-background-code-coding-1261427.jpg') }
+
+.swiper-slide {
+  height: 41rem;
+  text-align: left;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+}
+
+.swiper-slide:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: .4;
+}
+
+.texto-slide { width: 75%; }
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.3rem !important;
+}
+
+.swiper-pagination-bullet-active { background-color: #FDCB14 }
+
+#evento1 { background-image: url('../../../../images/company-concept-creative-7369.jpg') }
+#evento2 { background-image: url('../../../../images/widdisonphotography_0023-900x720.jpg') }
+#evento3 { background-image: url('../../../../images/tj-jen-presenting.jpg') }
+
+.imagen-evento {
+  height: 13rem;
+  text-align: left;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+}
+
+.box-evento {
+  width: 100%;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+#quienes-somos, #departamentos, #autoridades, #grupos { padding: 10px 0; }
+
+.titulos {
+  margin-bottom: 0;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  line-height: 56px;
+
+}
+
+.titulo{
+  margin-bottom: 0;
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  line-height: 56px;
+  text-align: center;
+}
+
+.titulo-quienes-somos, .titulo-autoridades, .titulo-grupos { margin-bottom: 34px; }
+
+
+
+.texto-about, .texto-cita {
+  letter-spacing: 0.8px;
+  line-height: 24px;
+}
+
+.box-departamento {
+  padding: 40px 20px;
+  border: 3px solid rgba(255,255,255, .2);
+}
+
+.titulo4 {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
+  line-height: 24px;
+}
+
+.texto-departamento {
+  letter-spacing: 0.4px;
+  line-height: 20px;
+}
+
+.btn-departamento {
+  margin-top: 20px;
+  padding: 10px 40px;
+  border-radius: 0%;
+}
+.btn-autoridad {
+  margin-top: 80px;
+  padding: 10px 40px;
+  border-radius: 0%;
+  display:inline-block;
+}
+
+.box-autoridad {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#auto1 { background-image: url('../../../../images/BT_20171021_JLRC21_3136580.jpg'); 
+      width:115px;
+      height:119px;
+      background-position: center center;
+      background-size: cover;
+      text-align: left;
+    }
+
+    #log1 { background-image: url('../../../../images/user.png'); 
+      width:115px;
+      height:119px;
+      background-position: center center;
+      background-size: cover;
+      text-align: left;
+    }
+
+#auto2 { background-image: url('../../../../images/BT_20171021_JLRC21_3136580.jpg'); 
+  width:115px;
+  height:119px;
+  background-position: center center;
+  background-size: cover;
+  text-align: left;
+}
+
+#auto3 { background-image: url('../../../../images/BT_20171021_JLRC21_3136580.jpg'); 
+  width:115px;
+  height:119px;
+  background-position: center center;
+  background-size: cover;
+  text-align: left;
+}
+#auto4 { background-image: url('../../../../images/BT_20171021_JLRC21_3136580.jpg'); 
+  width:115px;
+  height:119px;
+  background-position: center center;
+  background-size: cover;
+  text-align: left;
+}
+
+
+.card-autoridad {
+  padding: 70px 30px 40px 30px;
+  border: 2px solid rgba(253,203,20,0.2);
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .box-evento {
+    height: 36px;
+  }
+}
+
+.main-section{
+  margin:10px auto;
+  margin-top:15%;
+  padding: 0;
+
+}
+
+.modal-content{
+  background-color: #d8dee4;
+  opacity: .85;
+  padding: 0 0px;
+  box-shadow: px 0px 3px #848484;
+
+}
+.user-img{
+  margin-top: -50px;
+  margin-bottom: 35px;
+}
+
+.user-img img{
+  width: 100px;
+  height: 100px;
+  box-shadow: 0px 0px 3px #848484;
+  border-radius: 50%;
+}
+
+.form-group input{
+  height: 42px;
+  font-size: 18px;
+  border:0;
+  padding-left: 54px;
+  border-radius: 5px;
+}
+
+.form-group::before{
+  font-family: "Font Awesome\ 5 Free";
+  position: absolute;
+  left: 28px;
+  font-size: 22px;
+  padding-top:4px;
+}
+.form-group#user-group::before{
+  content: "\f007";
+  color: rgb(19, 18, 18); 
+}
+
+.form-group#contrasena-group::before{
+  content: "\f023";
+  color: rgb(19, 18, 18); 
+}
+
+#login form input[type="submit"] {
+  background: rgb(228, 187, 39);
+  border: 0;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+#login form input[type="submit"]:hover {
+  background: #6b2c31;
+}
+.forgot{
+  padding: 5px 0;
+}
+
+.forgot a{
+  color: rgb(73, 70, 70);
+}
+
+
+
+
+
+/*Estilos para menu 2 */
+nav {
+	margin: 27px auto 0;
+	position: relative;
+	width: 550px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+  font-size: 0;
+
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+a:nth-child(1) {
+	width: 100px;
+}
+a:nth-child(2) {
+	width: 150px;
+}
+a:nth-child(3) {
+	width: 150px;
+}
+a:nth-child(4) {
+	width: 150px;
+}
+
+/*a:nth-child(5) {
+	width: 200px;
+}*/
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color:  rgb(228, 187, 39);
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 150px;
+	left: 100px;
+	background-color:  rgb(228, 187, 39);
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 150px;
+	left: 250px;
+	background-color: rgb(228, 187, 39);
+}
+nav .start-portefolio, a:nth-child(4):hover~.animation {
+	width: 150px;
+	left: 400px;
+	background-color:  rgb(228, 187, 39);
+}/*
+nav .start-contact, a:nth-child(5):hover~.animation {
+	width: 200px;
+	left: 470px;
+	background-color: #e67e22;
+}*/
+
+#nuevo {
+  padding-top:1rem;
+  padding-bottom: 2rem;
+	font-size: 12px;
+	font-family: sans-serif;
+  background: #2c3e50;
+  position: relative;
+  width: 100%;
+  left: 0;
+
+}
+h1 {
+	text-align: center;
+	margin: 40px 0 40px;
+	text-align: center;
+	font-size: 50px;
+	color: #ecf0f1;
+	text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cherry Swash', cursive;
+}
+
+span {
+    color: #2BD6B4;
+}

@@ -14,11 +14,7 @@
 
                 <mat-form-field class="w100">
                   <mat-label>Carrera Universitaria</mat-label>
-<<<<<<< HEAD
-                  <mat-select formControlName="university_career_id">
-=======
                   <mat-select formControlName="university_carrer_id">
->>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
                       <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemUniversityCareer">
                           {{itemCategory.nameItemCategory}}
                       </mat-option>
@@ -46,16 +42,6 @@
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
         <mat-cell *matCellDef="let subjectMatter"> {{subjectMatter.name}} </mat-cell>
-<<<<<<< HEAD
-      </ng-container>
-      <ng-container matColumnDef="university_career_id">
-          <mat-header-cell *matHeaderCellDef> Titulación </mat-header-cell>
-          <mat-cell *matCellDef="let subjectMatter">{{subjectMatter.university_career_id}} </mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="semester">
-          <mat-header-cell *matHeaderCellDef> Semestre </mat-header-cell>
-          <mat-cell *matCellDef="let subjectMatter">{{subjectMatter.semester}} </mat-cell>
-=======
       </ng-container>
 
       <ng-container matColumnDef="semester">
@@ -66,7 +52,6 @@
       <ng-container matColumnDef="university_carrer_id">
           <mat-header-cell *matHeaderCellDef> Titulación </mat-header-cell>
           <mat-cell *matCellDef="let subjectMatter">{{subjectMatter.university_carrer_id}} </mat-cell>
->>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
         </ng-container>
       <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>

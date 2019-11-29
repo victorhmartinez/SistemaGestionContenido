@@ -19,19 +19,19 @@ export class PersonService {
     this.apiUrl = environment.apiUrl;
    }
    public createPersons(persons: Person) {
-    return this.httpClient.post(this.apiUrl+'persons/', persons, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'person/', persons, this.httpOptions);
   }
     
   public updatePersons(persons: Person) {
-    return this.httpClient.put(this.apiUrl+'persons/'+persons.person_id+'/', persons,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'person/'+persons.person_id+'/', persons,this.httpOptions);
   }
 
   public deletePersons(person_id: number) { 
-    return this.httpClient.delete(this.apiUrl+'persons/'+person_id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'person/'+person_id+'/', this.httpOptions);
   }
 
   public getPersons() { 
-    return this.httpClient.get<Person[]>(this.apiUrl+'persons/', this.httpOptions);
+    return this.httpClient.get<Person[]>(this.apiUrl+'person/', this.httpOptions);
   }
   
 }

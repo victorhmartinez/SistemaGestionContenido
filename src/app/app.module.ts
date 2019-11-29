@@ -36,10 +36,8 @@ import { MatMenuModule} from '@angular/material/menu';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
-<<<<<<< HEAD
 import { MallaComponent } from './components/malla/malla.component';
 
-=======
 import { SectionComponent } from './components/section/section.component';
 import { PersonsectionComponent } from './components/personsection/personsection.component';
 import { GroupComponent } from './components/group/group.component';
@@ -49,7 +47,6 @@ import { EnventComponent } from './components/envent/envent.component';
 import { GroupEventComponent } from './components/group-event/group-event.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { UserCComponent } from './components/user-c/user-c.component';
->>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
 
 @NgModule({
   declarations: [
@@ -75,10 +72,7 @@ import { UserCComponent } from './components/user-c/user-c.component';
     VermasTestimoniosComponent,
     VermasAutoridadesComponent,
     VermasMensajesComponent,
-<<<<<<< HEAD
     MallaComponent,
-  
-=======
     SectionComponent,
     PersonsectionComponent,
     GroupComponent,
@@ -89,7 +83,6 @@ import { UserCComponent } from './components/user-c/user-c.component';
     MenuComponent,
     UserCComponent
     
->>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
  
   ],
   imports: [

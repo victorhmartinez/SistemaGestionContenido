@@ -75,13 +75,13 @@ export class ItemcategoryComponent implements OnInit {
   //Create new form
   createFormGroup() {
     return new FormGroup({
-      idItemCategory: new FormControl(),
-      nameItemCategory: new FormControl('', [
+      item_category_id: new FormControl(),
+      name: new FormControl('', [
         Validators.required,
         Validators.maxLength(255)
       ]),
       active: new FormControl(false),
-      category: new FormControl('', [
+      category_id: new FormControl('', [
         Validators.required,
       ])
     });
@@ -90,16 +90,16 @@ export class ItemcategoryComponent implements OnInit {
   //Load data in form
   loadData(itemCategoryEdit: ItemCategory) {
     this.itemCategoryForm.setValue({
-      idItemCategory: itemCategoryEdit.idItemCategory,
-      nameItemCategory: itemCategoryEdit.nameItemCategory,
+      item_category_id: itemCategoryEdit.item_category_id,
+      name: itemCategoryEdit.name,
       active: itemCategoryEdit.active,
-      category: itemCategoryEdit.category
+      category_id: itemCategoryEdit.category_id
     })
   }
 
   //submit form
   submitForm() {
-    if (this.itemCategoryForm.value.idItemCategory == null) {
+    if (this.itemCategoryForm.value.item_category_id == null) {
       if (this.itemCategoryForm.valid) {
         this.itemCategoryService.createItemCategory(this.itemCategoryForm.value).subscribe(category => {
           this.updateListItemCategories();
