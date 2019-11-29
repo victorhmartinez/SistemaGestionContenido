@@ -1,0 +1,104 @@
+<section class="container d-flex justify-content-around pt-4">
+  <mat-card class="col-sm-4 d-inline-block align-top h-100">
+      <form [formGroup]="eventForm" #formDirective="ngForm">
+          <mat-card-title>Evento</mat-card-title>
+          <mat-card-content>
+            <!--<input type="date" id="start" name="trip-start"
+            value="2018-07-22"
+            min="2018-01-01" max="2018-12-31">
+
+<mat-form-field class="w100">
+                  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">  
+                </mat-form-field>
+
+
+            -<input type="date" id="exampleInput" name="input" ng-model="example.value"
+            placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required />
+
+
+
+
+
+
+
+         
+
+-->
+          
+
+                <mat-form-field class="w100">
+                  <input matInput formControlName="place" placeholder="Lugar" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field class="w100">
+                  <input matInput formControlName="link_form" placeholder="Link Form" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field class="w100">
+                  <input matInput formControlName="url_info" placeholder="url de Información" autocomplete="off">
+                </mat-form-field>
+
+              <mat-form-field class="w100">
+                  <mat-label>Contenidos</mat-label>
+                  <mat-select formControlName="content_id"><!---->
+                      <mat-option [value]="content.content_id" *ngFor="let content of listContent">
+                          {{content.title}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+          </mat-card-content>
+          <mat-card-actions>
+              <button mat-raised-button color="primary" (click)="submitForm(eventForm)">Guardar</button>
+              <button mat-raised-button (click)="resetForm()">Cancelar</button>
+          </mat-card-actions>
+      </form>
+  </mat-card>
+  <mat-card class="col-sm-7 d-inline-block">
+      <mat-form-field class= "w100">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+        </mat-form-field>
+      <mat-table [dataSource]="data" class="w100" cols="3">
+
+        <ng-container matColumnDef="place">
+            <mat-header-cell *matHeaderCellDef> Lugar </mat-header-cell>
+            <mat-cell *matCellDef="let event"> {{event.place}} </mat-cell>
+        </ng-container> 
+
+
+        <ng-container matColumnDef="link_form">
+          <mat-header-cell *matHeaderCellDef> LInk de forma </mat-header-cell>
+          <mat-cell *matCellDef="let event">{{event.link_form}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="url_info">
+            <mat-header-cell *matHeaderCellDef> Url de información </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.url_info}} </mat-cell>
+          </ng-container>
+
+        <ng-container matColumnDef="content_id">
+            <mat-header-cell *matHeaderCellDef> Content </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.content_id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
+          <mat-cell *matCellDef="let section"><a (click)="deleteSection(section.section_id)"><i
+              class="material-icons">delete</i></a></mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <mat-header-cell *matHeaderCellDef> Actualizar </mat-header-cell>
+            <mat-cell *matCellDef="let section"><a (click)="loadData(section)"><i class="material-icons">edit</i></a>
+            </mat-cell>
+          </ng-container>
+  
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+    </mat-card>
+
+</section>

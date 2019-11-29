@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SubjectMatter } from 'src/app/models/subject-matter';
 import { ItemCategory } from 'src/app/models/itemCategory';
+
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SubjectMatterService } from 'src/app/services/subjectMatter.service';
-import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
+import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';//servicio titulacion
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 @Component({
@@ -24,7 +25,8 @@ export class SubjectMatterComponent implements OnInit {
     this.subjectMatterForm = this.createFormGroup();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator; 
-  //Update UniversityCareer
+
+  //Update UniversityCareer OJO SERVICIO ANTERIOR
   updateListItemUniversityCategories() {
     this.universityCareerService.getUniversityCareer().subscribe(itemCategories => {
       this.listItemUniversityCareer = itemCategories;
@@ -63,7 +65,11 @@ applyFilter(filterValue: string) {
     this.updateListItemUniversityCategories();
     this.updateListSubjectMatter();
   }
+<<<<<<< HEAD
   displayedColumns: string[] = ['name', 'university_career_id','semester', 'delete', 'update'];
+=======
+  displayedColumns: string[] = ['name', 'semester', 'university_carrer_id', 'delete', 'update'];
+>>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
 
   createFormGroup() {
     return new FormGroup({
@@ -72,12 +78,20 @@ applyFilter(filterValue: string) {
         Validators.required,
         Validators.maxLength(255)
       ]),
+<<<<<<< HEAD
       university_career_id:  new FormControl('', [
         Validators.required,
         
       ]),
 
       semester:  new FormControl('', [
+=======
+      semester:  new FormControl('', [
+        Validators.required,
+        
+      ]),
+      university_carrer_id:  new FormControl('', [
+>>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
         Validators.required,
         
       ]),
@@ -88,8 +102,13 @@ applyFilter(filterValue: string) {
     this.subjectMatterForm.setValue({
       subject_matter_id: subjecMatterEdit.subject_matter_id,
       name: subjecMatterEdit.name,
+<<<<<<< HEAD
       university_career_id: subjecMatterEdit.university_career_id,   
       semester:subjecMatterEdit.semester
+=======
+      semester: subjecMatterEdit.semester,
+      university_carrer_id: subjecMatterEdit.university_carrer_id,   
+>>>>>>> fc4977f74ef765772b87a57069eb8771e574d005
 
     })
   }

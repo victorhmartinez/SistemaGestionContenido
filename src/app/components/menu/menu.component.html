@@ -11,13 +11,10 @@
                 <mat-form-field class="w100">
                   <input matInput formControlName="orden" placeholder="Orden" autocomplete="off">
                 </mat-form-field>
-                <mat-form-field class="w100">
-                    <input matInput formControlName="url" placeholder="Url" autocomplete="off">
-                  </mat-form-field>
 
               <mat-form-field class="w100">
                   <mat-label>Categorias</mat-label>
-                  <mat-select formControlName="item_category_item_category_id">
+                  <mat-select formControlName="item_category_id">
                       <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
                           {{itemCategory.nameItemCategory}}
                       </mat-option>
@@ -46,14 +43,10 @@
           <mat-header-cell *matHeaderCellDef> Orden </mat-header-cell>
           <mat-cell *matCellDef="let menu"> {{menu.orden}} </mat-cell>
         </ng-container>
-        <ng-container matColumnDef="url">
-          <mat-header-cell *matHeaderCellDef> Url </mat-header-cell>
-          <mat-cell *matCellDef="let menu"> {{menu.url}} </mat-cell>
-        </ng-container>
 
         <ng-container matColumnDef="itemCategory">
           <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
-          <mat-cell *matCellDef="let menu">{{menu.item_category_item_category_id}} </mat-cell>
+          <mat-cell *matCellDef="let menu">{{menu.item_category_id}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="delete">

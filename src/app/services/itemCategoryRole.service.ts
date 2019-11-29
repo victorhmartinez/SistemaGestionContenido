@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PersonsRole } from '../models/personsRole';
+import { PersonRole } from '../models/personRole';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -21,6 +21,6 @@ export class ItemCategoryRoleService {
   }
   
   public getPersonsRole() { 
-    return this.httpClient.get<PersonsRole[]>(this.apiUrl+'itemcategoryRol/', this.httpOptions);
+    return this.httpClient.get<PersonRole[]>(this.apiUrl+'itemcategoryRol/', this.httpOptions);
   }
 }

@@ -72,7 +72,7 @@ applyFilter(filterValue: string) {
     this.updateListItemCategories();
   }
 
-  displayedColumns: string[] = ['name', 'orden', 'url','itemCategory', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'orden','itemCategory', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
@@ -84,10 +84,7 @@ applyFilter(filterValue: string) {
       orden: new FormControl('', [
         Validators.required,
       ]),
-      url: new FormControl('', [
-        Validators.required,
-      ]),
-      item_category_item_category_id: new FormControl('', [
+      item_category_id: new FormControl('', [
         Validators.required,
       ]), 
     });
@@ -99,8 +96,7 @@ applyFilter(filterValue: string) {
       menu_id: menuEdit.menu_id,
       name: menuEdit.name,
       orden: menuEdit.orden,
-      url: menuEdit.url,
-      item_category_item_category_id: menuEdit.item_category_item_category_id,
+      item_category_id: menuEdit.item_category_id,
       
 
     })

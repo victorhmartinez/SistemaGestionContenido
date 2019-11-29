@@ -1,14 +1,14 @@
 <section class="container d-flex justify-content-around pt-4">
   <mat-card class="col-sm-4 d-inline-block align-top h-100">
-    <form [formGroup]="personsContactform" #formDirective="ngForm">
-      <mat-card-title>Contacto Personas</mat-card-title>
+    <form [formGroup]="personContactForm" #formDirective="ngForm">
+      <mat-card-title>Contacto de Personas</mat-card-title>
       <mat-card-content>
 
       
 
         <mat-form-field class="w100">
           <mat-label>Nombre Personas</mat-label>
-          <mat-select formControlName="persons_id">
+          <mat-select formControlName="person_id">
             <mat-option [value]="person.person_id" *ngFor="let person of listPersons">
               {{person.first_name}} {{person.second_name}} {{person.first_last_name}} {{person.second_last_name}}
             </mat-option>
@@ -18,8 +18,8 @@
 
         <mat-form-field class="w100">
           <mat-label>Tipo de contacto</mat-label>
-          <mat-select formControlName="item_category_id">
-            <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listTypeContact">
+          <mat-select formControlName="contact_type_id">
+            <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listContactType">
               {{itemCategory.nameItemCategory}}
             </mat-option>
           </mat-select>
@@ -31,7 +31,7 @@
 
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="submitForm(personsContactform)">Guardar</button>
+        <button mat-raised-button color="primary" (click)="submitForm(personContactForm)">Guardar</button>
         <button mat-raised-button (click)="resetForm()">Cancelar</button>
       </mat-card-actions>
     </form>
@@ -43,28 +43,30 @@
     <mat-table [dataSource]="data" class="w100" cols="3">
       <ng-container matColumnDef="contact">
         <mat-header-cell *matHeaderCellDef> Contacto </mat-header-cell>
-        <mat-cell *matCellDef="let personcontacts">{{personcontacts.contact}} </mat-cell>
+        <mat-cell *matCellDef="let personContact">{{personContact.contact}} </mat-cell>
+      </ng-container>
+
+      
+
+      <ng-container matColumnDef="typeContact">
+        <mat-header-cell *matHeaderCellDef> Tipo de contacto </mat-header-cell>
+        <mat-cell *matCellDef="let personContact">{{personContact.contact_type_id}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="person">
         <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-        <mat-cell *matCellDef="let personcontacts"> {{personcontacts.persons_id}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="itemCategory">
-        <mat-header-cell *matHeaderCellDef> Tipo de contacto </mat-header-cell>
-        <mat-cell *matCellDef="let personcontacts">{{personcontacts.item_category_id}} </mat-cell>
+        <mat-cell *matCellDef="let personContact"> {{personContact.person_id}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
-        <mat-cell *matCellDef="let personcontacts"><a (click)="deletePersonsContact(personcontacts.contact_info_id)"><i
+        <mat-cell *matCellDef="let personContact"><a (click)="deletePersonContact(personContact.person_contact_id)"><i
               class="material-icons">delete</i></a></mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="update">
         <mat-header-cell *matHeaderCellDef> Actualizar </mat-header-cell>
-        <mat-cell *matCellDef="let personcontacts"><a (click)="loadData(personcontacts)"><i
+        <mat-cell *matCellDef="let personContact"><a (click)="loadData(personContact)"><i
               class="material-icons">edit</i></a>
         </mat-cell>
       </ng-container>

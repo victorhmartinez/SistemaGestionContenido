@@ -4,7 +4,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { PersonService } from 'src/app/services/person.service';
 import { AuthService } from '../../services/auth.service';
 import { Person } from 'src/app/models/person';
-import { InfoSite } from 'src/app/models/infoSite';
 import { Menu } from 'src/app/models/menu';
 import { DataFrontpageService } from 'src/app/services/data-frontpage.service';
 import { MenuService } from 'src/app/services/menu.service';
@@ -30,7 +29,6 @@ export class FrontpageComponent implements OnInit {
   carrera: {name: string};//APLICACION CARRERAS
   
   listPersons: Person[] = [];
-  listInfoSitesQuienesSomos: InfoSite [] = [];
   listMenu: Menu[] = [];
   listTestimonios: Content[] = [];
   listMensajes: Content[] = [];
@@ -53,7 +51,7 @@ export class FrontpageComponent implements OnInit {
 
   ngOnInit() {
     this.updateListPersons();
-    this.updateListInfoSiteQuienesSomos();
+    
     this.updateListMenu();
     this.updateListTestimonios();
     this.updateListMensajes();
@@ -80,17 +78,7 @@ export class FrontpageComponent implements OnInit {
       this.listPersons = person;
     });
   }
-  //Lista Infosite
-  updateListInfoSiteQuienesSomos() {
-    this.frontPageDataService.getDataQuienesSomos().subscribe(infosite => {
-      this. listInfoSitesQuienesSomos = infosite
-    
-    },
-      error => {
-        alert(JSON.stringify(error));
-      }
-    );
-  }
+
   //Lista de Menus
   updateListMenu() {
     this.menuService.getMenu().subscribe(menu => {

@@ -8,24 +8,29 @@ import { AuthGuard } from './guards/auth.guard';
 import { CategoryComponent } from './components/category/category.component';
 import { ItemcategoryComponent } from './components/itemcategory/itemcategory.component';
 import { PersonComponent } from './components/person/person.component';
-import { PersonsroleComponent } from './components/personsrole/personsrole.component';
-import { PersonsmediaComponent } from './components/personsmedia/personsmedia.component';
+import { PersonsroleComponent } from './components/personsrole/personRole.component';
+import { PersonsmediaComponent } from './components/personsmedia/personmedia.component';
 import { PersoncontactsComponent } from './components/personcontacts/personcontacts.component';
-import { PersonDepartamentComponent } from './components/person-departament/person-departament.component';
 import { ContentComponent } from './components/content/content.component';
 import { ContentMediaComponent } from './components/content-media/content-media.component';
-import { ContentInfoComponent } from './components/content-info/content-info.component';
-import { InfositeComponent } from './components/infosite/infosite.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { PersonsectionComponent } from './components/personsection/personsection.component';
+import { SectionComponent } from './components/section/section.component';
+import { GroupComponent } from './components/group/group.component';
+import { GroupContactComponent } from './components/groupContact/groupContact.component';
+import { RoleComponent } from './components/role/role.component';
 
 import { SubjectMatterComponent } from './components/subject-matter/subject-matter.component';
-import { PreRequirementsComponent } from './components/pre-requirements/pre-requirements.component';
+import { RequirementComponent } from './components/requirement/requirement.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
 import { MallaComponent } from './components/malla/malla.component';
 
+import { EnventComponent } from './components/envent/envent.component';
+import { GroupEventComponent } from './components/group-event/group-event.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { UserCComponent } from './components/user-c/user-c.component';
 
 const routes: Routes = [
  
@@ -52,15 +57,20 @@ const routes: Routes = [
     { path: 'personsrole', component: PersonsroleComponent },
     { path: 'personsmedia', component: PersonsmediaComponent },
     { path: 'personcontact', component: PersoncontactsComponent },
-    { path: 'persondepartament', component: PersonDepartamentComponent },
     { path: 'content', component: ContentComponent },
     { path: 'contentMedia', component: ContentMediaComponent },
-    { path: 'contentInfo', component: ContentInfoComponent },
-    { path: 'infosite', component: InfositeComponent },
-    { path: 'menu', component: MenuComponent },
+    { path: 'personSection', component: PersonsectionComponent },
+    { path: 'section', component: SectionComponent },
+    { path: 'group', component: GroupComponent },
+    { path: 'groupContact', component: GroupContactComponent },
+    { path: 'role', component: RoleComponent },
    
     { path: 'subjectMatter', component: SubjectMatterComponent },
-    { path: 'preRequirements', component: PreRequirementsComponent },
+    { path: 'requirement', component: RequirementComponent },
+    { path: 'event', component: EnventComponent },
+    { path: 'groupEvent', component: GroupEventComponent },
+    { path: 'menu', component: MenuComponent },
+    { path: 'user', component: UserCComponent },
   ]
  },
  
