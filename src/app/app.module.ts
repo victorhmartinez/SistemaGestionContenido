@@ -19,25 +19,31 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ItemcategoryComponent } from './components/itemcategory/itemcategory.component';
 
-import { PersonsroleComponent } from './components/personsrole/personsrole.component';
+import { PersonsroleComponent } from './components/personsrole/personRole.component';
 import { PersonComponent } from './components/person/person.component';
-import { PersonsmediaComponent } from './components/personsmedia/personsmedia.component';
+import { PersonsmediaComponent } from './components/personsmedia/personmedia.component';
 import { PersoncontactsComponent } from './components/personcontacts/personcontacts.component';
-import { PersonDepartamentComponent } from './components/person-departament/person-departament.component';
 import { ContentComponent } from './components/content/content.component';
 import { ContentMediaComponent } from './components/content-media/content-media.component';
 import { ContentInfoComponent } from './components/content-info/content-info.component';
-import { MenuComponent } from './components/menu/menu.component';
 
-import { InfositeComponent } from './components/infosite/infosite.component';
 import { SubjectMatterComponent } from './components/subject-matter/subject-matter.component';
-import { PreRequirementsComponent } from './components/pre-requirements/pre-requirements.component';
+import { RequirementComponent } from './components/requirement/requirement.component';
 import { MatPaginatorIntl } from '@angular/material';
 import { MatPaginatorIntlEspa } from './mat-paginator-intl-espa';
 import { MatMenuModule} from '@angular/material/menu';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
+import { SectionComponent } from './components/section/section.component';
+import { PersonsectionComponent } from './components/personsection/personsection.component';
+import { GroupComponent } from './components/group/group.component';
+import { GroupContactComponent } from './components/groupContact/groupContact.component';
+import { RoleComponent } from './components/role/role.component';
+import { EnventComponent } from './components/envent/envent.component';
+import { GroupEventComponent } from './components/group-event/group-event.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { UserCComponent } from './components/user-c/user-c.component';
 
 @NgModule({
   declarations: [
@@ -55,18 +61,24 @@ import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-men
     PersonComponent,
     PersonsmediaComponent,
     PersoncontactsComponent,
-    PersonDepartamentComponent,
     ContentComponent,
     ContentMediaComponent,
     ContentInfoComponent,
-    MenuComponent,
- 
-    InfositeComponent,
     SubjectMatterComponent,
-    PreRequirementsComponent,
+    RequirementComponent,
     VermasTestimoniosComponent,
     VermasAutoridadesComponent,
     VermasMensajesComponent,
+    SectionComponent,
+    PersonsectionComponent,
+    GroupComponent,
+    GroupContactComponent,
+    RoleComponent,
+    EnventComponent,
+    GroupEventComponent,
+    MenuComponent,
+    UserCComponent
+    
  
   ],
   imports: [

@@ -5,11 +5,16 @@
           <mat-card-content>
 
                 <mat-form-field class="w100">
-                  <input matInput formControlName="name_subject_matter" placeholder="Nombre del Componente" autocomplete="off">
+                  <input matInput formControlName="name" placeholder="Nombre del Componente" autocomplete="off">
                 </mat-form-field>
+
+                <mat-form-field class="w100">
+                  <input matInput formControlName="semester" placeholder="Semestre" autocomplete="off">
+                </mat-form-field>
+
                 <mat-form-field class="w100">
                   <mat-label>Carrera Universitaria</mat-label>
-                  <mat-select formControlName="universitycareer">
+                  <mat-select formControlName="university_carrer_id">
                       <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemUniversityCareer">
                           {{itemCategory.nameItemCategory}}
                       </mat-option>
@@ -27,14 +32,21 @@
       <mat-form-field class= "w100">
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
         </mat-form-field>
+
     <mat-table [dataSource]="data" class="w100" cols="3"> 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-        <mat-cell *matCellDef="let subjectMatter"> {{subjectMatter.name_subject_matter}} </mat-cell>
+        <mat-cell *matCellDef="let subjectMatter"> {{subjectMatter.name}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="universitycareer">
+
+      <ng-container matColumnDef="semester">
+        <mat-header-cell *matHeaderCellDef> Semestre </mat-header-cell>
+        <mat-cell *matCellDef="let subjectMatter"> {{subjectMatter.semester}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="university_carrer_id">
           <mat-header-cell *matHeaderCellDef> Titulación </mat-header-cell>
-          <mat-cell *matCellDef="let subjectMatter">{{subjectMatter.universitycareer}} </mat-cell>
+          <mat-cell *matCellDef="let subjectMatter">{{subjectMatter.university_carrer_id}} </mat-cell>
         </ng-container>
       <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>

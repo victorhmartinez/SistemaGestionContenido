@@ -19,18 +19,18 @@ export class SubjectMatterService {
 
   }
   public createSubjectMatter(subject: SubjectMatter) {
-    return this.httpClient.post(this.apiUrl+'subjectMatter/', subject, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'subject_matter/', subject, this.httpOptions);
   }
 
   public updateSubjectMatter(subject: SubjectMatter) {
-    return this.httpClient.put(this.apiUrl+'subjectMatter/'+subject.subject_matter_id+'/', subject,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'subject_matter/'+subject.subject_matter_id+'/', subject,this.httpOptions);
   }
 
   public deleteSubjectMatter(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'subjectMatter/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'subject_matter/'+id+'/', this.httpOptions);
   }
 
   public getSubjectMatter() { 
-    return this.httpClient.get<SubjectMatter[]>(this.apiUrl+'subjectMatter/', this.httpOptions);
+    return this.httpClient.get<SubjectMatter[]>(this.apiUrl+'subject_matter/', this.httpOptions);
   }
 }

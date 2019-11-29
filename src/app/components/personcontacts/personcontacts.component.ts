@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+//Models
 import { Person } from 'src/app/models/person';
 import { ItemCategory } from 'src/app/models/itemCategory';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { PersoncontactsService } from 'src/app/services/personcontacts.service';
+import { PersonContact } from 'src/app/models/personcontact';
+//Services
+import { PersonContactService } from 'src/app/services/personContact.service';
 import { PersonService } from 'src/app/services/person.service';
 import { ItemCategoryService } from 'src/app/services/itemCategory.service';
-import { Personcontacts } from 'src/app/models/personcontacts';
+
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
 
@@ -16,34 +19,35 @@ import { UnirversityCareerService } from 'src/app/services/unirversity-career.se
 })
 export class PersoncontactsComponent implements OnInit {
   listPersons: Person[] = [];
-  listTypeContact: ItemCategory[] = [];
-  listPersonsContact: Personcontacts [] = [];
-  personsContactform: FormGroup;
+  listContactType: ItemCategory[] = [];
+  listPersonContact: PersonContact [] = [];
+  personContactForm: FormGroup;
   data:MatTableDataSource<any>;
   constructor(
-    private personsContactService: PersoncontactsService ,
+    private personContactService: PersonContactService ,
     private personService: PersonService,
     private universityCareerService: UnirversityCareerService,
   ) { 
-    this.personsContactform = this.createFormGroup();
+    this.personContactForm = this.createFormGroup();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator; 
+
    //Persons and Categories
    updateListPersons() {
     this.personService.getPersons().subscribe(person => {
       this.listPersons = person;
     });
   }
-  updateListTypeContact() {
+  updateContactType() {//OJOOOOO SERVICIOS ANERIORE
     this.universityCareerService.getTypeContact().subscribe(itemCategories => {
-      this.listTypeContact = itemCategories;
+      this.listContactType = itemCategories;
     });
   }
   //all person,itemcategories,contacts
-  updateListPersonsContact() {
-    this.personsContactService.getPersonsContact().subscribe(personsContact => {
-      this.listPersonsContact = personsContact
-      this.data= new MatTableDataSource<Personcontacts>(this.listPersonsContact);
+  updateListPersonContact() {
+    this.personContactService.getPersonContact().subscribe(personContact => {
+      this.listPersonContact = personContact
+      this.data= new MatTableDataSource<PersonContact>(this.listPersonContact);
       this.data.paginator=this.paginator;
     },
       error => {
@@ -56,59 +60,60 @@ export class PersoncontactsComponent implements OnInit {
     this.data.filter = filterValue.trim().toLowerCase();
   }
   //Delete
-  deletePersonsContact(id: number) {
-    this.personsContactService.deletePersonsContact(id).subscribe(persons => {
-      this.updateListPersonsContact();
+  deletePersonContact(id: number) {
+    this.personContactService.deletePersonContact(id).subscribe(persons => {
+      this.updateListPersonContact();
     },
       error => {
         alert(JSON.stringify(error));
       })
   }
   //Update
-  updatePersonsContact(id: number) {
-    alert(JSON.stringify(this.personsContactform.valueChanges));
+  updatePersonContact(id: number) {
+    alert(JSON.stringify(this.personContactForm.valueChanges));
   }
+
   ngOnInit() {
     this.updateListPersons();
-    this.updateListTypeContact();
-    this.updateListPersonsContact();
+    this.updateContactType();
+    this.updateListPersonContact();
   }
   //columns table
-  displayedColumns: string[] = ['contact','person', 'itemCategory', 'delete', 'update'];
-//FormGroup
+  displayedColumns: string[] = ['contact','typeContact', 'person', 'delete', 'update'];
+  
+  //FormGroup
   createFormGroup() {
     return new FormGroup({
-
-      contact_info_id: new FormControl(),
+      person_contact_id: new FormControl(),
       contact:new FormControl('', [
         Validators.required,
         Validators.maxLength(255)
       ]),
-      persons_id: new FormControl('', [
+      contact_type_id: new FormControl('', [
         Validators.required,
       ]),
-      item_category_id: new FormControl('', [
+      person_id: new FormControl('', [
         Validators.required,
       ]),
       
     });
   }
    //Load data in form
-   loadData(personsContactEdit: Personcontacts) {
-    this.personsContactform.setValue({
-      contact_info_id: personsContactEdit.contact_info_id,
-      contact:personsContactEdit.contact,
-      persons_id : personsContactEdit.persons_id,
-      item_category_id: personsContactEdit.item_category_id,
+   loadData(personContactEdit: PersonContact) {
+    this.personContactForm.setValue({
+      person_contact_id: personContactEdit.person_contact_id,
+      contact:personContactEdit.contact,
+      contact_type_id : personContactEdit.contact_type_id,
+      person_id: personContactEdit.person_id,
       
     })
   }
     //submit form
     submitForm() {
-      if (this.personsContactform.value.contact_info_id == null) {
-        if (this.personsContactform.valid) {
-          this.personsContactService.createpersonsContact(this.personsContactform.value).subscribe(personContact => {
-            this.updateListPersonsContact();
+      if (this.personContactForm.value.person_contact_id == null) {
+        if (this.personContactForm.valid) {
+          this.personContactService.createPersonContact(this.personContactForm.value).subscribe(personContact => {
+            this.updateListPersonContact();
           }, error => {
             alert(JSON.stringify(error));
           })
@@ -116,9 +121,9 @@ export class PersoncontactsComponent implements OnInit {
         }
       }
       else {
-        if (this.personsContactform.valid) {
-          this.personsContactService.updatePersonsContact(this.personsContactform.value).subscribe(personContact => {
-            this.updateListPersonsContact();
+        if (this.personContactForm.valid) {
+          this.personContactService.updatePersonContact(this.personContactForm.value).subscribe(personContact => {
+            this.updateListPersonContact();
           })
           this.resetForm();
         }
@@ -127,9 +132,9 @@ export class PersoncontactsComponent implements OnInit {
     //reset form
   resetForm() {
     let control: AbstractControl = null;
-    this.personsContactform.reset({ active: false });
-    this.personsContactform.markAsUntouched();
-    Object.keys(this.personsContactform.controls).forEach((nameControl) => {control = this.personsContactform.controls[nameControl];
+    this.personContactForm.reset({ active: false });
+    this.personContactForm.markAsUntouched();
+    Object.keys(this.personContactForm.controls).forEach((nameControl) => {control = this.personContactForm.controls[nameControl];
       control.setErrors(null);
     });
   }

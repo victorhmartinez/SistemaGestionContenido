@@ -43,6 +43,13 @@
         </button>
       </mat-list-item>
 
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="section">
+          <mat-icon>drag_indicator</mat-icon>
+          Secciones
+        </button>
+      </mat-list-item>
+
       
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="person">
@@ -50,11 +57,24 @@
           Personas
         </button>
       </mat-list-item>
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="personSection">
+          <mat-icon>perm_identity</mat-icon>
+          Secciones Personas
+        </button>
+      </mat-list-item>
 
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="personsrole">
           <mat-icon>perm_contact_calendar</mat-icon>
           Roles de Personas
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="role">
+          <mat-icon>supervisor_account</mat-icon>
+          Roles 
         </button>
       </mat-list-item>
 
@@ -71,13 +91,7 @@
           Personas Contactos
         </button>
       </mat-list-item>
-      <!--PersonDepartament-->
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink="persondepartament">
-          <mat-icon>work</mat-icon>
-          Personas Departamentos
-        </button>
-      </mat-list-item>
+      
       <!--Content-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="content">
@@ -85,35 +99,14 @@
           Contenido
         </button>
       </mat-list-item>
-      <!--content_media-->
+      <!--content_media
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink ="contentMedia">
           <mat-icon>perm_media</mat-icon>
           Contenido Media
         </button>
-      </mat-list-item>
-      
-      <!--content_info-->
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink="contentInfo">
-          <mat-icon>info</mat-icon>
-          Contenido Informacion
-        </button>
-      </mat-list-item>
+      </mat-list-item>-->
 
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink ="infosite">
-          <mat-icon>filter_list</mat-icon>
-          Informacion Sitio
-        </button>
-      </mat-list-item>
-
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink="menu">
-          <mat-icon>menu</mat-icon>
-          Menu
-        </button>
-      </mat-list-item>     
          <!--Subject Matter-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="subjectMatter">
@@ -121,13 +114,55 @@
           Materias
         </button>
       </mat-list-item>
-       <!--Pre-Requirements-->
+       <!--Requirements-->
        <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink="preRequirements">
+        <button class="menu-item" mat-flat-button routerLink="requirement">
           <mat-icon>file_copy</mat-icon>
-          Pre Requisitos
+          Requisitos
         </button>
       </mat-list-item>
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="group">
+          <mat-icon>web</mat-icon>
+          Grupos
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="groupContact">
+          <mat-icon>contact_mail</mat-icon>
+          Contacto Grupos
+        </button>
+      </mat-list-item>
+
+      
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="event">
+          <mat-icon>business</mat-icon>
+          Eventos
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="menu">
+          <mat-icon>dialpad</mat-icon>
+          Menu
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="user">
+          <mat-icon>filter_none</mat-icon>
+          Usuario
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button routerLink="groupEvent">
+          <mat-icon>list_alt</mat-icon>
+          Eventos de Grupos
+        </button>
+      </mat-list-item>
+
 
       <mat-list-item>
         <button class="menu-item" mat-flat-button>
@@ -135,7 +170,6 @@
           Settings
         </button>
       </mat-list-item>
-    
 
     </mat-list>
   </mat-sidenav>
@@ -145,4 +179,5 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 

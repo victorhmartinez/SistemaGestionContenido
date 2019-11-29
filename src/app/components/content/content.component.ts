@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Person } from 'src/app/models/person';
 import { ItemCategory } from 'src/app/models/itemCategory';
+import { ItemCategoryService } from '../../services/itemCategory.service';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
+//import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
 import { Content } from 'src/app/models/content';
 import { ContentService } from 'src/app/services/content.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
@@ -14,14 +15,14 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 })
 export class ContentComponent implements OnInit {
   
-  listTypeEvent: ItemCategory[] = [];
+  listContentTypeEvent: ItemCategory[] = [];
   listAcademicPeriod: ItemCategory[] = [];
   listContent: Content[] = [];
   listItemUniversityCareer: ItemCategory[] = [];
   contentForm: FormGroup;
   data:MatTableDataSource<any>;
   constructor(
-    private universityCareerService: UnirversityCareerService,
+    private itemCategoryService: ItemCategoryService,
     private contentService : ContentService
   ) {
     this.contentForm = this.createFormGroup();
@@ -29,19 +30,19 @@ export class ContentComponent implements OnInit {
    @ViewChild(MatPaginator) paginator: MatPaginator; 
        //Update UniversityCareer
        updateListItemUniversityCategories() {
-        this.universityCareerService.getUniversityCareer().subscribe(itemCategories => {
+        this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
           this.listItemUniversityCareer = itemCategories;
         });
       }
       //Update Type Event
-      updateListTypeEvent() {
-        this.universityCareerService.getTypeEvent().subscribe(itemCategories => {
-          this.listTypeEvent = itemCategories;
+      updateListContentTypeEvent() {
+        this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+          this.listContentTypeEvent = itemCategories;
         });
       }
       //Update Academic Period
       updateListAcademicPeriod() {
-        this.universityCareerService.getAcademicPeriod().subscribe(itemCategories => {
+        this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
           this.listAcademicPeriod = itemCategories;
         });
       }
@@ -61,6 +62,7 @@ export class ContentComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.data.filter = filterValue.trim().toLowerCase();
   }
+
 //Delete
 deleteContent(id: number) {
   this.contentService.deleteContent(id).subscribe(persons => {
@@ -78,10 +80,10 @@ updateContent(id: number) {
     this.updateListAcademicPeriod();
     this.updateListContent();
     this.updateListItemUniversityCategories();
-    this.updateListTypeEvent();
+    this.updateListContentTypeEvent();
   }
   //columns table
-  displayedColumns: string[] = ['title','description','type_event','create_time','update_time','academic_period','universitycareer','delete','update'];
+  displayedColumns: string[] = ['title','description','create_time','update_time','content_type_id','academic_period_id','university_carrer_id','delete','update'];
    //FORM ACTIONS
   //Create new form
   createFormGroup() {
@@ -95,18 +97,21 @@ updateContent(id: number) {
         Validators.required,
         Validators.maxLength(255)
       ]),
-
-      type_event: new FormControl('', [
+      update_time: new FormControl('', [
+        Validators.required,
+      ]),
+      create_time: new FormControl('', [
         Validators.required,
       ]),
 
-   
-      
-      academic_period: new FormControl('', [
+      content_type_id: new FormControl('', [
+        Validators.required,
+      ]),     
+      academic_period_id: new FormControl('', [
         Validators.required,
       ]),
 
-       content_universitycareer: new FormControl('', [
+      university_carrer_id: new FormControl('', [
         Validators.required,
       ]),
     });
@@ -118,10 +123,11 @@ updateContent(id: number) {
       content_id:contentEdit.content_id,
       title: contentEdit.title,
       description: contentEdit.description,
-      
-      type_event: contentEdit.type_event,
-      academic_period:contentEdit.academic_period,
-      content_universitycareer  : contentEdit.content_universitycareer
+      update_time: contentEdit.update_time,
+      create_time: contentEdit.create_time,
+      content_type_id: contentEdit.content_type_id,
+      academic_period_id:contentEdit.academic_period_id,
+      university_carrer_id  : contentEdit.university_carrer_id
     })
   }
     //submit form

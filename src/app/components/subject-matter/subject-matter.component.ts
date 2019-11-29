@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SubjectMatter } from 'src/app/models/subject-matter';
 import { ItemCategory } from 'src/app/models/itemCategory';
+
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SubjectMatterService } from 'src/app/services/subjectMatter.service';
-import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
+import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';//servicio titulacion
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 @Component({
@@ -24,7 +25,8 @@ export class SubjectMatterComponent implements OnInit {
     this.subjectMatterForm = this.createFormGroup();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator; 
-  //Update UniversityCareer
+
+  //Update UniversityCareer OJO SERVICIO ANTERIOR
   updateListItemUniversityCategories() {
     this.universityCareerService.getUniversityCareer().subscribe(itemCategories => {
       this.listItemUniversityCareer = itemCategories;
@@ -63,16 +65,20 @@ applyFilter(filterValue: string) {
     this.updateListItemUniversityCategories();
     this.updateListSubjectMatter();
   }
-  displayedColumns: string[] = ['name', 'universitycareer', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'semester', 'university_carrer_id', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
       subject_matter_id: new FormControl(),
-      name_subject_matter: new FormControl('', [
+      name: new FormControl('', [
         Validators.required,
         Validators.maxLength(255)
       ]),
-      universitycareer:  new FormControl('', [
+      semester:  new FormControl('', [
+        Validators.required,
+        
+      ]),
+      university_carrer_id:  new FormControl('', [
         Validators.required,
         
       ]),
@@ -82,8 +88,9 @@ applyFilter(filterValue: string) {
   loadData(subjecMatterEdit: SubjectMatter) {
     this.subjectMatterForm.setValue({
       subject_matter_id: subjecMatterEdit.subject_matter_id,
-      name_subject_matter: subjecMatterEdit.name_subject_matter,
-      universitycareer: subjecMatterEdit.universitycareer,   
+      name: subjecMatterEdit.name,
+      semester: subjecMatterEdit.semester,
+      university_carrer_id: subjecMatterEdit.university_carrer_id,   
 
     })
   }
