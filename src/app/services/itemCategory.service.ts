@@ -24,18 +24,18 @@ export class ItemCategoryService {
   }
 
   public createItemCategory(itemCategory: ItemCategory) {
-    return this.httpClient.post(this.apiUrl+'itemcategory/', itemCategory, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'item_category/', itemCategory, this.httpOptions);
   }
     
   public updateItemCategory(itemCategory: ItemCategory) {
-    return this.httpClient.put(this.apiUrl+'itemcategory/'+itemCategory.idItemCategory+'/', itemCategory,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'item_category/'+itemCategory.item_category_id+'/', itemCategory,this.httpOptions);
   }
 
   public deleteItemCategory(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'itemcategory/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'item_category/'+id+'/', this.httpOptions);
   }
 
   public getItemCategories() { 
-    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategory', this.httpOptions);
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'item_category/', this.httpOptions);
   }
 }

@@ -1,13 +1,15 @@
 export class Category {
 
-    idCategory: number;
-    nameCategory: string;
+    category_id: number;
+    name: string;
     active: boolean;
 
-    constructor(idCategory?: number, nameCategory?: string, active?: boolean){
-        this.idCategory = idCategory,
-        this.nameCategory = nameCategory,
+    constructor(category_id?: number, name?: string, active?: boolean){
+        this.category_id = category_id,
+        this.name = name,
         this.active = active
     }
-
+//category_id": 1,
+//"name": "Titulación",
+//"active": true
 }

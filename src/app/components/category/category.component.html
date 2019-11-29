@@ -4,7 +4,7 @@
             <mat-card-title>Categoría</mat-card-title>
             <mat-card-content>
                 <mat-form-field class="w100">
-                    <input matInput formControlName="nameCategory" placeholder="Nombre categoría" autocomplete="off">
+                    <input matInput formControlName="name" placeholder="Nombre categoría" autocomplete="off">
                 </mat-form-field>
                 <mat-checkbox formControlName="active" class="w100">Activo</mat-checkbox>
             </mat-card-content>
@@ -22,9 +22,9 @@
                         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
                       </mat-form-field>
             <table mat-table [dataSource]="data" class="w100" cols="3">
-                <ng-container matColumnDef="nameCategory">
+                <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-                    <mat-cell *matCellDef="let category"> {{category.nameCategory}} </mat-cell>
+                    <mat-cell *matCellDef="let category"> {{category.name}} </mat-cell>
                 </ng-container>
     
                 <ng-container matColumnDef="active">
@@ -34,7 +34,7 @@
     
                 <ng-container matColumnDef="delete">
                     <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
-                    <mat-cell *matCellDef="let category"><a (click)="deleteCategory(category.idCategory)"><i
+                    <mat-cell *matCellDef="let category"><a (click)="deleteCategory(category.category_id)"><i
                                 class="material-icons">delete</i></a></mat-cell>
                 </ng-container>
     

@@ -13,3 +13,8 @@ constructor(person_id?:number,first_name?:string,second_name?:string,first_last_
     this.second_last_name=second_last_name
 }
 }
+/*"person_id": 1,
+        "first_name": "Luis",
+        "second_name": "Rodrigo",
+        "first_last_name": "Barba",
+        "second_last_name": "Guamán"*/
