@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import{FlexLayoutModule }from '@angular/flex-layout'
 import { AppComponent } from './app.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { FrontpageComponent } from './components/frontpage/frontpage.component';
@@ -38,6 +39,8 @@ import { MatMenuModule} from '@angular/material/menu';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
+import { MallaComponent } from './components/malla/malla.component';
+
 
 @NgModule({
   declarations: [
@@ -67,6 +70,8 @@ import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-men
     VermasTestimoniosComponent,
     VermasAutoridadesComponent,
     VermasMensajesComponent,
+    MallaComponent,
+  
  
   ],
   imports: [
@@ -78,7 +83,8 @@ import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-men
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    MatMenuModule
+    MatMenuModule,
+    FlexLayoutModule
    
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlEspa}],

@@ -32,4 +32,10 @@ export class DataFrontpageService {
    public getMenu() { 
     return this.httpClient.get<Menu[]>(this.apiUrl+'menu/', this.httpOptions);
   }
+  public getMaterias(){
+    return this.httpClient.get(this.apiUrl+'subject_matter/',this.httpOptions);
+  }
+  public getRequirements(){
+    return this.httpClient.get(this.apiUrl+'requirement/',this.httpOptions);
+  }
 }

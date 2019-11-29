@@ -24,6 +24,8 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
+import { MallaComponent } from './components/malla/malla.component';
+
 
 const routes: Routes = [
  
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: '', component: FrontpageComponent, pathMatch: 'full',},
  // { path: '', redirectTo: '/frontpage', pathMatch: 'full' },
   { path: 'isic', component: FrontpageComponent},
+  {path:'malla', component:MallaComponent},
+
   {path:'autoridades', component:VermasAutoridadesComponent},
   {path:'testimonios' , component:VermasTestimoniosComponent},
   {path:'mensajes' , component:VermasMensajesComponent},

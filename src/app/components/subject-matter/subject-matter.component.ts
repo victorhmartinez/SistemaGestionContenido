@@ -63,16 +63,21 @@ applyFilter(filterValue: string) {
     this.updateListItemUniversityCategories();
     this.updateListSubjectMatter();
   }
-  displayedColumns: string[] = ['name', 'universitycareer', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'university_career_id','semester', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
       subject_matter_id: new FormControl(),
-      name_subject_matter: new FormControl('', [
+      name: new FormControl('', [
         Validators.required,
         Validators.maxLength(255)
       ]),
-      universitycareer:  new FormControl('', [
+      university_career_id:  new FormControl('', [
+        Validators.required,
+        
+      ]),
+
+      semester:  new FormControl('', [
         Validators.required,
         
       ]),
@@ -82,8 +87,9 @@ applyFilter(filterValue: string) {
   loadData(subjecMatterEdit: SubjectMatter) {
     this.subjectMatterForm.setValue({
       subject_matter_id: subjecMatterEdit.subject_matter_id,
-      name_subject_matter: subjecMatterEdit.name_subject_matter,
-      universitycareer: subjecMatterEdit.universitycareer,   
+      name: subjecMatterEdit.name,
+      university_career_id: subjecMatterEdit.university_career_id,   
+      semester:subjecMatterEdit.semester
 
     })
   }

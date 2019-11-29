@@ -76,8 +76,8 @@ data:MatTableDataSource<any>;
    createFormGroup() {
      return new FormGroup({
  
-      pre_requirements_id: new FormControl(),
-      subject_matter_id_id: new FormControl('', [
+      requirement_id: new FormControl(),
+      subject_matter_id: new FormControl('', [
          Validators.required,
        ]),
        subject_matter_requeriment_id: new FormControl('', [
@@ -88,15 +88,15 @@ data:MatTableDataSource<any>;
      //Load data in form
      loadData(preRequirementEdit: PreRequirements) {
       this.preRequirementsForm.setValue({
-        pre_requirements_id: preRequirementEdit.pre_requirements_id,
-        subject_matter_id_id : preRequirementEdit.subject_matter_id_id,
+        requirement_id: preRequirementEdit.requirement_id,
+        subject_matter_id : preRequirementEdit.subject_matter_id,
         subject_matter_requeriment_id: preRequirementEdit.subject_matter_requeriment_id,
   
       })
     }
     //submit form
     submitForm() {
-      if (this.preRequirementsForm.value.pre_requirements_id == null) {
+      if (this.preRequirementsForm.value.requirement_id == null) {
         if (this.preRequirementsForm.valid) {
           this.PreRequirementsService.createpreRequirements(this.preRequirementsForm.value).subscribe(preRequirement => {
             this.updateListPreRequirements();

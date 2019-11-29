@@ -10,8 +10,8 @@
         <mat-form-field class="w100">
           <mat-label>Categoría</mat-label>
           <mat-select formControlName="category">
-            <mat-option [value]="category.idCategory" *ngFor="let category of listCategories">
-              {{category.nameCategory}}
+            <mat-option [value]="category.idCategory" *ngFor="let cat of listCategories">
+              {{cat.nameCategory}}
             </mat-option>
           </mat-select>
         </mat-form-field>

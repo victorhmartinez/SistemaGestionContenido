@@ -18,18 +18,18 @@ export class PreRequirementsService {
     this.apiUrl = environment.apiUrl;
   }
   public createpreRequirements(preRequirements: PreRequirements) {
-    return this.httpClient.post(this.apiUrl+'preRequirements/', preRequirements, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'requirement/', preRequirements, this.httpOptions);
   }
     
   public updatepreRequirements(preRequirements: PreRequirements) {
-    return this.httpClient.put(this.apiUrl+'preRequirements/'+preRequirements.pre_requirements_id+'/', preRequirements,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'requirement/'+preRequirements.requirement_id+'/', preRequirements,this.httpOptions);
   }
 
   public deletepreRequirements(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'preRequirements/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'requirement/'+id+'/', this.httpOptions);
   }
 
   public getpreRequirements() { 
-    return this.httpClient.get<PreRequirements[]>(this.apiUrl+'preRequirements/', this.httpOptions);
+    return this.httpClient.get<PreRequirements[]>(this.apiUrl+'requirement/', this.httpOptions);
   }
 }
