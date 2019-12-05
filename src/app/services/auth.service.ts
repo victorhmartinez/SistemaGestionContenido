@@ -15,9 +15,9 @@ import { isNullOrUndefined } from 'util';
 
 
 export class AuthService {
-  AUTH_SERVER: string = 'http://127.0.0.1:8000';
+  AUTH_SERVER: string = 'http://3.134.77.123:8000/';
   authSubject = new BehaviorSubject(false);
-  private token: string;
+  private access: string;
 
   constructor(private httpClient: HttpClient ) { 
   }
@@ -28,21 +28,21 @@ export class AuthService {
 
   //Token
   login(user: UserI): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>("http://127.0.0.1:8000/api-token-auth/",
+    return this.httpClient.post<JwtResponseI>("http://3.134.77.123:8000/api/login/token/",
       user).pipe(tap(
         (res: JwtResponseI) => {
           if (res) {
             // guardar token
-            this.saveToken(JSON.stringify(res["token"]));
+            this.saveToken(JSON.stringify(res["access"]));
             this.setUser(user);
           }
         })
       );
   }
 
-  private saveToken(token: string): void {
-    localStorage.setItem("ACCESS_TOKEN", token);
-    this.token = token;
+  private saveToken(access: string): void {
+    localStorage.setItem("ACCESS_TOKEN", access);
+    this.access = access;
   }
 
   setUser(user: UserI): void {
@@ -63,8 +63,9 @@ export class AuthService {
 
   //Logout
   logout():void{
-    this.token='';
+    this.access='';
     localStorage.removeItem('ACCESS_TOKEN"');
+    localStorage.removeItem('currentUser"');
   }
   }
 
