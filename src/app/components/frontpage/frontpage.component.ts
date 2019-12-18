@@ -9,6 +9,7 @@ import { DataFrontpageService } from 'src/app/services/data-frontpage.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { ContentService } from 'src/app/services/content.service';
 import { Content } from 'src/app/models/content';
+import { UserI } from 'src/app/models/user';
 @Component({
   selector: 'app-frontpage',
   templateUrl: './frontpage.component.html',

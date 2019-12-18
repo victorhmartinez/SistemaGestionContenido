@@ -51,7 +51,7 @@
       </mat-list-item>
 
       
-      <mat-list-item>
+      <mat-list-item  *ngIf="is_SuperAdmin">
         <button class="menu-item" mat-flat-button routerLink="person">
           <mat-icon>person_add</mat-icon>
           Personas
@@ -71,7 +71,7 @@
         </button>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item  *ngIf="is_SuperAdmin">
         <button class="menu-item" mat-flat-button routerLink="role">
           <mat-icon>supervisor_account</mat-icon>
           Roles 
@@ -145,17 +145,19 @@
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="menu">
           <mat-icon>dialpad</mat-icon>
-          Menu
+          Menu   
+        
         </button>
       </mat-list-item>
 
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink="user">
+
+      <mat-list-item  *ngIf="is_SuperAdmin"> 
+        <button class="menu-item" mat-flat-button routerLink="user" >
           <mat-icon>filter_none</mat-icon>
           Usuario
         </button>
       </mat-list-item>
-
+    
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="groupEvent">
           <mat-icon>list_alt</mat-icon>

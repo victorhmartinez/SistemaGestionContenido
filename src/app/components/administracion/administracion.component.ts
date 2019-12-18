@@ -8,11 +8,13 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./administracion.component.css']
 })
 export class AdministracionComponent implements OnInit {
-
-  constructor(private authService: AuthService, private router: Router) { }
+public is_SuperAdmin:boolean;
+public is_Admin:boolean;
+  constructor(private authService:AuthService, private router: Router) { }
 
 
   ngOnInit() {
+    this.isSuperAdmin();
   }
   title = 'AngularMaterialGettingStarted';
 
@@ -42,5 +44,15 @@ logout(){
   this.router.navigateByUrl('');
  
 }
+isSuperAdmin(){
+  if( this.authService.getUserRoles){
+    console.log(this.authService.getUserRoles())
+ this.is_SuperAdmin=false;
+ 
+  }else{
+    console.log(this.authService.getUserRoles())
+    this.is_SuperAdmin=true;
+  }
+ }
 
 }

@@ -14,6 +14,7 @@ export class ContentService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
+      
     }                                                                                       )
   }
   constructor(private httpClient: HttpClient,) { 

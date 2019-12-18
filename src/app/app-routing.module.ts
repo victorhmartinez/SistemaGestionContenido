@@ -31,6 +31,7 @@ import { EnventComponent } from './components/envent/envent.component';
 import { GroupEventComponent } from './components/group-event/group-event.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { UserCComponent } from './components/user-c/user-c.component';
+import { GuardsRoleGuard } from './guards/guards-role.guard';
 
 const routes: Routes = [
  
@@ -51,9 +52,9 @@ const routes: Routes = [
   
   { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]
   ,children:[
-    { path: 'category', component: CategoryComponent },
+    { path: 'category', component: CategoryComponent  },
     { path: 'itemcategory', component: ItemcategoryComponent }, 
-    { path: 'person', component: PersonComponent },
+    { path: 'person', component: PersonComponent,canActivate: [GuardsRoleGuard]},
     { path: 'personsrole', component: PersonsroleComponent },
     { path: 'personsmedia', component: PersonsmediaComponent },
     { path: 'personcontact', component: PersoncontactsComponent },
@@ -63,14 +64,14 @@ const routes: Routes = [
     { path: 'section', component: SectionComponent },
     { path: 'group', component: GroupComponent },
     { path: 'groupContact', component: GroupContactComponent },
-    { path: 'role', component: RoleComponent },
+    { path: 'role', component: RoleComponent,canActivate: [GuardsRoleGuard]},
    
     { path: 'subjectMatter', component: SubjectMatterComponent },
     { path: 'requirement', component: RequirementComponent },
     { path: 'event', component: EnventComponent },
     { path: 'groupEvent', component: GroupEventComponent },
     { path: 'menu', component: MenuComponent },
-    { path: 'user', component: UserCComponent },
+    { path: 'user', component: UserCComponent,canActivate: [GuardsRoleGuard] },
   ]
  },
  

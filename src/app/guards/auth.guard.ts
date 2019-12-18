@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate, Router, CanLoad, CanActivateChild } from '@angular/router';
 import { Observable } from 'rxjs';
 
 //SERVICE
@@ -9,6 +9,8 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate  {
+  
+ 
   constructor(private authService: AuthService, private router: Router) { }
 
   //Guards
@@ -17,9 +19,17 @@ export class AuthGuard implements CanActivate  {
       // login TRUE
       return true;
     } else {
-      this.router.navigate(['/auth/frontPage']);
+      this.router.navigate(['']);
       return false;
     }
   }
+ 
+  
+  
+
+
+  
+
+  
 }
 

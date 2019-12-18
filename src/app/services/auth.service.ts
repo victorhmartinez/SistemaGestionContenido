@@ -35,6 +35,7 @@ export class AuthService {
             // guardar token
             this.saveToken(JSON.stringify(res["access"]));
             this.setUser(user);
+         
           }
         })
       );
@@ -45,10 +46,13 @@ export class AuthService {
     this.access = access;
   }
 
+
   setUser(user: UserI): void {
     let user_string = JSON.stringify(user);
-    localStorage.setItem("currentUser", user_string);
+    localStorage.setItem("currentUserS", user_string);
+  
   }
+ 
 
   //Guards
   getCurrentUser(): UserI {
@@ -60,6 +64,23 @@ export class AuthService {
       return null;
     }
   }
+//Roles
+getUserRoles():boolean{
+  let user_string = localStorage.getItem("currentUser");
+    if (!isNullOrUndefined(user_string)) {
+      let user: UserI = JSON.parse(user_string);
+       if(user.is_superuser){
+        console.log("Hola");
+         return true;
+       }else{
+        console.log("Hola2");
+         return false;
+       }
+    } else {
+      
+      return false;
+    } 
+}
 
   //Logout
   logout():void{
