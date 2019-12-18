@@ -8,8 +8,19 @@
 }
 
 mat-grid-tile {
-  background: #27B865;
+  background: #E0EA84;  /*#E0EA84margin: 1rem;
+  padding: 1rem;
+  */
+  border-radius: 5%;
+  align-content: center;
+  font-family: fantasy;
+
+  text-align: center;
+  border: 1px solid #003F72;
+  
+
 }
+
 body { font-family: 'PT Sans', sans-serif; }
 
 .bg-primary { background-color: #003F72 !important; }
@@ -52,6 +63,7 @@ body { font-family: 'PT Sans', sans-serif; }
   opacity: .4;
 }
 
+
 .texto-slide { width: 75%; }
 
 .swiper-pagination-bullet {
@@ -89,6 +101,7 @@ body { font-family: 'PT Sans', sans-serif; }
   line-height: 56px;
 
 }
+
 
 .titulo{
   margin-bottom: 0;
