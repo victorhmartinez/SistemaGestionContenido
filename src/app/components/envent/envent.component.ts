@@ -49,6 +49,7 @@ export class EnventComponent implements OnInit {
         alert(JSON.stringify(error));
       }
     );
+    this.listEvent.length;
   }
   //Filter the table
   applyFilter(filterValue: string) {

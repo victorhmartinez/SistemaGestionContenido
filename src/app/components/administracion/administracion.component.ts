@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { UserCService } from 'src/app/services/user-c.service';
 
 @Component({
   selector: 'app-administracion',
@@ -8,13 +9,16 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./administracion.component.css']
 })
 export class AdministracionComponent implements OnInit {
-public is_SuperAdmin:boolean;
+public is_SuperAdmin :boolean;
+
 public is_Admin:boolean;
-  constructor(private authService:AuthService, private router: Router) { }
+  constructor(private authService:AuthService, private router: Router,private userService:UserCService) { }
 
 
   ngOnInit() {
     this.isSuperAdmin();
+    this.isCoordinador();
+   
   }
   title = 'AngularMaterialGettingStarted';
 
@@ -44,15 +48,22 @@ logout(){
   this.router.navigateByUrl('');
  
 }
+
 isSuperAdmin(){
-  if( this.authService.getUserRoles){
-    console.log(this.authService.getUserRoles())
- this.is_SuperAdmin=false;
+  if( this.authService.getUserRoles()){
+ this.is_SuperAdmin=true;
  
   }else{
-    console.log(this.authService.getUserRoles())
-    this.is_SuperAdmin=true;
+    this.is_SuperAdmin=false;
   }
+ }
+ isCoordinador(){
+  if( this.authService.getUserRoles()){
+    this.is_Admin=true;
+    
+     }else{
+       this.is_Admin=false;
+     }
  }
 
 }

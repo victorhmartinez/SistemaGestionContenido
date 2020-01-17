@@ -20,6 +20,7 @@ export class MallaComponent implements OnInit {
     this.updateListMenu();
     this.getListMaterias();
     this.getListRequirements();
+    console.log(this.listMaterias)
   }
   updateListMenu() {
     this.menuService.getMenu().subscribe(menu => {

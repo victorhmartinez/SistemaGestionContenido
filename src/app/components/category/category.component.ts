@@ -49,7 +49,7 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.updateListCategories();
-    
+    console.log(this.listCategories)
     
   }
 
