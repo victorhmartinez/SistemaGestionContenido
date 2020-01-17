@@ -51,7 +51,7 @@
         </ng-container>
 
         <ng-container matColumnDef="password">
-          <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> Contraseña </mat-header-cell>
           <mat-cell *matCellDef="let userC">{{userC.password}} </mat-cell>
         </ng-container>
 
@@ -72,7 +72,7 @@
 
         <ng-container matColumnDef="delete">
           <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
-          <mat-cell *matCellDef="let userC"><a (click)="deleteSection(userC.userC_id)"><i
+          <mat-cell *matCellDef="let userC"><a (click)="deleteUserC(userC.user_id)"><i
               class="material-icons">delete</i></a></mat-cell>
         </ng-container>
 

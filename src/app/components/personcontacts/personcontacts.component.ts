@@ -26,7 +26,7 @@ export class PersoncontactsComponent implements OnInit {
   constructor(
     private personContactService: PersonContactService ,
     private personService: PersonService,
-    private universityCareerService: UnirversityCareerService,
+    private iIemCategoryService: ItemCategoryService,
   ) { 
     this.personContactForm = this.createFormGroup();
   }
@@ -39,7 +39,7 @@ export class PersoncontactsComponent implements OnInit {
     });
   }
   updateContactType() {//OJOOOOO SERVICIOS ANERIORE
-    this.universityCareerService.getTypeContact().subscribe(itemCategories => {
+    this.iIemCategoryService.getItemCategories().subscribe(itemCategories => {
       this.listContactType = itemCategories;
     });
   }

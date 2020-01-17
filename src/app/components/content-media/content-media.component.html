@@ -10,16 +10,16 @@
 
             <mat-form-field class="w100">
               <mat-label>Categorias</mat-label>
-              <mat-select formControlName="item_category_item_category_id">
-                  <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
-                      {{itemCategory.nameItemCategory}}
+              <mat-select formControlName="item_category_id">
+                  <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemCategories">
+                      {{itemCategory.name}}
                   </mat-option>
               </mat-select>
           </mat-form-field>
 
               <mat-form-field class="w100">
                 <mat-label>Contenido</mat-label>
-                <mat-select formControlName="content_content_id">
+                <mat-select formControlName="content_id">
                     <mat-option [value]="content.content_id" *ngFor="let content of listContent">
                         {{content.title}}
                     </mat-option>
@@ -45,14 +45,14 @@
         <mat-cell *matCellDef="let contentMedia"> {{contentMedia.path}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="itemCategory">
+      <ng-container matColumnDef="item_category_id">
         <mat-header-cell *matHeaderCellDef>Item de Categoria</mat-header-cell>
-        <mat-cell *matCellDef="let contentMedia"> {{contentMedia.item_category_item_category_id}} </mat-cell>
+        <mat-cell *matCellDef="let contentMedia"> {{contentMedia.item_category_id}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="content">
+      <ng-container matColumnDef="content_id">
         <mat-header-cell *matHeaderCellDef>Contenido</mat-header-cell>
-        <mat-cell *matCellDef="let contentMedia">{{contentMedia.content_content_id}} </mat-cell>
+        <mat-cell *matCellDef="let contentMedia">{{contentMedia.content_id}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="delete">

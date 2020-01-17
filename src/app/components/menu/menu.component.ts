@@ -72,7 +72,7 @@ applyFilter(filterValue: string) {
     this.updateListItemCategories();
   }
 
-  displayedColumns: string[] = ['name', 'orden','itemCategory', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'order','itemCategory', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
@@ -81,7 +81,7 @@ applyFilter(filterValue: string) {
         Validators.required,
         Validators.maxLength(45)
       ]),
-      orden: new FormControl('', [
+      order: new FormControl('', [
         Validators.required,
       ]),
       item_category_id: new FormControl('', [
@@ -95,7 +95,7 @@ applyFilter(filterValue: string) {
     this.menuForm.setValue({
       menu_id: menuEdit.menu_id,
       name: menuEdit.name,
-      orden: menuEdit.orden,
+      order: menuEdit.order,
       item_category_id: menuEdit.item_category_id,
       
 

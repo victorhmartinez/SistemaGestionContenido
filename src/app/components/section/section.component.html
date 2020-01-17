@@ -11,9 +11,9 @@
 
               <mat-form-field class="w100">
                   <mat-label>Categorias</mat-label>
-                  <mat-select formControlName="universitycarrer"><!---->
-                      <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
-                          {{itemCategory.nameItemCategory}}
+                  <mat-select formControlName="university_career_id"><!---->
+                      <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemCategories">
+                          {{itemCategory.name}}
                       </mat-option>
                   </mat-select>
               </mat-form-field>
@@ -37,9 +37,9 @@
         </ng-container> 
 
 
-        <ng-container matColumnDef="universitycarrer">
+        <ng-container matColumnDef="university_career_id">
           <mat-header-cell *matHeaderCellDef> Carrera Universitaria </mat-header-cell>
-          <mat-cell *matCellDef="let section">{{section.section_id}} </mat-cell>
+          <mat-cell *matCellDef="let section">{{section.university_career_id}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="delete">

@@ -12,7 +12,6 @@ import { PersonRole } from '../../models/personRole';
 import { Role } from '../../models/role';
 
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { ItemCategoryRoleService } from 'src/app/services/itemCategoryRole.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 @Component({
@@ -33,7 +32,8 @@ export class PersonsroleComponent implements OnInit {
   constructor(
     private personRoleService: PersonRoleService ,
     private personService: PersonService,
-    private itemCategoryRolService: ItemCategoryRoleService,
+    //private itemCategoryRolService: ItemCategoryRoleService,
+    private itemCategoryService: ItemCategoryService,
     private roleService: RoleService,
   ) {
     this.personRoleForm = this.createFormGroup();
@@ -46,7 +46,12 @@ export class PersonsroleComponent implements OnInit {
       this.listPersons = person;
     });
   }
+  updateListItemCategories() {
+    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+      this.listItemCategories = itemCategories;
 
+    });
+  }
   /*updateListItemCategories() {//OJO SERVICIO ANTERIOR
     this.itemCategoryRolService.getPersonsRole().subscribe(itemCategories => {
       this.listItemCategories = itemCategories;
@@ -91,17 +96,17 @@ applyFilter(filterValue: string) {
 
   ngOnInit() {
     this.updateListPersons();
-    //this.updateListItemCategories();
+    this.updateListItemCategories();
     this.updateListRoles();
     this.updateListPersonRole();
   }
 
-  displayedColumns: string[] = ['university_carrer', 'role', 'person', 'delete', 'update'];
+  displayedColumns: string[] = ['university_career_id', 'role', 'person', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
       person_role_id: new FormControl(),
-      university_carrer: new FormControl('', [
+      university_career_id: new FormControl('', [
         Validators.required,
       ]),
       role_id: new FormControl('', [
@@ -117,7 +122,7 @@ applyFilter(filterValue: string) {
   loadData(personRoleEdit: PersonRole) {
     this.personRoleForm.setValue({
       person_role_id: personRoleEdit.person_role_id,
-      university_carrer: personRoleEdit.university_carrer,
+      university_career_id: personRoleEdit.university_career_id,
       role_id : personRoleEdit.role_id,
       person_id: personRoleEdit.person_id,
 

@@ -4,14 +4,14 @@ export class Group {
 
     group_id: number;
     name: string;
-    university_carrer_id: ItemCategory;
+    university_career_id: ItemCategory;
     
 
-    constructor(group_id?: number, name?: string,university_carrer_id?: ItemCategory){
+    constructor(group_id?: number, name?: string,university_career_id?: ItemCategory){
         this.group_id = group_id,
         this.name = name,
-        this.university_carrer_id = university_carrer_id
-        
+        this.university_career_id = university_career_id
+
     }
 
 }

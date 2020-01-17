@@ -14,9 +14,9 @@
         <!--Content type-->
         <mat-form-field class="w100">
           <mat-label>Tipo de Contenido</mat-label>
-          <mat-select formControlName="type_event">
-            <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listContentTypeEvent">
-              {{itemCategory.nameItemCategory}}
+          <mat-select formControlName="content_type_id">
+            <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listContentTypeEvent">
+              {{itemCategory.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -24,19 +24,19 @@
         <!--academic_period-->
         <mat-form-field class="w100">
           <mat-label>Periodo Academico</mat-label>
-          <mat-select formControlName="academic_period">
-            <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listAcademicPeriod">
-              {{itemCategory.nameItemCategory}}
+          <mat-select formControlName="academic_period_id">
+            <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listAcademicPeriod">
+              {{itemCategory.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
         <!--content_universitycareer-->
 
         <mat-form-field class="w100">
-          <mat-label>Contenido Carrera Universitaria</mat-label>
-          <mat-select formControlName="content_universitycareer">
-            <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemUniversityCareer">
-              {{itemCategory.nameItemCategory}}
+          <mat-label>Carrera Universitaria</mat-label>
+          <mat-select formControlName="university_career_id">
+            <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemUniversityCareer">
+              {{itemCategory.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -83,9 +83,9 @@
         <mat-header-cell *matHeaderCellDef>Periodo Academico</mat-header-cell>
         <mat-cell *matCellDef="let content">{{content.academic_period_id}} </mat-cell>
       </ng-container>
-      <ng-container matColumnDef="university_carrer_id">
+      <ng-container matColumnDef="university_career_id">
         <mat-header-cell *matHeaderCellDef>Carrerra Universitaria</mat-header-cell>
-        <mat-cell *matCellDef="let content">{{content.university_carrer_id}} </mat-cell>
+        <mat-cell *matCellDef="let content">{{content.university_career_id}} </mat-cell>
       </ng-container>
 
 

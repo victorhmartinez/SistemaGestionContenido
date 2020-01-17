@@ -77,7 +77,7 @@ updateContentMedia(id: number) {
    
   }
    //columns table
-   displayedColumns: string[] = ['path', 'itemCategory','content', 'delete', 'update'];
+   displayedColumns: string[] = ['path', 'item_category_id','content_id', 'delete', 'update'];
    //FormGroup
      createFormGroup() {
        return new FormGroup({
@@ -86,10 +86,10 @@ updateContentMedia(id: number) {
         path: new FormControl('', [
            Validators.required,
          ]),
-         item_category_item_category_id: new FormControl('', [
+         item_category_id: new FormControl('', [
            Validators.required,
          ]),
-         content_content_id: new FormControl('', [
+         content_id: new FormControl('', [
            Validators.required,
          ]),
        });
@@ -101,8 +101,8 @@ loadData(contentMediaEdit: ContentMedia) {
   this.contentMediaForm.setValue({
     content_media_id: contentMediaEdit.content_media_id,
     path : contentMediaEdit.path,
-    item_category_item_category_id: contentMediaEdit.item_category_item_category_id,
-    content_content_id:contentMediaEdit.content_content_id
+    item_category_id: contentMediaEdit.item_category_id,
+    content_id:contentMediaEdit.content_id
 
   })
 }

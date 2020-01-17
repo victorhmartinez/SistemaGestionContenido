@@ -50,11 +50,11 @@ const routes: Routes = [
  
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   
-  { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]
+  { path: 'administracion', component: AdministracionComponent//, canActivate: [AuthGuard]
   ,children:[
     { path: 'category', component: CategoryComponent  },
     { path: 'itemcategory', component: ItemcategoryComponent }, 
-    { path: 'person', component: PersonComponent,canActivate: [GuardsRoleGuard]},
+    { path: 'person', component: PersonComponent},//,canActivate: [GuardsRoleGuard]},
     { path: 'personsrole', component: PersonsroleComponent },
     { path: 'personsmedia', component: PersonsmediaComponent },
     { path: 'personcontact', component: PersoncontactsComponent },
@@ -64,14 +64,14 @@ const routes: Routes = [
     { path: 'section', component: SectionComponent },
     { path: 'group', component: GroupComponent },
     { path: 'groupContact', component: GroupContactComponent },
-    { path: 'role', component: RoleComponent,canActivate: [GuardsRoleGuard]},
+    { path: 'role', component: RoleComponent},//canActivate: [GuardsRoleGuard]},
    
     { path: 'subjectMatter', component: SubjectMatterComponent },
     { path: 'requirement', component: RequirementComponent },
     { path: 'event', component: EnventComponent },
     { path: 'groupEvent', component: GroupEventComponent },
     { path: 'menu', component: MenuComponent },
-    { path: 'user', component: UserCComponent,canActivate: [GuardsRoleGuard] },
+    { path: 'user', component: UserCComponent},//canActivate: [GuardsRoleGuard] },
   ]
  },
  

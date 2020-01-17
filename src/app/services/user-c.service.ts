@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UserC } from '../models/UserC';
+import { UserC } from '../models/userC';
 import { environment } from '../../environments/environment';
 
 
@@ -13,7 +13,8 @@ export class UserCService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('ACCESS_TOKEN'))
     })
   }
   constructor(private httpClient: HttpClient,
@@ -25,7 +26,7 @@ export class UserCService {
    }
 
    public updateUserC(user: UserC) {
-     return this.httpClient.put(this.apiUrl+'user/'+user.userC_id+'/', user,this.httpOptions);
+     return this.httpClient.put(this.apiUrl+'user/'+user.user_id+'/', user,this.httpOptions);
    }
 
    public deleteUserC(id: number) { 

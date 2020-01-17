@@ -6,7 +6,7 @@
 
               <mat-form-field class="w100">
                   <mat-label>Materia</mat-label>
-                  <mat-select formControlName="requirement_id">
+                  <mat-select formControlName="subject_matter_id">
                       <mat-option [value]="subjectMatter.subject_matter_id" *ngFor="let subjectMatter of listSubjectMatter">
                           {{subjectMatter.name}}
                       </mat-option>
@@ -35,7 +35,7 @@
                 <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
               </mat-form-field>
       <mat-table [dataSource]="data" class="w100" cols="3"> 
-        <ng-container matColumnDef="subjectMatter">
+        <ng-container matColumnDef="subject_matter_id">
           <mat-header-cell *matHeaderCellDef> Materia </mat-header-cell>
           <mat-cell *matCellDef="let Requirement"> {{Requirement.requirement_id}} </mat-cell>
         </ng-container>
