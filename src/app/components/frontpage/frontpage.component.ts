@@ -33,6 +33,7 @@ export class FrontpageComponent implements OnInit {
   listMenu: Menu[] = [];
   listTestimonios: Content[] = [];
   listMensajes: Content[] = [];
+  public isError = false;
 
 
   constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router ,
@@ -63,11 +64,21 @@ export class FrontpageComponent implements OnInit {
   onLogin(form): void {
     console.log('login', form.value);
     
-    this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl('/administracion');
-    }); 
-    this.modalService.dismissAll();
-  }
+    if(form.valid==true){
+      this.authService.login(form.value).subscribe(res => {
+      this.router.navigateByUrl('/administracion');     
+      this.modalService.dismissAll();
+    },
+    error=>{
+      this.isError=true; 
+    
+    });
+   }       
+      //this.modalService.dismissAll();
+    }
+      //this.isError=true;
+      //this.modalService.dismissAll();
+
 
 
   open(content) {
