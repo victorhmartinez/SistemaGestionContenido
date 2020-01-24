@@ -18,7 +18,7 @@ export class CategoryService {
       'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('ACCESS_TOKEN'))
     
     }
-    )
+  )
       
   }
   

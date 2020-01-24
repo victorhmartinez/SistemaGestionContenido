@@ -10,9 +10,9 @@
 
                 <mat-form-field class="w100">
                   <mat-label>Carrera Universitaria</mat-label>
-                  <mat-select formControlName="university_carrer_id">
-                      <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemUniversityCareer">
-                          {{itemCategory.nameItemCategory}}
+                  <mat-select formControlName="university_career_id">
+                      <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemUniversityCareer">
+                          {{itemCategory.name}}
                       </mat-option>
                   </mat-select>
               </mat-form-field>
@@ -35,9 +35,9 @@
         <mat-cell *matCellDef="let group"> {{group.name}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="university_carrer_id">
+      <ng-container matColumnDef="university_career_id">
           <mat-header-cell *matHeaderCellDef> Titulación </mat-header-cell>
-          <mat-cell *matCellDef="let group">{{group.university_carrer_id}} </mat-cell>
+          <mat-cell *matCellDef="let group">{{group.university_career_id}} </mat-cell>
         </ng-container>
       <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>

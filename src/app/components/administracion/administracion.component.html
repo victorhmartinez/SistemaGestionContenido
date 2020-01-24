@@ -50,7 +50,6 @@
         </button>
       </mat-list-item>
 
-      
       <mat-list-item  *ngIf="is_SuperAdmin || is_Admin">
         <button class="menu-item" mat-flat-button routerLink="person">
           <mat-icon>person_add</mat-icon>
@@ -71,7 +70,7 @@
         </button>
       </mat-list-item>
 
-      <mat-list-item  *ngIf="is_SuperAdmin">
+      <mat-list-item>  <!---*ngIf="is_SuperAdmin">-->
         <button class="menu-item" mat-flat-button routerLink="role">
           <mat-icon>supervisor_account</mat-icon>
           Roles 
@@ -99,13 +98,13 @@
           Contenido
         </button>
       </mat-list-item>
-      <!--content_media
+      <!--content_media-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink ="contentMedia">
           <mat-icon>perm_media</mat-icon>
           Contenido Media
         </button>
-      </mat-list-item>-->
+      </mat-list-item>
 
          <!--Subject Matter-->
       <mat-list-item *ngIf=" is_Admin">
@@ -150,7 +149,6 @@
         
         </button>
       </mat-list-item>
-
 
       <mat-list-item  *ngIf="is_SuperAdmin ||is_Admin"> 
         <button class="menu-item" mat-flat-button routerLink="user" >

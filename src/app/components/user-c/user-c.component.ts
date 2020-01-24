@@ -6,7 +6,7 @@ import { PersonService } from '../../services/person.service';
 
 //Models
 import { Person } from '../../models/person';
-import { UserC } from '../../models/UserC';
+import { UserC } from '../../models/userC';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
@@ -81,7 +81,7 @@ applyFilter(filterValue: string) {
 
   createFormGroup() {
     return new FormGroup({
-      userC_id: new FormControl(),
+      user_id: new FormControl(),
       username: new FormControl('', [
         Validators.required,
         Validators.maxLength(16)
@@ -103,7 +103,7 @@ applyFilter(filterValue: string) {
   //Load data in form
   loadData(userCEdit: UserC) {
     this.userCForm.setValue({
-      userC_id: userCEdit.userC_id,
+      user_id: userCEdit.userC_id,
       username: userCEdit.username,
       email: userCEdit.email,
       password: userCEdit.password,
@@ -115,7 +115,7 @@ applyFilter(filterValue: string) {
 
   //submit form
   submitForm() {
-    if (this.userCForm.value.userC_id == null) {
+    if (this.userCForm.value.user_id == null) {
       if (this.userCForm.valid) {
         this.userCService.createUserC(this.userCForm.value).subscribe(userC => {
           this.updateListUserC();

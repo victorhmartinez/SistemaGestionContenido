@@ -74,13 +74,13 @@ applyFilter(filterValue: string) {
     this.updateListItemCategories();
   }
 
-  displayedColumns: string[] = ['universitycarrer', 'name', 'delete', 'update'];
+  displayedColumns: string[] = ['university_career_id', 'name', 'delete', 'update'];
 
 
   createFormGroup() {
     return new FormGroup({
       section_id: new FormControl(),
-      universitycarrer: new FormControl('', [
+      university_career_id: new FormControl('', [
         Validators.required,
       ]), 
       name: new FormControl('', [
@@ -94,7 +94,7 @@ applyFilter(filterValue: string) {
    loadData(sectionEdit: Section) {
     this.sectionForm.setValue({
       section_id: sectionEdit.section_id,
-      universitycarrer: sectionEdit.universitycarrer,
+      university_career_id: sectionEdit.university_career_id,
       name: sectionEdit.name
 
       

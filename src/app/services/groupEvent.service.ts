@@ -12,7 +12,8 @@ export class GroupEventService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('ACCESS_TOKEN'))
     })
   }
 
@@ -22,18 +23,18 @@ export class GroupEventService {
   }
   
   public createGroupEvent(groupEvent: GroupEvent) {
-    return this.httpClient.post(this.apiUrl+'/group_event/', groupEvent, this.httpOptions);
+    return this.httpClient.post(this.apiUrl+'group_event/', groupEvent, this.httpOptions);
   }
 
   public updateGroupEvent(groupEvent: GroupEvent) {
-    return this.httpClient.put(this.apiUrl+'/group_event/'+groupEvent.group_event_id+'/', groupEvent,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'group_event/'+groupEvent.group_event_id+'/', groupEvent,this.httpOptions);
   }
 
   public deleteGroupEvent(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'/group_event/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'group_event/'+id+'/', this.httpOptions);
   }
 
   public getGroupEvent() { 
-    return this.httpClient.get<GroupEvent[]>(this.apiUrl+'/group_event/', this.httpOptions);
+    return this.httpClient.get<GroupEvent[]>(this.apiUrl+'group_event/', this.httpOptions);
   }
 }

@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { isNullOrUndefined } from 'util';
 import { UserCService } from './user-c.service';
-import { UserC } from '../models/UserC';
+import { UserC } from '../models/userC';
 
 
 

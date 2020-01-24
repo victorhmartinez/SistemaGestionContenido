@@ -77,7 +77,7 @@ data:MatTableDataSource<any>;
     this.updateListSubjectMatterRequirement();
   }
  //columns table
- displayedColumns: string[] = ['subjectMatter', 'subject_matter_requeriment_id', 'delete', 'update'];
+ displayedColumns: string[] = ['subject_matter_id', 'subject_matter_requeriment_id', 'delete', 'update'];
  
   //FormGroup
    createFormGroup() {
@@ -97,7 +97,7 @@ data:MatTableDataSource<any>;
       this.RequirementForm.setValue({
         requirement_id: RequirementEdit.requirement_id,
         subject_matter_id : RequirementEdit.subject_matter_id,
-        subject_matter_requeriment_id: RequirementEdit.subject_matter_requeriment_id,
+        subject_matter_requeriment_id: RequirementEdit.subject_matter_requeriment_id
   
       })
     }

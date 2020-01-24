@@ -12,7 +12,8 @@ export class PersonContactService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('ACCESS_TOKEN'))
     })
   }
   constructor(private httpClient: HttpClient) {

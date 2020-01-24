@@ -11,8 +11,8 @@
                 <mat-form-field class="w100">
                     <mat-label>Tipo Contacto</mat-label>
                     <mat-select formControlName="contact_type_id"><!---->
-                        <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listContactType">
-                            {{itemCategory.nameItemCategory}}
+                        <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listContactType">
+                            {{itemCategory.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

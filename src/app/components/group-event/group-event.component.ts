@@ -116,7 +116,7 @@ export class GroupEventComponent implements OnInit {
 
   //submit form
   submitForm() {
-    if (this.groupEventForm.value.section_id == null) {
+    if (this.groupEventForm.value.group_event_id == null) {
       if (this.groupEventForm.valid) {
         this.groupEventService.createGroupEvent(this.groupEventForm.value).subscribe(groupEvent => {
           this.updateListGroupEvent();

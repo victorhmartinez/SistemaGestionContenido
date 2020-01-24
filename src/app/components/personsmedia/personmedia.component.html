@@ -20,15 +20,15 @@
               <mat-form-field class="w100">
                   <mat-label>Categorias</mat-label>
                   <mat-select formControlName="item_category_id">
-                      <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
-                          {{itemCategory.nameItemCategory}}
+                      <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemCategories">
+                          {{itemCategory.name}}
                       </mat-option>
                   </mat-select>
               </mat-form-field>
 
           </mat-card-content>
           <mat-card-actions>
-              <button mat-raised-button color="primary" (click)="submitForm(personsMediaForm)">Guardar</button>
+              <button mat-raised-button color="primary" (click)="submitForm(personMediaForm)">Guardar</button>
               <button mat-raised-button (click)="resetForm()">Cancelar</button>
           </mat-card-actions>
       </form>

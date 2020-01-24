@@ -6,6 +6,8 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 import { SubjectMatterService } from 'src/app/services/subjectMatter.service';
 import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';//servicio titulacion
 import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { ItemCategoryService } from 'src/app/services/itemCategory.service';
+
 
 @Component({
   selector: 'app-subject-matter',
@@ -20,15 +22,15 @@ export class SubjectMatterComponent implements OnInit {
 
   constructor(
     private subjectMatterService: SubjectMatterService,
-    private universityCareerService: UnirversityCareerService,
+    private itemCategoryService: ItemCategoryService,
   ) { 
     this.subjectMatterForm = this.createFormGroup();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator; 
 
-  //Update UniversityCareer OJO SERVICIO ANTERIOR
+  //Update UniversityCareer 
   updateListItemUniversityCategories() {
-    this.universityCareerService.getUniversityCareer().subscribe(itemCategories => {
+    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
       this.listItemUniversityCareer = itemCategories;
     });
   }
@@ -65,7 +67,7 @@ applyFilter(filterValue: string) {
     this.updateListItemUniversityCategories();
     this.updateListSubjectMatter();
   }
-  displayedColumns: string[] = ['name', 'semester', 'university_carrer_id', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'semester', 'university_career_id', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
@@ -78,7 +80,7 @@ applyFilter(filterValue: string) {
         Validators.required,
         
       ]),
-      university_carrer_id:  new FormControl('', [
+      university_career_id:  new FormControl('', [
         Validators.required,
         
       ]),
@@ -90,7 +92,7 @@ applyFilter(filterValue: string) {
       subject_matter_id: subjecMatterEdit.subject_matter_id,
       name: subjecMatterEdit.name,
       semester: subjecMatterEdit.semester,
-      university_carrer_id: subjecMatterEdit.university_carrer_id,   
+      university_career_id: subjecMatterEdit.university_career_id,   
 
     })
   }

@@ -83,7 +83,7 @@ updateContent(id: number) {
     this.updateListContentTypeEvent();
   }
   //columns table
-  displayedColumns: string[] = ['title','description','create_time','update_time','content_type_id','academic_period_id','university_carrer_id','delete','update'];
+  displayedColumns: string[] = ['title','description','create_time','update_time','content_type_id','academic_period_id','university_career_id','delete','update'];
    //FORM ACTIONS
   //Create new form
   createFormGroup() {
@@ -97,13 +97,6 @@ updateContent(id: number) {
         Validators.required,
         Validators.maxLength(255)
       ]),
-      update_time: new FormControl('', [
-        Validators.required,
-      ]),
-      create_time: new FormControl('', [
-        Validators.required,
-      ]),
-
       content_type_id: new FormControl('', [
         Validators.required,
       ]),     
@@ -111,7 +104,7 @@ updateContent(id: number) {
         Validators.required,
       ]),
 
-      university_carrer_id: new FormControl('', [
+      university_career_id: new FormControl('', [
         Validators.required,
       ]),
     });
@@ -123,11 +116,9 @@ updateContent(id: number) {
       content_id:contentEdit.content_id,
       title: contentEdit.title,
       description: contentEdit.description,
-      update_time: contentEdit.update_time,
-      create_time: contentEdit.create_time,
       content_type_id: contentEdit.content_type_id,
       academic_period_id:contentEdit.academic_period_id,
-      university_carrer_id  : contentEdit.university_carrer_id
+      university_career_id  : contentEdit.university_career_id
     })
   }
     //submit form
@@ -151,7 +142,7 @@ updateContent(id: number) {
         }
       }
     }
-     //reset form
+     //reset forms
   resetForm() {
     let control: AbstractControl = null;
     this.contentForm.reset({ active: false });

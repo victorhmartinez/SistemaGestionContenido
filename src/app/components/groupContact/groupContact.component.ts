@@ -28,7 +28,7 @@ export class GroupContactComponent implements OnInit {
   constructor(
     private groupContactService: GroupContactService ,
     private groupService: GroupService,
-    private itemCategoryService: UnirversityCareerService
+    private itemCategoryService: ItemCategoryService
 
 
   ) {
@@ -44,8 +44,8 @@ export class GroupContactComponent implements OnInit {
   }
 
   //servicion otro
-  updatelistContactType() {//OJO SERVICIO ANTERIOR
-    this.itemCategoryService.getTypeContact().subscribe(contactType => {
+  updatelistContactType() {
+    this.itemCategoryService.getItemCategories().subscribe(contactType => {
       this.listContactType = contactType;
     });
   }

@@ -103,7 +103,7 @@ applyFilter(filterValue: string) {
   //Load data in form
   loadData(personMediaEdit: PersonMedia) {
     this.personMediaForm.setValue({
-      persons_media_id: personMediaEdit.person_media_id,
+      person_media_id: personMediaEdit.person_media_id,
       path: personMediaEdit.path,
       item_category_id: personMediaEdit.item_category_id,
       person_id : personMediaEdit.person_id,

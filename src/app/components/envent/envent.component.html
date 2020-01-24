@@ -3,30 +3,7 @@
       <form [formGroup]="eventForm" #formDirective="ngForm">
           <mat-card-title>Evento</mat-card-title>
           <mat-card-content>
-            <!--<input type="date" id="start" name="trip-start"
-            value="2018-07-22"
-            min="2018-01-01" max="2018-12-31">
-
-<mat-form-field class="w100">
-                  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">  
-                </mat-form-field>
-
-
-            -<input type="date" id="exampleInput" name="input" ng-model="example.value"
-            placeholder="yyyy-MM-dd" min="2013-01-01" max="2013-12-31" required />
-
-
-
-
-
-
-
-         
-
--->
-          
-
-                <mat-form-field class="w100">
+           <mat-form-field class="w100">
                   <input matInput formControlName="place" placeholder="Lugar" autocomplete="off">
                 </mat-form-field>
 
@@ -59,6 +36,11 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
         </mat-form-field>
       <mat-table [dataSource]="data" class="w100" cols="3">
+
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+          <mat-cell *matCellDef="let event">{{event.date}} </mat-cell>
+        </ng-container>
 
         <ng-container matColumnDef="place">
             <mat-header-cell *matHeaderCellDef> Lugar </mat-header-cell>

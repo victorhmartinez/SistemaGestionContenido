@@ -75,15 +75,12 @@ export class EnventComponent implements OnInit {
     this.updateListContent();
   }
 
-  displayedColumns: string[] = [ 'place','link_form', 'url_info', 'content_id', 'delete', 'update'];
+  displayedColumns: string[] = [ 'date', 'place','link_form', 'url_info', 'content_id', 'delete', 'update'];
 
 
   createFormGroup() {
     return new FormGroup({
-      event_id: new FormControl(),
-      date: new FormControl('', [
-        Validators.required,
-      ]), 
+      event_id: new FormControl(), 
       place: new FormControl('', [
         Validators.required,
         Validators.maxLength(255)
@@ -106,7 +103,6 @@ export class EnventComponent implements OnInit {
   loadData(eventEdit: Event) {
     this.eventForm.setValue({
       event_id: eventEdit.event_id,
-      date: eventEdit.date,
       place: eventEdit.place,
       link_form: eventEdit.link_form,
       url_info: eventEdit.url_info,

@@ -3,12 +3,12 @@ export class SubjectMatter {
     subject_matter_id : number;
     name :string;
     semester: number;
-    university_carrer_id :ItemCategory;
+    university_career_id :ItemCategory;
 
-    constructor(subject_matter_id ?: number, name ?: string, semester ?: number,university_carrer_id ?: ItemCategory){
+    constructor(subject_matter_id ?: number, name ?: string, semester ?: number,university_career_id ?: ItemCategory){
     this.subject_matter_id= subject_matter_id
     this.name =name,
     this.semester =semester,
-    this.university_carrer_id= university_carrer_id
+    this.university_career_id= university_career_id
     }
 }

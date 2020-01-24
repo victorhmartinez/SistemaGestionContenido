@@ -1,6 +1,6 @@
 <section class="container d-flex justify-content-around pt-4">
     <mat-card class="col-sm-4 d-inline-block align-top h-100">
-        <form [formGroup]="personsRoleForm" #formDirective="ngForm">
+        <form [formGroup]="personRoleForm" #formDirective="ngForm">
             <mat-card-title>Roles de Persona</mat-card-title>
             <mat-card-content>
 
@@ -16,9 +16,9 @@
 
                 <mat-form-field class="w100">
                     <mat-label>Carrera Universitaria</mat-label>
-                    <mat-select formControlName="university_carrer"><!---->
-                        <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
-                            {{itemCategory.nameItemCategory}}
+                    <mat-select formControlName="university_career_id"><!---->
+                        <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemCategories">
+                            {{itemCategory.name}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -44,9 +44,9 @@
                     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
                   </mat-form-field>
         <mat-table [dataSource]="data" class="w100" cols="3"> 
-          <ng-container matColumnDef="university_carrer">
+          <ng-container matColumnDef="university_career_id">
             <mat-header-cell *matHeaderCellDef> Carrera </mat-header-cell>
-            <mat-cell *matCellDef="let personRole"> {{personRole.university_carrer}} </mat-cell>
+            <mat-cell *matCellDef="let personRole"> {{personRole.university_career_id}} </mat-cell>
           </ng-container>
 
           <ng-container matColumnDef="role">

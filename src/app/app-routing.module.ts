@@ -51,7 +51,7 @@ const routes: Routes = [
  
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   
-  { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]
+  { path: 'administracion', component: AdministracionComponent//, canActivate: [AuthGuard]
   ,children:[
     { path: 'category', component: CategoryComponent  },
     { path: 'itemcategory', component: ItemcategoryComponent }, 

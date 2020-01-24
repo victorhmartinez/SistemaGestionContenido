@@ -2,7 +2,7 @@ import { Component, OnInit , ViewChild} from '@angular/core';
 import { Group } from 'src/app/models/group';
 import { ItemCategory } from 'src/app/models/itemCategory'
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';//servicio titulacion
+import { ItemCategoryService } from '../../services/itemCategory.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { GroupService } from 'src/app/services/group.service';
 import { group } from '@angular/animations';
@@ -20,7 +20,7 @@ export class GroupComponent implements OnInit {
 
   constructor(
     private GroupService: GroupService,
-    private universityCareerService: UnirversityCareerService,
+    private itemCategoryService: ItemCategoryService,
   ) {
     this.GroupForm = this.createFormGroup();
    }
@@ -28,7 +28,7 @@ export class GroupComponent implements OnInit {
 
    //List
    updateListItemUniversityCategories() {
-    this.universityCareerService.getUniversityCareer().subscribe(itemCategories => {
+    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
       this.listItemUniversityCareer = itemCategories;
     });
   }
@@ -68,7 +68,7 @@ deleteGroup(id: number) {
     this.updateListGroup();
   }
 
-  displayedColumns: string[] = ['name', 'university_carrer_id', 'delete', 'update'];
+  displayedColumns: string[] = ['name', 'university_career_id', 'delete', 'update'];
 
   createFormGroup() {
     return new FormGroup({
@@ -77,7 +77,7 @@ deleteGroup(id: number) {
         Validators.required,
         Validators.maxLength(255)
       ]),
-      university_carrer_id:  new FormControl('', [
+      university_career_id:  new FormControl('', [
         Validators.required,
         
       ]),
@@ -89,7 +89,7 @@ deleteGroup(id: number) {
     this.GroupForm.setValue({
       group_id: GroupEdit.group_id,
       name: GroupEdit.name,
-      university_carrer_id: GroupEdit.university_carrer_id,   
+      university_career_id: GroupEdit.university_career_id,   
 
     })
   }
