@@ -1,11 +1,10 @@
-
 <mat-toolbar id="mainToolbar" color="primary">
-  
+
   <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
   My Awesome App
   <span class="toolbar-spacer"></span>
- 
-<button mat-fab [matMenuTriggerFor]="menu" color ="warn" >
+
+  <button mat-fab [matMenuTriggerFor]="menu" color="warn">
     <mat-icon class="toolbar-icon" matBadge="8" matBadgePosition="after" matBadgeColor="accent">notifications</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -19,7 +18,7 @@
 
 <mat-sidenav-container fxFlexFill id="sidenavContainer" fullscreen>
   <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
-      <span class="sidenav-spacer"></span>
+    <span class="sidenav-spacer"></span>
     <mat-list id="menus">
       <mat-card>
         <mat-card-header>
@@ -50,13 +49,13 @@
         </button>
       </mat-list-item>
 
-      <mat-list-item  *ngIf="is_SuperAdmin || is_Admin">
+      <mat-list-item *ngIf="is_SuperAdmin || is_Admin">
         <button class="menu-item" mat-flat-button routerLink="person">
           <mat-icon>person_add</mat-icon>
           Personas
         </button>
       </mat-list-item>
-      <mat-list-item *ngIf=" is_Admin" >
+      <mat-list-item *ngIf=" is_Admin">
         <button class="menu-item" mat-flat-button routerLink="personSection">
           <mat-icon>perm_identity</mat-icon>
           Secciones Personas
@@ -70,10 +69,11 @@
         </button>
       </mat-list-item>
 
-      <mat-list-item>  <!---*ngIf="is_SuperAdmin">-->
+      <mat-list-item>
+        <!---*ngIf="is_SuperAdmin">-->
         <button class="menu-item" mat-flat-button routerLink="role">
           <mat-icon>supervisor_account</mat-icon>
-          Roles 
+          Roles
         </button>
       </mat-list-item>
 
@@ -83,14 +83,14 @@
           Personas Media
         </button>
       </mat-list-item>
-      
+
       <mat-list-item *ngIf=" is_Admin">
         <button class="menu-item" mat-flat-button routerLink="personcontact">
           <mat-icon>contacts</mat-icon>
           Personas Contactos
         </button>
       </mat-list-item>
-      
+
       <!--Content-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="content">
@@ -100,21 +100,21 @@
       </mat-list-item>
       <!--content_media-->
       <mat-list-item>
-        <button class="menu-item" mat-flat-button routerLink ="contentMedia">
+        <button class="menu-item" mat-flat-button routerLink="contentMedia">
           <mat-icon>perm_media</mat-icon>
           Contenido Media
         </button>
       </mat-list-item>
 
-         <!--Subject Matter-->
+      <!--Subject Matter-->
       <mat-list-item *ngIf=" is_Admin">
         <button class="menu-item" mat-flat-button routerLink="subjectMatter">
           <mat-icon>filter_none</mat-icon>
           Materias
         </button>
       </mat-list-item>
-       <!--Requirements-->
-       <mat-list-item *ngIf=" is_Admin">
+      <!--Requirements-->
+      <mat-list-item *ngIf=" is_Admin">
         <button class="menu-item" mat-flat-button routerLink="requirement">
           <mat-icon>file_copy</mat-icon>
           Requisitos
@@ -127,36 +127,65 @@
           Grupos
         </button>
       </mat-list-item>
+      <!--Grupo Contacto-->
       <mat-list-item *ngIf="is_Admin">
         <button class="menu-item" mat-flat-button routerLink="groupContact">
           <mat-icon>contact_mail</mat-icon>
           Contacto Grupos
         </button>
       </mat-list-item>
+      <!-- Eventos-->
 
-      
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="event">
           <mat-icon>business</mat-icon>
           Eventos
         </button>
       </mat-list-item>
-
+      <!--Menu-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="menu">
           <mat-icon>dialpad</mat-icon>
-          Menu   
-        
+          Menu
+
         </button>
       </mat-list-item>
-
-      <mat-list-item  *ngIf="is_SuperAdmin ||is_Admin"> 
-        <button class="menu-item" mat-flat-button routerLink="user" >
-          <mat-icon>filter_none</mat-icon>
+      <!--Carrera Universitaria-->
+      <mat-list-item *ngIf="is_SuperAdmin ||is_Admin">
+        <button class="menu-item" mat-flat-button routerLink="universityCarrer2">
+          <mat-icon>menu_book</mat-icon>
+          Carrera Universitaria
+        </button>
+      </mat-list-item>
+      <!--Periodo Academico-->
+      <mat-list-item *ngIf="is_SuperAdmin ||is_Admin">
+        <button class="menu-item" mat-flat-button routerLink="academicPeriod">
+          <mat-icon>device_hub</mat-icon>
+          Periodo Academico
+        </button>
+      </mat-list-item>
+<!-- Tipo de Contacto-->
+<mat-list-item *ngIf="is_SuperAdmin ||is_Admin">
+    <button class="menu-item" mat-flat-button routerLink="type-contact">
+      <mat-icon>import_contacts</mat-icon>
+      Tipo de Contacto
+    </button>
+  </mat-list-item>
+  <!-- Tipo de Contenido-->
+  <mat-list-item *ngIf="is_SuperAdmin ||is_Admin">
+      <button class="menu-item" mat-flat-button routerLink="content-type">
+        <mat-icon>dynamic_feed</mat-icon>
+        Tipo de Contenido
+      </button>
+      <!-- User-->
+    </mat-list-item>
+      <mat-list-item *ngIf="is_SuperAdmin ||is_Admin">
+        <button class="menu-item" mat-flat-button routerLink="user">
+          <mat-icon>supervised_user_circle</mat-icon>
           Usuario
         </button>
       </mat-list-item>
-    
+<!-- Eventos de Grupos-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="groupEvent">
           <mat-icon>list_alt</mat-icon>
@@ -164,7 +193,7 @@
         </button>
       </mat-list-item>
 
-
+<!-- Settings-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button>
           <mat-icon>settings_application</mat-icon>
@@ -180,5 +209,3 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-

@@ -10,7 +10,7 @@ import { PersonService } from 'src/app/services/person.service';
 import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
+import { UnirversityCareerService } from 'src/app/services/filerItemCategory';
 
 @Component({
   selector: 'app-personcontacts',

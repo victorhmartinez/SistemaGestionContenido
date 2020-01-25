@@ -47,6 +47,10 @@ import { EnventComponent } from './components/envent/envent.component';
 import { GroupEventComponent } from './components/group-event/group-event.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { UserCComponent } from './components/user-c/user-c.component';
+import { UniversityCarrerComponent } from './components/university-carrer/university-carrer.component';
+import { AcademicPeriodComponent } from './components/academic-period/academic-period.component';
+import { ContentTypeComponent } from './components/content-type/content-type.component';
+import { TypeContactComponent } from './components/type-contact/type-contact.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,11 @@ import { UserCComponent } from './components/user-c/user-c.component';
     EnventComponent,
     GroupEventComponent,
     MenuComponent,
-    UserCComponent
+    UserCComponent,
+    UniversityCarrerComponent,
+    AcademicPeriodComponent,
+    ContentTypeComponent,
+    TypeContactComponent
     
  
   ],

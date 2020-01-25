@@ -4,7 +4,7 @@ import { ItemCategory } from 'src/app/models/itemCategory';
 
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SubjectMatterService } from 'src/app/services/subjectMatter.service';
-import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';//servicio titulacion
+import { UnirversityCareerService } from 'src/app/services/filerItemCategory';//servicio titulacion
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 

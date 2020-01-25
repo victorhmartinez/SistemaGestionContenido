@@ -10,11 +10,12 @@ import { ItemCategory } from '../models/itemCategory';
 })
 export class UnirversityCareerService {
   private apiUrl: string;
+
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('ACCESS_TOKEN'))
     })
-
   }
   constructor(private httpClient: HttpClient,) {
     this.apiUrl = environment.apiUrl;

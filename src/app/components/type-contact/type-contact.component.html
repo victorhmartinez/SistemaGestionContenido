@@ -1,0 +1,55 @@
+<section class="container d-flex justify-content-around pt-4">
+    <mat-card class="col-sm-4 d-inline-block align-top h-100">
+      <form [formGroup]="typeContactForm" #formDirective="ngForm">
+        <mat-card-title>Tipo de Contacto</mat-card-title>
+        <mat-card-content>
+  
+          <mat-form-field class="w100">
+            <input matInput formControlName="name" placeholder="Tipo de Contacto" autocomplete="off">
+          </mat-form-field>
+  
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="submitForm(typeContactForm)">Guardar</button>
+          <button mat-raised-button (click)="resetForm()">Cancelar</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+    <mat-card class="col-sm-7 d-inline-block">
+      <mat-form-field class="w100">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+      </mat-form-field>
+      <mat-table [dataSource]="data" class="w100" cols="3">
+  
+        <ng-container matColumnDef="typeContact">
+          <mat-header-cell *matHeaderCellDef> Contacto</mat-header-cell>
+          <mat-cell *matCellDef="let typeContact">{{typeContact.name}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="itemcategory">
+          <mat-header-cell *matHeaderCellDef> Tipo de Contacto </mat-header-cell>
+          <mat-cell *matCellDef="let typeContact">{{typeContact.item_category_id}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="delete">
+          <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
+          <mat-cell *matCellDef="let typeContact"><a
+              (click)="deleteTypeContact(typeContact.typeContact_id)"><i
+                class="material-icons">delete</i></a></mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="update">
+          <mat-header-cell *matHeaderCellDef> Actualizar </mat-header-cell>
+          <mat-cell *matCellDef="let typeContact"><a (click)="loadData(typeContact)"><i
+                class="material-icons">edit</i></a>
+          </mat-cell>
+        </ng-container>
+  
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+    </mat-card>
+  
+  </section>

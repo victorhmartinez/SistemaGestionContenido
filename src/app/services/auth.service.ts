@@ -93,11 +93,10 @@ export class AuthService {
      
       if (user.is_superuser || user.is_admin) {
         console.log(user.is_superuser);
-        console.log('logueo coordinador',user.is_admin)
+   
         return true;
       } else {
-        console.log(user.is_superuser);
-        console.log(user.is_admin)
+    
         return false;
       }
       

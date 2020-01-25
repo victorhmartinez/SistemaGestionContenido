@@ -33,6 +33,12 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserCComponent } from './components/user-c/user-c.component';
 import { GuardsRoleGuard } from './guards/guards-role.guard';
 import { GuardsCoordinadorGuard } from './guards/guards-coordinador.guard';
+import { UniversityCarrer } from './models/university-carrer';
+import { UniversityCarrerComponent } from './components/university-carrer/university-carrer.component';
+import { AcademicPeriodComponent } from './components/academic-period/academic-period.component';
+import { TypeContactComponent } from './components/type-contact/type-contact.component';
+import { ContentType } from './models/content-type';
+import { ContentTypeComponent } from './components/content-type/content-type.component';
 
 const routes: Routes = [
  
@@ -51,7 +57,7 @@ const routes: Routes = [
  
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   
-  { path: 'administracion', component: AdministracionComponent//, canActivate: [AuthGuard]
+  { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]
   ,children:[
     { path: 'category', component: CategoryComponent  },
     { path: 'itemcategory', component: ItemcategoryComponent }, 
@@ -66,7 +72,10 @@ const routes: Routes = [
     { path: 'group', component: GroupComponent,canActivate:[GuardsCoordinadorGuard]},
     { path: 'groupContact', component: GroupContactComponent,canActivate:[GuardsCoordinadorGuard] },
     { path: 'role', component: RoleComponent,canActivate: [GuardsRoleGuard]},
-   
+    { path: 'universityCarrer2', component: UniversityCarrerComponent},
+    { path: 'academicPeriod', component: AcademicPeriodComponent},
+    { path: 'type-contact', component: TypeContactComponent},
+    { path: 'content-type', component: ContentTypeComponent},
     { path: 'subjectMatter', component: SubjectMatterComponent,canActivate: [GuardsRoleGuard] },
     { path: 'requirement', component: RequirementComponent,canActivate: [GuardsRoleGuard]},
     { path: 'event', component: EnventComponent },
