@@ -141,6 +141,16 @@ background: rgb(223, 225, 226)}
   line-height: 24px;
 }
 
+.titulo5 {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
+  line-height: 24px;
+}
+
+
 .texto-departamento {
   letter-spacing: 0.4px;
   line-height: 20px;
@@ -297,5 +307,6 @@ background: rgb(223, 225, 226)}
   left: 0;
 
 }
-
-
+.icon-facebook2:before {
+  content: "\ea91";
+}
