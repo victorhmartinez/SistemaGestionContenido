@@ -21,19 +21,19 @@ export class ContentTypeService {
   ) {
     this.apiUrl = environment.apiUrl;
   }
-  public createContentType(contentType:ContentType) {
-    return this.httpClient.post(this.apiUrl+'item_category/', contentType, this.httpOptions);
+  public createContentType(name:String) {
+    return this.httpClient.post(this.apiUrl+'utils/type_content/', name, this.httpOptions);
   }
     
   public updateContentType(contentType: ContentType) {
-    return this.httpClient.put(this.apiUrl+'item_category/'+contentType.contentType_id+'/', contentType,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'utils/type_content/'+contentType.contentType_id+'/', contentType,this.httpOptions);
   }
 
   public deleteContentType(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'item_category/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'utils/type_content/'+id+'/', this.httpOptions);
   }
 
   public getContentType() { 
-    return this.httpClient.get<ContentType[]>(this.apiUrl+'item_category/', this.httpOptions);
+    return this.httpClient.get<ContentType[]>(this.apiUrl+'utils/type_content/', this.httpOptions);
   }
 }

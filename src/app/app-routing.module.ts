@@ -44,7 +44,7 @@ const routes: Routes = [
  
   
 
-  { path: 'utpl.edu.ec/:name', component: FrontpageComponent },//nombre de carrera
+  { path: ':name', component: FrontpageComponent },//nombre de carrera
   { path: 'arquitectura/:id', component: FrontpageComponent },
   { path: '', component: FrontpageComponent, pathMatch: 'full',},
  // { path: '', redirectTo: '/frontpage', pathMatch: 'full' },
@@ -57,7 +57,7 @@ const routes: Routes = [
  
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   
-  { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]
+  { path: ':name/administracion', component: AdministracionComponent, canActivate: [AuthGuard]
   ,children:[
     { path: 'category', component: CategoryComponent  },
     { path: 'itemcategory', component: ItemcategoryComponent }, 

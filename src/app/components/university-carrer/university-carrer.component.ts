@@ -71,7 +71,7 @@ export class UniversityCarrerComponent implements OnInit {
 
   }
     //columns table
-    displayedColumns: string[] = ['universityCarrer','itemcategory', 'delete', 'update'];
+    displayedColumns: string[] = ['itemcategory','universityCarrer', 'delete', 'update'];
      //FormGroup
   createFormGroup() {
     return new FormGroup({

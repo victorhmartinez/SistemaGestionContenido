@@ -22,19 +22,19 @@ export class UniversityCarrerService {
 
   }
 
-  public createUniversityCarrer(universityCarrer:UniversityCarrer) {
-    return this.httpClient.post(this.apiUrl+'item_category/', universityCarrer, this.httpOptions);
+  public createUniversityCarrer(name:String) {
+    return this.httpClient.post(this.apiUrl+'utils/university_career/', name, this.httpOptions);
   }
     
   public updateUniversityCarrer(universityCarrer: UniversityCarrer) {
-    return this.httpClient.put(this.apiUrl+'item_category/'+universityCarrer.universityCarrer_id+'/', universityCarrer,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'utils/university_career/'+universityCarrer.universityCarrer_id+'/', universityCarrer,this.httpOptions);
   }
 
   public deleteUniversityCarrer(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'item_category/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'utils/university_career/'+id+'/', this.httpOptions);
   }
 
   public getUniversityCarrer() { 
-    return this.httpClient.get<UniversityCarrer[]>(this.apiUrl+'item_category/', this.httpOptions);
+    return this.httpClient.get<UniversityCarrer[]>(this.apiUrl+'utils/university_career/', this.httpOptions);
   }
 }

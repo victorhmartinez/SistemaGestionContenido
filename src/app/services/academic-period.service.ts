@@ -20,20 +20,20 @@ export class AcademicPeriodService {
   ) {
     this.apiUrl = environment.apiUrl;
   }
-  public createAcademyPeriod(academicPeriod:AcademicPeriod) {
-    return this.httpClient.post(this.apiUrl+'item_category/', academicPeriod, this.httpOptions);
+  public createAcademyPeriod(name:String) {
+    return this.httpClient.post(this.apiUrl+'utils/academic_period/', name, this.httpOptions);
   }
     
   public updateAcademyPeriod(academicPeriod: AcademicPeriod) {
-    return this.httpClient.put(this.apiUrl+'item_category/'+academicPeriod.academicPeriod_id+'/', academicPeriod,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'utils/academic_period/'+academicPeriod.academicPeriod_id+'/', academicPeriod,this.httpOptions);
   }
 
   public deleteAcademyPeriod(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'item_category/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'utils/academic_period/'+id+'/', this.httpOptions);
   }
 
   public getAcademyPeriod() { 
-    return this.httpClient.get<AcademicPeriod[]>(this.apiUrl+'item_category/', this.httpOptions);
+    return this.httpClient.get<AcademicPeriod[]>(this.apiUrl+'utils/academic_period/', this.httpOptions);
   }
 
 

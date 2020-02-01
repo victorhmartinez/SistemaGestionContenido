@@ -21,19 +21,19 @@ export class TypeContactService {
   ) {
     this.apiUrl = environment.apiUrl;
   }
-  public createTypeContact(typeContact:TypeContact) {
-    return this.httpClient.post(this.apiUrl+'item_category/', typeContact, this.httpOptions);
+  public createTypeContact(name:String) {
+    return this.httpClient.post(this.apiUrl+'utils/contact_type/', name, this.httpOptions);
   }
     
   public updateTypeContact(typeContact: TypeContact) {
-    return this.httpClient.put(this.apiUrl+'item_category/'+typeContact.typeContact_id+'/', typeContact,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'utils/contact_type/'+typeContact.typeContact_id+'/', typeContact,this.httpOptions);
   }
 
   public deleteTypeContact(id: number) { 
-    return this.httpClient.delete(this.apiUrl+'item_category/'+id+'/', this.httpOptions);
+    return this.httpClient.delete(this.apiUrl+'utils/contact_type/'+id+'/', this.httpOptions);
   }
 
   public getTypeContact() { 
-    return this.httpClient.get<TypeContact[]>(this.apiUrl+'item_category/', this.httpOptions);
+    return this.httpClient.get<TypeContact[]>(this.apiUrl+'utils/contact_type/', this.httpOptions);
   }
 }
