@@ -59,6 +59,8 @@ export class FrontpageComponent implements OnInit {
     this.updateListMensajes();
     this.carrera = {
       name: this.rutaActiva.snapshot.params.name};
+      console.log('ruta',this.carrera.name);
+      
   }
 
   onLogin(form): void {
@@ -66,7 +68,7 @@ export class FrontpageComponent implements OnInit {
     
     if(form.valid==true){
       this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl('/administracion');     
+      this.router.navigateByUrl(this.carrera.name+'/administracion');     
       this.modalService.dismissAll();
     },
     error=>{

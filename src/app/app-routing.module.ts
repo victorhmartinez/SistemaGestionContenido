@@ -72,7 +72,7 @@ const routes: Routes = [
     { path: 'group', component: GroupComponent,canActivate:[GuardsCoordinadorGuard]},
     { path: 'groupContact', component: GroupContactComponent,canActivate:[GuardsCoordinadorGuard] },
     { path: 'role', component: RoleComponent,canActivate: [GuardsRoleGuard]},
-    { path: 'universityCarrer2', component: UniversityCarrerComponent},
+    { path: 'universityCareer', component: UniversityCarrerComponent},
     { path: 'academicPeriod', component: AcademicPeriodComponent},
     { path: 'type-contact', component: TypeContactComponent},
     { path: 'content-type', component: ContentTypeComponent},
