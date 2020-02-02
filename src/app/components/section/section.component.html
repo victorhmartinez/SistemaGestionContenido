@@ -10,10 +10,10 @@
 
 
               <mat-form-field class="w100">
-                  <mat-label>Categorias</mat-label>
+                  <mat-label>Carrera universitaria</mat-label>
                   <mat-select formControlName="university_career_id"><!---->
-                      <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemCategories">
-                          {{itemCategory.name}}
+                      <mat-option [value]="universityCarrer.item_category_id" *ngFor="let universityCarrer of listItemUniversityCareer">
+                          {{universityCarrer.name}}
                       </mat-option>
                   </mat-select>
               </mat-form-field>

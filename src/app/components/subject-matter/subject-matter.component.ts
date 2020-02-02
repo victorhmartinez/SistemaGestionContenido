@@ -4,10 +4,11 @@ import { ItemCategory } from 'src/app/models/itemCategory';
 
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { SubjectMatterService } from 'src/app/services/subjectMatter.service';
-import { UnirversityCareerService } from 'src/app/services/filerItemCategory';//servicio titulacion
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 
+//Utils
+import { UniversityCarrerService  } from 'src/app/services/university-carrer.service';
 
 @Component({
   selector: 'app-subject-matter',
@@ -23,6 +24,7 @@ export class SubjectMatterComponent implements OnInit {
   constructor(
     private subjectMatterService: SubjectMatterService,
     private itemCategoryService: ItemCategoryService,
+    private universityService : UniversityCarrerService
   ) { 
     this.subjectMatterForm = this.createFormGroup();
   }
@@ -30,7 +32,7 @@ export class SubjectMatterComponent implements OnInit {
 
   //Update UniversityCareer 
   updateListItemUniversityCategories() {
-    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+    this.universityService.getUniversityCarrer().subscribe(itemCategories => {
       this.listItemUniversityCareer = itemCategories;
     });
   }

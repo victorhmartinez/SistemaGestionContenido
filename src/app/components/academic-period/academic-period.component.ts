@@ -14,7 +14,7 @@ import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 export class AcademicPeriodComponent implements OnInit {
 
   
-  listAcademicPeriod: AcademicPeriod[] = [];
+  listAcademicPeriod: ItemCategory[] = [];
   listItemCategory: ItemCategory [] = [];
   academicPeriodForm: FormGroup;
   data:MatTableDataSource<any>;
@@ -37,7 +37,7 @@ export class AcademicPeriodComponent implements OnInit {
    updateListAcademicPeriod() {
     this.academicPeriodService.getAcademyPeriod().subscribe(universityCarrer => {
       this.listAcademicPeriod = universityCarrer
-      this.data= new MatTableDataSource<AcademicPeriod>(this.listAcademicPeriod);
+      this.data= new MatTableDataSource<ItemCategory>(this.listAcademicPeriod);
       this.data.paginator=this.paginator;
     },
       error => {

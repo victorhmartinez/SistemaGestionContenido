@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Category } from 'src/app/models/category';
 import { ItemCategory } from 'src/app/models/itemCategory';
-import { UniversityCarrer } from 'src/app/models/university-carrer';
+import { UniversityCarrer } from 'src/app/models/universityCareer';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { CategoryService } from 'src/app/services/category.service';
@@ -15,7 +15,7 @@ import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 })
 export class UniversityCarrerComponent implements OnInit {
   listCategory: Category[] = [];
-  listUnivesersityCarrer: UniversityCarrer[] = [];
+  listUnivesersityCarrer: ItemCategory[] = [];
   listItemCategory: ItemCategory [] = [];
   universityCarrerForm: FormGroup;
   data:MatTableDataSource<any>;
@@ -38,7 +38,7 @@ export class UniversityCarrerComponent implements OnInit {
    updateListUniversityCarrer() {
     this.universityCarrerService.getUniversityCarrer().subscribe(universityCarrer => {
       this.listUnivesersityCarrer = universityCarrer
-      this.data= new MatTableDataSource<UniversityCarrer>(this.listUnivesersityCarrer);
+      this.data= new MatTableDataSource<ItemCategory>(this.listUnivesersityCarrer);
       this.data.paginator=this.paginator;
     },
       error => {
@@ -75,7 +75,7 @@ export class UniversityCarrerComponent implements OnInit {
      //FormGroup
   createFormGroup() {
     return new FormGroup({
-      universityCarrer_id: new FormControl(),
+      university_career_id: new FormControl(),
       name: new FormControl('', [
         Validators.required,
         Validators.maxLength(255)

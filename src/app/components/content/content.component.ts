@@ -8,6 +8,11 @@ import { Content } from 'src/app/models/content';
 import { ContentService } from 'src/app/services/content.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
+//Utils
+import { ContentTypeService  } from 'src/app/services/content-type.service';
+import { AcademicPeriodService  } from 'src/app/services/academic-period.service';
+import { UniversityCarrerService  } from 'src/app/services/university-carrer.service';
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -23,26 +28,29 @@ export class ContentComponent implements OnInit {
   data:MatTableDataSource<any>;
   constructor(
     private itemCategoryService: ItemCategoryService,
-    private contentService : ContentService
+    private contentService : ContentService,
+    private contentTypeService : ContentTypeService,
+    private academicPeriodService : AcademicPeriodService,
+    private universityService : UniversityCarrerService
   ) {
     this.contentForm = this.createFormGroup();
    }
    @ViewChild(MatPaginator) paginator: MatPaginator; 
        //Update UniversityCareer
        updateListItemUniversityCategories() {
-        this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+        this.universityService.getUniversityCarrer().subscribe(itemCategories => {
           this.listItemUniversityCareer = itemCategories;
         });
       }
       //Update Type Event
       updateListContentTypeEvent() {
-        this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+        this.contentTypeService.getContentType().subscribe(itemCategories => {
           this.listContentTypeEvent = itemCategories;
         });
       }
       //Update Academic Period
       updateListAcademicPeriod() {
-        this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+        this.academicPeriodService.getAcademyPeriod().subscribe(itemCategories => {
           this.listAcademicPeriod = itemCategories;
         });
       }

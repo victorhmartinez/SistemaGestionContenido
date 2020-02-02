@@ -7,6 +7,9 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { GroupService } from 'src/app/services/group.service';
 import { group } from '@angular/animations';
 
+//Utils
+import { UniversityCarrerService  } from 'src/app/services/university-carrer.service';
+
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
@@ -21,6 +24,7 @@ export class GroupComponent implements OnInit {
   constructor(
     private GroupService: GroupService,
     private itemCategoryService: ItemCategoryService,
+    private universityService : UniversityCarrerService
   ) {
     this.GroupForm = this.createFormGroup();
    }
@@ -28,7 +32,7 @@ export class GroupComponent implements OnInit {
 
    //List
    updateListItemUniversityCategories() {
-    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
+    this.universityService.getUniversityCarrer().subscribe(itemCategories => {
       this.listItemUniversityCareer = itemCategories;
     });
   }

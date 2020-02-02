@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ContentType } from '../models/content-type';
+import { ItemCategory } from '../models/itemCategory';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,6 @@ export class ContentTypeService {
   }
 
   public getContentType() { 
-    return this.httpClient.get<ContentType[]>(this.apiUrl+'utils/type_content/', this.httpOptions);
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/type_content/', this.httpOptions);
   }
 }

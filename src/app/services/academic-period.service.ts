@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { ItemCategory } from '../models/itemCategory';
 import { AcademicPeriod } from '../models/academic-period';
 
 @Injectable({
@@ -33,7 +34,7 @@ export class AcademicPeriodService {
   }
 
   public getAcademyPeriod() { 
-    return this.httpClient.get<AcademicPeriod[]>(this.apiUrl+'utils/academic_period/', this.httpOptions);
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/academic_period/', this.httpOptions);
   }
 
 

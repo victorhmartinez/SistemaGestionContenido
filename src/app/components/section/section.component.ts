@@ -2,13 +2,17 @@ import { Component, OnInit,  ViewChild } from '@angular/core';
 
 //Services
 import { SectionService } from '../../services/section.service';
-import { ItemCategoryService } from '../../services/itemCategory.service';
+//import { ItemCategoryService } from '../../services/itemCategory.service';
 
 //Models
-import { ItemCategory } from '../../models/itemCategory';
+import { UniversityCarrer } from '../../models/universityCareer';
 import { Section } from '../../models/section';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { ItemCategory } from 'src/app/models/itemCategory';
+
+//Utils
+import { UniversityCarrerService  } from 'src/app/services/university-carrer.service';
 
 
 @Component({
@@ -19,25 +23,34 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 export class SectionComponent implements OnInit {
 
 
-  listItemCategories: ItemCategory[] = [];
+  listItemUniversityCareer: ItemCategory[] = [];
   listSection: Section[] = [];
   sectionForm: FormGroup;
   data:MatTableDataSource<any>;
 
   constructor(
     private sectionService: SectionService,
-    private itemCategoryService: ItemCategoryService,
+    private universityService : UniversityCarrerService
   ) { 
     this.sectionForm = this.createFormGroup();
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator; 
-  updateListItemCategories() {
+  
+  /*updateListItemCategories() {
     this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
       this.listItemCategories = itemCategories;
 
     });
+  }*/
+
+  updateListUniversityC() {
+    this.universityService.getUniversityCarrer().subscribe(universityC => {
+      this.listItemUniversityCareer = universityC;
+
+    });
   }
+
 
   //All 
   updateListSection() {
@@ -71,7 +84,7 @@ applyFilter(filterValue: string) {
 
   ngOnInit() {
     this.updateListSection();
-    this.updateListItemCategories();
+    this.updateListUniversityC();
   }
 
   displayedColumns: string[] = ['university_career_id', 'name', 'delete', 'update'];

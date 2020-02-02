@@ -11,6 +11,9 @@ import { ItemCategory } from '../../models/itemCategory';
 import { PersonRole } from '../../models/personRole';
 import { Role } from '../../models/role';
 
+//Utils
+import { UniversityCarrerService  } from 'src/app/services/university-carrer.service';
+
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
@@ -24,7 +27,7 @@ export class PersonsroleComponent implements OnInit {
   listPersons: Person[] = [];
   listItemCategories: ItemCategory[] = [];
   listPersonRole: PersonRole[] = [];
-
+  listItemUniversityCareer: ItemCategory[] = [];
   listRole: Role[] = [];
   personRoleForm: FormGroup;
   data:MatTableDataSource<any>;
@@ -35,6 +38,7 @@ export class PersonsroleComponent implements OnInit {
     //private itemCategoryRolService: ItemCategoryRoleService,
     private itemCategoryService: ItemCategoryService,
     private roleService: RoleService,
+    private universityService : UniversityCarrerService
   ) {
     this.personRoleForm = this.createFormGroup();
    }
@@ -46,10 +50,9 @@ export class PersonsroleComponent implements OnInit {
       this.listPersons = person;
     });
   }
-  updateListItemCategories() {
-    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
-      this.listItemCategories = itemCategories;
-
+  updateListItemUniversityCategories() {
+    this.universityService.getUniversityCarrer().subscribe(itemCategories => {
+      this.listItemUniversityCareer = itemCategories;
     });
   }
   /*updateListItemCategories() {//OJO SERVICIO ANTERIOR
@@ -96,7 +99,7 @@ applyFilter(filterValue: string) {
 
   ngOnInit() {
     this.updateListPersons();
-    this.updateListItemCategories();
+    this.updateListItemUniversityCategories();
     this.updateListRoles();
     this.updateListPersonRole();
   }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { TypeContact } from '../models/type-contact';
+import { ItemCategory } from '../models/itemCategory';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,6 @@ export class TypeContactService {
   }
 
   public getTypeContact() { 
-    return this.httpClient.get<TypeContact[]>(this.apiUrl+'utils/contact_type/', this.httpOptions);
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/contact_type/', this.httpOptions);
   }
 }

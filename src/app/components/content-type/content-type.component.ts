@@ -12,7 +12,7 @@ import { ItemCategoryService } from 'src/app/services/itemCategory.service';
   styleUrls: ['./content-type.component.css']
 })
 export class ContentTypeComponent implements OnInit {
-  listContentType: ContentType[] = [];
+  listContentType: ItemCategory[] = [];
   listItemCategory: ItemCategory [] = [];
   contentTypeForm: FormGroup;
   data:MatTableDataSource<any>;
@@ -35,7 +35,7 @@ export class ContentTypeComponent implements OnInit {
    updateListContentType() {
     this.contentTypeService.getContentType().subscribe(universityCarrer => {
       this.listContentType = universityCarrer
-      this.data= new MatTableDataSource<ContentType>(this.listContentType);
+      this.data= new MatTableDataSource<ItemCategory>(this.listContentType);
       this.data.paginator=this.paginator;
     },
       error => {

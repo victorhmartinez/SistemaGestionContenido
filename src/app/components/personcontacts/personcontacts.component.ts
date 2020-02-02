@@ -10,7 +10,9 @@ import { PersonService } from 'src/app/services/person.service';
 import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { UnirversityCareerService } from 'src/app/services/filerItemCategory';
+
+//Utils
+import { TypeContactService  } from 'src/app/services/type-contact.service';
 
 @Component({
   selector: 'app-personcontacts',
@@ -26,7 +28,7 @@ export class PersoncontactsComponent implements OnInit {
   constructor(
     private personContactService: PersonContactService ,
     private personService: PersonService,
-    private iIemCategoryService: ItemCategoryService,
+    private typeContactService: TypeContactService
   ) { 
     this.personContactForm = this.createFormGroup();
   }
@@ -38,8 +40,8 @@ export class PersoncontactsComponent implements OnInit {
       this.listPersons = person;
     });
   }
-  updateContactType() {//OJOOOOO SERVICIOS ANERIORE
-    this.iIemCategoryService.getItemCategories().subscribe(itemCategories => {
+  updateContactType() {
+    this.typeContactService.getTypeContact().subscribe(itemCategories => {
       this.listContactType = itemCategories;
     });
   }

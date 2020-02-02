@@ -33,7 +33,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserCComponent } from './components/user-c/user-c.component';
 import { GuardsRoleGuard } from './guards/guards-role.guard';
 import { GuardsCoordinadorGuard } from './guards/guards-coordinador.guard';
-import { UniversityCarrer } from './models/university-carrer';
+import { UniversityCarrer } from './models/universityCareer';
 import { UniversityCarrerComponent } from './components/university-carrer/university-carrer.component';
 import { AcademicPeriodComponent } from './components/academic-period/academic-period.component';
 import { TypeContactComponent } from './components/type-contact/type-contact.component';

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { UniversityCarrer } from '../models/university-carrer';
+import { UniversityCarrer } from '../models/universityCareer';
+import { ItemCategory } from '../models/itemCategory';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class UniversityCarrerService {
   }
     
   public updateUniversityCarrer(universityCarrer: UniversityCarrer) {
-    return this.httpClient.put(this.apiUrl+'utils/university_career/'+universityCarrer.universityCarrer_id+'/', universityCarrer,this.httpOptions);
+    return this.httpClient.put(this.apiUrl+'utils/university_career/'+universityCarrer.university_career_id+'/', universityCarrer,this.httpOptions);
   }
 
   public deleteUniversityCarrer(id: number) { 
@@ -35,6 +36,6 @@ export class UniversityCarrerService {
   }
 
   public getUniversityCarrer() { 
-    return this.httpClient.get<UniversityCarrer[]>(this.apiUrl+'utils/university_career/', this.httpOptions);
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/university_career/', this.httpOptions);
   }
 }

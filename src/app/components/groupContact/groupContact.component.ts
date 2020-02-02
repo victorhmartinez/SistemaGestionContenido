@@ -12,6 +12,8 @@ import { UnirversityCareerService } from 'src/app/services/filerItemCategory';//
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 
+//Utils
+import { TypeContactService  } from 'src/app/services/type-contact.service';
 
 @Component({
   selector: 'app-groupContact',
@@ -28,8 +30,8 @@ export class GroupContactComponent implements OnInit {
   constructor(
     private groupContactService: GroupContactService ,
     private groupService: GroupService,
-    private itemCategoryService: ItemCategoryService
-
+    private itemCategoryService: ItemCategoryService,
+    private typeContactService: TypeContactService
 
   ) {
     this.GroupContactForm = this.createFormGroup();
@@ -45,7 +47,7 @@ export class GroupContactComponent implements OnInit {
 
   //servicion otro
   updatelistContactType() {
-    this.itemCategoryService.getItemCategories().subscribe(contactType => {
+    this.typeContactService.getTypeContact().subscribe(contactType => {
       this.listContactType = contactType;
     });
   }

@@ -16,12 +16,12 @@
 
                 <mat-form-field class="w100">
                     <mat-label>Carrera Universitaria</mat-label>
-                    <mat-select formControlName="university_career_id"><!---->
-                        <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemCategories">
-                            {{itemCategory.name}}
-                        </mat-option>
+                    <mat-select formControlName="university_career_id">
+                      <mat-option [value]="itemCategory.item_category_id" *ngFor="let itemCategory of listItemUniversityCareer">
+                        {{itemCategory.name}}
+                      </mat-option>
                     </mat-select>
-                </mat-form-field>
+                  </mat-form-field>
 
                 <mat-form-field class="w100">
                     <mat-label>Roles</mat-label>

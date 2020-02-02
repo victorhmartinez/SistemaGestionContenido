@@ -14,7 +14,7 @@ import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 export class TypeContactComponent implements OnInit {
 
   
-  listTypeContact: TypeContact[] = [];
+  listTypeContact: ItemCategory[] = [];
   listItemCategory: ItemCategory [] = [];
   typeContactForm: FormGroup;
   data:MatTableDataSource<any>;
@@ -37,7 +37,7 @@ export class TypeContactComponent implements OnInit {
    updateListTypeContact() {
     this.typeContactService.getTypeContact().subscribe(universityCarrer => {
       this.listTypeContact = universityCarrer
-      this.data= new MatTableDataSource<TypeContact>(this.listTypeContact);
+      this.data= new MatTableDataSource<ItemCategory>(this.listTypeContact);
       this.data.paginator=this.paginator;
     },
       error => {
