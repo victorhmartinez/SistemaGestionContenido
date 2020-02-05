@@ -36,12 +36,13 @@
         <section class="eventos swiper-container" id="animacion">
           <!--Imageness-->
           <div class="swiper-wrapper">
-            <!--CAROUSEL bootstrap-->
+            <!--CAROUSEL bootstrap
+            https://scontent.fuio13-1.fna.fbcdn.net/v/t31.0-8/27624973_10156301175060921_3441525261015536028_o.jpg?_nc_cat=110&_nc_oc=AQkZO6s6EW35Ekf7-jVULF_NVRp99iWvjApbdKLedmn3XR-CCiDDy1wWAjfT7uO_kAQ&_nc_ht=scontent.fuio13-1.fna&oh=0150f4672f5e69e27f2d81cd8f9c2568&oe=5DEDD783-->
             <ngb-carousel>
               <ng-container *ngFor="let mensaje of listMensajes;  let i=index">
                 <ng-template ngbSlide *ngIf="i<3">
                   <img
-                    src="https://scontent.fuio13-1.fna.fbcdn.net/v/t31.0-8/27624973_10156301175060921_3441525261015536028_o.jpg?_nc_cat=110&_nc_oc=AQkZO6s6EW35Ekf7-jVULF_NVRp99iWvjApbdKLedmn3XR-CCiDDy1wWAjfT7uO_kAQ&_nc_ht=scontent.fuio13-1.fna&oh=0150f4672f5e69e27f2d81cd8f9c2568&oe=5DEDD783"
+                    src="https://scontent.fgye8-1.fna.fbcdn.net/v/t1.0-0/p640x640/51582920_10157224767420921_8108694604678692864_o.png?_nc_cat=107&_nc_ohc=7A_HolKMm_8AX8DIegt&_nc_ht=scontent.fgye8-1.fna&oh=633648d1a2739a10bbc2cb20116241bf&oe=5EC89BC1"
                     alt="Random third slide" />
                   <div class="carousel-caption" >
                     <h3>{{mensaje.title}}</h3>
@@ -281,18 +282,31 @@
   
   
   <section class="bg-primary">
-    <footer class="page-footer font-small unique-color-dark">
+    <footer class="page-footer unique-color-dark">
       
         <div style="background-color: #FDCB14;">
           <div class="container">
-              <div class="row py-3 d-flex align-items-center">
-                  
-                  
+              <div class="row py-1 d-flex align-items-center">
+                 
+                  <div id="ico1" class="btn btn-warning" href="https://www.utpl.edu.ec/decidesermas">
+                    <a href="#"></a>
+                  </div>
+                  <div id="ico2" class="btn btn-warning">
+                    <img>
+                  </div>
+                  <div id="ico3" class="btn btn-warning">
+                    <img>
+                  </div>
+                  <div id="ico4" class="btn btn-warning">
+                    <img>
+                  </div>
+                  <!--<div class="row">
+                      <img src="icon/pinterest.png">
+                      <label>Siguenos en Pinteres</label>
+                  </div>-->     
               </div>
-
           </div>
         </div>
-        
          <!-- Footer Links -->
         <div class="container text-center  text-white-50 py-3 text-md-left mt-5" style="background-color: #003F72;"> 
            <!-- Grid row -->
@@ -417,7 +431,29 @@
       </div>
     </div>
   </ng-template>
-  <!--<p>
-    Esta carrera es: {{carrera.name}}npm install angular-bootstrap-md --save 
-  </p>--> 
+  <p>
+    Esta carrera es: {{carrera.name}}
+  </p> 
+ <!-- <ng-container *ngIf="itemCategory">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let itemCategory of itemCategory">
+                <td>{{ itemCategory.item_category_id }}</td>
+            </tr>
+        </tbody>
+    </table>
+  </ng-container>-->
+  
+  <ul>
+    <li *ngFor="let itemCategory of itemCategory">
+      {{ itemCategory.item_category_id }}
+    </li>
+  </ul>
   

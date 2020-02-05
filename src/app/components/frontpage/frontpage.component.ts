@@ -9,7 +9,12 @@ import { DataFrontpageService } from 'src/app/services/data-frontpage.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { ContentService } from 'src/app/services/content.service';
 import { Content } from 'src/app/models/content';
-import { UserI } from 'src/app/models/user';
+import { ItemCategory } from 'src/app/models/itemCategory';
+
+//Utils
+import { UniversityCarrerService } from '../../services/university-carrer.service';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-frontpage',
   templateUrl: './frontpage.component.html',
@@ -33,6 +38,7 @@ export class FrontpageComponent implements OnInit {
   listMenu: Menu[] = [];
   listTestimonios: Content[] = [];
   listMensajes: Content[] = [];
+  itemCategory: ItemCategory[]=[];
   public isError = false;
 
 
@@ -42,7 +48,8 @@ export class FrontpageComponent implements OnInit {
     private menuService: MenuService,
     private frontPageDataService : DataFrontpageService,
     private testimoniosService:ContentService,
-    private rutaActiva:ActivatedRoute) { 
+    private rutaActiva:ActivatedRoute,
+    private universityService: UniversityCarrerService) { 
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = true;
@@ -50,18 +57,29 @@ export class FrontpageComponent implements OnInit {
 
     
   }
+  //Arreglo para guardar los item category
+  //itemCategory: Observable<ItemCategory[]> = new Observable();
 
+  
   ngOnInit() {
     this.updateListPersons();
-    
     this.updateListMenu();
     this.updateListTestimonios();
     this.updateListMensajes();
     this.carrera = {
       name: this.rutaActiva.snapshot.params.name};
       console.log('ruta',this.carrera.name);
-      
-  }
+  this.getUnicaCarrera(this.carrera.name);
+
+  
+    }
+    
+ getUnicaCarrera(name:string){
+   this.universityService.getUniversityCarrerID2(name).subscribe(item=>{
+     this.itemCategory=item;
+     console.log('otor',item)
+   })
+ }   
 
   onLogin(form): void {
     console.log('login', form.value);

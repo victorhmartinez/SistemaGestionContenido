@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Section } from '../models/section';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SectionService {
   private apiUrl: string;
-
+  baseURLPosts = environment.apiUrl + 'utils/university_career_sections/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -35,5 +36,17 @@ export class SectionService {
 
     public getSection() { 
       return this.httpClient.get<Section[]>(this.apiUrl+'section/', this.httpOptions);
+    }
+    /*public getSectionID(university_career_id: number):Observable<Section[]> { 
+      http://3.134.77.123:8000/api/utils/find_item_category/?name=Sistemas
+      const url =`${this.apiUrl}?university_career_id=${university_career_id}`;
+      return this.httpClient.get<Section[]>(this.apiUrl+'utils/university_career_sections/'+university_career_id, this.httpOptions);
+    }
+    */
+
+
+    public getSectionID(university_career_id: number):Observable<Section[]> { 
+      const url = `${this.baseURLPosts}?university_career_id=${university_career_id}`;
+      return this.httpClient.get<Section[]>(url);
     }
 }
