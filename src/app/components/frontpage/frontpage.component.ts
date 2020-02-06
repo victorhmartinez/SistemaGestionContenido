@@ -20,7 +20,7 @@ import { Observable } from 'rxjs';
   templateUrl: './frontpage.component.html',
   styleUrls: ['./frontpage.component.css'],
   providers: [NgbModalConfig, NgbModal],
-  
+
   styles: [`
   .dark-modal .modal-content {
     background-color: #292b2c;
@@ -32,78 +32,105 @@ import { Observable } from 'rxjs';
   `]
 })
 export class FrontpageComponent implements OnInit {
-  carrera: {name: string};//APLICACION CARRERAS
-  
+  carrera: { name: string };//APLICACION CARRERAS
+
   listPersons: Person[] = [];
   listMenu: Menu[] = [];
   listTestimonios: Content[] = [];
   listMensajes: Content[] = [];
-  itemCategory: ItemCategory[]=[];
+  carreraUnica: ItemCategory[] = [];
   public isError = false;
+ 
 
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router ,
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router,
     private authService: AuthService,
-    private personService: PersonService, 
+    private personService: PersonService,
     private menuService: MenuService,
-    private frontPageDataService : DataFrontpageService,
-    private testimoniosService:ContentService,
-    private rutaActiva:ActivatedRoute,
-    private universityService: UniversityCarrerService) { 
+    private frontPageDataService: DataFrontpageService,
+    private testimoniosService: ContentService,
+    private rutaActiva: ActivatedRoute,
+    
+    private universityService: UniversityCarrerService) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = true;
-    
 
-    
+
+
   }
+  public bandera = new ItemCategory();
   //Arreglo para guardar los item category
   //itemCategory: Observable<ItemCategory[]> = new Observable();
 
-  
+  public prueba: ItemCategory;
   ngOnInit() {
     this.updateListPersons();
     this.updateListMenu();
     this.updateListTestimonios();
     this.updateListMensajes();
     this.carrera = {
-      name: this.rutaActiva.snapshot.params.name};
-      console.log('ruta',this.carrera.name);
-  this.getUnicaCarrera(this.carrera.name);
+      name: this.rutaActiva.snapshot.params.name
+    };
+    console.log('ruta', this.carrera.name);
+    //this.getUnicaCarrera(this.carrera.name);
+    this.pruba(this.carrera.name);
+    //console.log('ds',this.prueba.item_category_id);
 
-  
-    }
+  }
+  async pruba(name: string) {
+    await this.universityService.getUniversityCarrerID2(name).subscribe(carerr => {
+      console.log();
+      this.bandera = carerr;
+      
+      console.log('Prueba', this.bandera.name);
+      console.log('El id',this.bandera.item_category_id);
+      //return this.bandera.item_category_id;
+    },
+  error => {
+    console.log("Error "+error);
+  },
+  ()=>{
+    console.log("Completado!!!!!!!!!!!");
+    console.log('hola mundo',this.bandera.name);
+    //presentarMensaje(textoBienvenida);
+
+
+  });
     
- getUnicaCarrera(name:string){
-   this.universityService.getUniversityCarrerID2(name).subscribe(item=>{
-     this.itemCategory=item;
-     console.log('otor',item)
-   })
- }   
+    await console.log('hola mundo',this.bandera.name);
+  }
+ 
+  /*getUnicaCarrera(name:string){
+    this.universityService.getUniversityCarrerID2(name).subscribe(item=>{
+      this.carreraUnica=item;
+      console.log('otro',this.carreraUnica)
+    })
+  }   */
 
   onLogin(form): void {
     console.log('login', form.value);
-    
-    if(form.valid==true){
+
+    if (form.valid == true) {
       this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl(this.carrera.name+'/administracion');     
-      this.modalService.dismissAll();
-    },
-    error=>{
-      this.isError=true; 
-    
-    });
-   }       
-      //this.modalService.dismissAll();
+        this.router.navigateByUrl(this.carrera.name + '/administracion');
+        this.modalService.dismissAll();
+      },
+        error => {
+          this.isError = true;
+
+        });
     }
-      //this.isError=true;
-      //this.modalService.dismissAll();
+    //this.modalService.dismissAll();
+  }
+  //this.isError=true;
+  //this.modalService.dismissAll();
 
 
 
   open(content) {
     this.modalService.open(content, { windowClass: 'dark-modal', size: 'sm' });
-  
+
   }//Listas Autoridades
   updateListPersons() {
     this.personService.getPersons().subscribe(person => {

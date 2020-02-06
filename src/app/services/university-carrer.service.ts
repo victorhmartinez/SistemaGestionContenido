@@ -41,11 +41,11 @@ export class UniversityCarrerService {
   }
   public getUniversityCarrerID2(name:String) { 
     console.log('Sale',this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/find_item_category/?name='+name, this.httpOptions))
-    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/find_item_category/?name='+name, this.httpOptions);
+    return this.httpClient.get<ItemCategory>(this.apiUrl+'utils/find_item_category/?name='+name, this.httpOptions);
   }
-  public getUniversityCarrerID(name: String) { 
+  /*public getUniversityCarrerID(name: String) { 
     const url = `${this.baseURL}?name=${name}`;
     console.log(this.httpClient.get<ItemCategory[]>(url));
     return this.httpClient.get<ItemCategory[]>(url);
-  }
+  }*/
 }
