@@ -85,13 +85,13 @@ export class AuthService {
   }
   
 
-  getUserRoles(): boolean {
+  getUserSuper_admin(): boolean {
     
     let user_string = localStorage.getItem("userPrueba");
     if (!isNullOrUndefined(user_string)) {
       let user: UserC = JSON.parse(user_string);
      
-      if (user.is_superuser || user.is_admin) {
+      if (user.is_superuser) {
         console.log(user.is_superuser);
    
         return true;
@@ -103,8 +103,31 @@ export class AuthService {
     } else {
       return false;
     }
+    
 
   }
+  getUserCoordinador(): boolean {
+    
+    let user_string = localStorage.getItem("userPrueba");
+    if (!isNullOrUndefined(user_string)) {
+      let user: UserC = JSON.parse(user_string);
+     
+      if (user.is_admin) {
+        console.log(user.is_admin);
+   
+        return true;
+      } else {
+    
+        return false;
+      }
+      
+    } else {
+      return false;
+    }
+    
+
+  }
+
 
   //Logout
   logout(): void {

@@ -110,7 +110,11 @@ background: rgb(223, 225, 226)}
   line-height: 56px;
 }
 
-.titulo-quienes-somos, .titulo-autoridades, .titulo-grupos { margin-bottom: 34px; }
+.titulo-quienes-somos, .titulo-autoridades, .titulo-grupos {
+  
+  margin-bottom: 34px; 
+  font-weight:bold; 
+}
 #titu1 { background-image: url('../../../../images/tj-jen-presenting.jpg'); 
   width:590px;
   height:400px;

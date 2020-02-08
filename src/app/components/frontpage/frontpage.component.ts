@@ -14,6 +14,8 @@ import { ItemCategory } from 'src/app/models/itemCategory';
 //Utils
 import { UniversityCarrerService } from '../../services/university-carrer.service';
 import { Observable } from 'rxjs';
+import { Section } from 'src/app/models/section';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-frontpage',
@@ -34,23 +36,24 @@ import { Observable } from 'rxjs';
 export class FrontpageComponent implements OnInit {
   carrera: { name: string };//APLICACION CARRERAS
 
-  listPersons: Person[] = [];
-  listMenu: Menu[] = [];
+  listAutoridades = [];
+  listMenu: ItemCategory[] = [];
   listTestimonios: Content[] = [];
-  listMensajes: Content[] = [];
+  
+  listSecciones:Section [] = [];
   carreraUnica: ItemCategory[] = [];
+  messageWelcome: Content [] = [];
   public isError = false;
- 
+
 
 
   constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router,
     private authService: AuthService,
-    private personService: PersonService,
-    private menuService: MenuService,
+    
     private frontPageDataService: DataFrontpageService,
     private testimoniosService: ContentService,
     private rutaActiva: ActivatedRoute,
-    
+
     private universityService: UniversityCarrerService) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
@@ -65,10 +68,10 @@ export class FrontpageComponent implements OnInit {
 
   public prueba: ItemCategory;
   ngOnInit() {
-    this.updateListPersons();
+    //this.updateListPersons();
     this.updateListMenu();
-    this.updateListTestimonios();
-    this.updateListMensajes();
+   // this.updateListTestimonios();
+    //this.updateListMensajes();
     this.carrera = {
       name: this.rutaActiva.snapshot.params.name
     };
@@ -82,25 +85,46 @@ export class FrontpageComponent implements OnInit {
     await this.universityService.getUniversityCarrerID2(name).subscribe(carerr => {
       console.log();
       this.bandera = carerr;
-      
+
       console.log('Prueba', this.bandera.name);
-      console.log('El id',this.bandera.item_category_id);
+      console.log('El id', this.bandera.item_category_id);
       //return this.bandera.item_category_id;
     },
-  error => {
-    console.log("Error "+error);
-  },
-  ()=>{
-    console.log("Completado!!!!!!!!!!!");
-    console.log('hola mundo',this.bandera.name);
-    //presentarMensaje(textoBienvenida);
+      error => {
+        console.log("Error " + error);
+      },
+      () => {
+        console.log("Completado!!!!!!!!!!!");
+        console.log('hola mundo', this.bandera.name);
+        this.getMessageWelcome(this.bandera.item_category_id);
+        this.getSeccionesCareer(this.bandera.item_category_id);
+        this.getAutoridadesCareer(this.bandera.item_category_id);
+        //presentarMensaje(textoBienvenida);
 
 
-  });
-    
-    await console.log('hola mundo',this.bandera.name);
+      });
+
+    await console.log('hola mundo', this.bandera.name);
   }
- 
+
+  getMessageWelcome(id: number) {
+    this.frontPageDataService.getMensajeBienvenida(id).subscribe(message => {
+      this.messageWelcome = message;
+      console.log('Mensaje Bienvenida Sistemas Papa',this.messageWelcome)
+    })
+  }
+  getSeccionesCareer(id:number){
+this.frontPageDataService.getSeccionesCareer(id).subscribe(secciones =>{
+  this.listSecciones=secciones;
+  console.log('Secciones de la carrera',this.listSecciones);
+
+})
+  }
+  getAutoridadesCareer(id:number){
+    this.frontPageDataService.getPersonCareer(id).subscribe((autoridad:any) =>this.listAutoridades=autoridad);
+    this.frontPageDataService.getPersonCareer(id).subscribe(autoridad =>console.log('Autoridades',autoridad));
+  }
+
   /*getUnicaCarrera(name:string){
     this.universityService.getUniversityCarrerID2(name).subscribe(item=>{
       this.carreraUnica=item;
@@ -133,14 +157,12 @@ export class FrontpageComponent implements OnInit {
 
   }//Listas Autoridades
   updateListPersons() {
-    this.personService.getPersons().subscribe(person => {
-      this.listPersons = person;
-    });
+  
   }
 
   //Lista de Menus
   updateListMenu() {
-    this.menuService.getMenu().subscribe(menu => {
+    this.frontPageDataService.getMenu().subscribe(menu => {
       this.listMenu = menu;
     },
       error => {
@@ -148,6 +170,7 @@ export class FrontpageComponent implements OnInit {
       }
     );
   }
+  /*
   // Lista testimonios
   updateListTestimonios() {
     this.frontPageDataService.getTestimonios().subscribe(testimonio => {
@@ -167,5 +190,6 @@ export class FrontpageComponent implements OnInit {
         alert(JSON.stringify(error));
       }
     );
-  }
+  }*/
+
 }

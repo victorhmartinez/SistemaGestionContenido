@@ -20,9 +20,10 @@ export class VermasTestimoniosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  this.updateListTestimonios();
+ // this.updateListTestimonios();
     this.updateListMenu();
   }
+  /*
 //Lista Testimonios
 updateListTestimonios() {
   this.frontPageDataService.getTestimonios().subscribe(testimonio => {
@@ -32,7 +33,7 @@ updateListTestimonios() {
       alert(JSON.stringify(error));
     }
   );
-}
+}*/
 //Lista de Menus
 updateListMenu() {
   this.menuService.getMenu().subscribe(menu => {

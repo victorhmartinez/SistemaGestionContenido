@@ -11,12 +11,12 @@ export class GuardsRoleGuard implements CanActivate {
 
   //Guards
   canActivate() {
-    if(this.authService.getUserRoles()){
-      console.log(this.authService.getUserRoles())
+    if(this.authService.getUserSuper_admin()){
+      console.log(this.authService.getUserSuper_admin())
       return true;
     }else{
       this.router.navigate(['/administracion'])
-      console.log(this.authService.getUserRoles())
+      console.log(this.authService.getUserSuper_admin())
       return false;
       
     }

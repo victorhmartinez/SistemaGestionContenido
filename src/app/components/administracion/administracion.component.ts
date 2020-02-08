@@ -50,7 +50,7 @@ logout(){
 }
 
 isSuperAdmin(){
-  if( this.authService.getUserRoles()){
+  if( this.authService.getUserSuper_admin()){
  this.is_SuperAdmin=true;
  
   }else{
@@ -58,7 +58,7 @@ isSuperAdmin(){
   }
  }
  isCoordinador(){
-  if( this.authService.getUserRoles()){
+  if( this.authService.getUserCoordinador()){
     this.is_Admin=true;
     
      }else{

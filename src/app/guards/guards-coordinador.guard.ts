@@ -11,12 +11,12 @@ export class GuardsCoordinadorGuard implements CanActivate  {
   constructor(private authService: AuthService, private router: Router) { }
 //Guards
 canActivate() {
-  if(this.authService.getUserRoles()){
-    console.log(this.authService.getUserRoles())
+  if(this.authService.getUserCoordinador()){
+    console.log(this.authService.getUserCoordinador())
     return true;
   }else{
     this.router.navigate(['/administracion'])
-    console.log(this.authService.getUserRoles())
+    console.log(this.authService.getUserCoordinador())
     return false;
     
   }

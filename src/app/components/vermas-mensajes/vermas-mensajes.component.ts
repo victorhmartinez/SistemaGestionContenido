@@ -25,7 +25,7 @@ export class VermasMensajesComponent implements OnInit {
   ngOnInit() {
     this.updateListPersons();
     this.updateListMenu();
-    this.updateListMensajes();
+    //this.updateListMensajes();
   }
   //Listas Autoridades
   updateListPersons() {
@@ -43,6 +43,7 @@ export class VermasMensajesComponent implements OnInit {
       }
     );
   }
+  /*
   //Lista de mensajes
   updateListMensajes() {
     this.frontPageDataService.getMensajes().subscribe(mensajes => {
@@ -52,5 +53,5 @@ export class VermasMensajesComponent implements OnInit {
         alert(JSON.stringify(error));
       }
     );
-  }
+  }*/
 }
