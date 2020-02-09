@@ -287,7 +287,7 @@ body { font-family: 'PT Sans', sans-serif; }
 nav {
 	margin: 27px auto 0;
 	position: relative;
-	width: 550px;
+	width: 800px;
 	height: 50px;
 	background-color: #34495e;
 	border-radius: 8px;
@@ -317,10 +317,10 @@ nav .animation {
 	border-radius: 8px;
 }
 a:nth-child(1) {
-	width: 100px;
+	width: 120px;
 }
 a:nth-child(2) {
-	width: 150px;
+	width: 190px;
 }
 a:nth-child(3) {
 	width: 150px;
@@ -329,34 +329,34 @@ a:nth-child(4) {
 	width: 150px;
 }
 
-/*a:nth-child(5) {
-	width: 200px;
-}*/
+a:nth-child(5) {
+	width: 180px;
+}
 nav .start-home, a:nth-child(1):hover~.animation {
-	width: 100px;
+	width: 120px;
 	left: 0;
 	background-color:  rgb(228, 187, 39);
 }
 nav .start-about, a:nth-child(2):hover~.animation {
-	width: 150px;
-	left: 100px;
+	width: 190px;
+	left: 115px;
 	background-color:  rgb(228, 187, 39);
 }
 nav .start-blog, a:nth-child(3):hover~.animation {
-	width: 150px;
-	left: 250px;
+	width: 140px;
+	left: 310px;
 	background-color: rgb(228, 187, 39);
 }
 nav .start-portefolio, a:nth-child(4):hover~.animation {
-	width: 150px;
-	left: 400px;
+	width: 170px;
+	left: 450px;
 	background-color:  rgb(228, 187, 39);
-}/*
+}
 nav .start-contact, a:nth-child(5):hover~.animation {
-	width: 200px;
-	left: 470px;
-	background-color: #e67e22;
-}*/
+	width: 180px;
+	left: 620px;
+	background-color: rgb(228, 187, 39);
+}
 
 #nuevo {
   padding-top:1rem;

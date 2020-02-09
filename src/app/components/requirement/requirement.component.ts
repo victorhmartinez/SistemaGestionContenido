@@ -87,7 +87,7 @@ data:MatTableDataSource<any>;
       subject_matter_id: new FormControl('', [
          Validators.required,
        ]),
-       subject_matter_requeriment_id: new FormControl('', [
+       subject_matter_requirement_id: new FormControl('', [
          Validators.required,
        ]),
      });
@@ -97,7 +97,7 @@ data:MatTableDataSource<any>;
       this.RequirementForm.setValue({
         requirement_id: RequirementEdit.requirement_id,
         subject_matter_id : RequirementEdit.subject_matter_id,
-        subject_matter_requeriment_id: RequirementEdit.subject_matter_requeriment_id
+        subject_matter_requirement_id: RequirementEdit.subject_matter_requirement_id
   
       })
     }

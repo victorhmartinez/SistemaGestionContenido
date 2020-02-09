@@ -16,7 +16,7 @@
 
               <mat-form-field class="w100">
                   <mat-label>Materia Requisito</mat-label>
-                  <mat-select formControlName="subject_matter_requeriment_id">
+                  <mat-select formControlName="subject_matter_requirement_id">
                       <mat-option [value]="subjectMatter.subject_matter_id" *ngFor="let subjectMatter of listSubjectMatter">
                           {{subjectMatter.name}}
                       </mat-option>
@@ -37,12 +37,12 @@
       <mat-table [dataSource]="data" class="w100" cols="3"> 
         <ng-container matColumnDef="subject_matter_id">
           <mat-header-cell *matHeaderCellDef> Materia </mat-header-cell>
-          <mat-cell *matCellDef="let Requirement"> {{Requirement.requirement_id}} </mat-cell>
+          <mat-cell *matCellDef="let Requirement"> {{Requirement.subject_matter_id}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="subject_matter_requeriment_id">
           <mat-header-cell *matHeaderCellDef> Materia Requisito </mat-header-cell>
-          <mat-cell *matCellDef="let Requirement">{{Requirement.subject_matter_requeriment_id}} </mat-cell>
+          <mat-cell *matCellDef="let Requirement">{{Requirement.subject_matter_requirement_id}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="delete">
