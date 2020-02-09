@@ -13,12 +13,13 @@
         <h2 class="titulos titulo-grupos text-white">Malla Curricular</h2>
         <div class="row">
           <div class="col-md-12 box-autoridades bg-light">
-            <ul>
-              Requisitos
-              <li *ngFor="let requirements of listRequirements" >
-                {{requirements.subject_matter_requeriment_id}}
-              </li>
-            </ul>
+            <p>requisitos</p>
+          <ul *ngFor=" let requirements of listMaterias">
+
+            <li> cadena Principal {{requirements.subject_matter_data.name}}</li>
+          
+           
+          </ul>
           <div>
           <h2 class="titulo">Malla Académica de Sistemas</h2><br>
         </div>
@@ -27,12 +28,12 @@
         <mat-grid-list cols="6" rowHeight="60px">
 
           <mat-grid-tile    *ngFor="let materias of listMaterias"  [ngbPopover]="popContent"
-            popoverTitle="{{materias.name}}" triggers="mouseenter:mouseleave">
+            popoverTitle="{{materias.subject_matter_data.name}}" triggers="mouseenter:mouseleave">
 
-            <ng-template #popContent> Ciclo Ademico: {{materias.semester}}
-              <br><b>Cadena: {{materias.name}} </b>
+            <ng-template #popContent> Ciclo Ademico: {{materias.subject_matter_data.semester}}
+              <br><b>Cadena: {{materias.requirements.name}} </b>
             </ng-template>
-            {{materias.name}}
+            {{materias.subject_matter_data.name}}
           </mat-grid-tile>
 
         </mat-grid-list>
