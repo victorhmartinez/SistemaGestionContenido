@@ -13,12 +13,14 @@
         <h2 class="titulos titulo-grupos text-white">Malla Curricular</h2>
         <div class="row">
           <div class="col-md-12 box-autoridades bg-light">
-            <ul>
-              Requisitos
-              <li *ngFor="let requirements of listRequirements" >
-                {{requirements.subject_matter_requeriment_id}}
-              </li>
-            </ul>
+            
+          <!--<ul *ngFor=" let requirements of listMaterias">
+            <p>requisitos</p>
+            <li> cadena Principal {{requirements.subject_matter_data.name}}</li>
+          
+           
+          </ul>-->
+          <br>
           <div>
           <h2 class="titulo">Malla Académica de Sistemas</h2><br>
         </div>
@@ -26,13 +28,18 @@
         <div class="redondeo">
         <mat-grid-list cols="6" rowHeight="60px">
 
-          <mat-grid-tile    *ngFor="let materias of listMaterias"  [ngbPopover]="popContent"
-            popoverTitle="{{materias.name}}" triggers="mouseenter:mouseleave">
+          <mat-grid-tile *ngFor="let materias of listMaterias"  [ngbPopover]="popContent"
+            popoverTitle="{{materias.subject_matter_data.name}}" triggers="mouseenter:mouseleave" i="6">
 
-            <ng-template #popContent> Ciclo Ademico: {{materias.semester}}
-              <br><b>Cadena: {{materias.name}} </b>
+            <ng-template  #popContent> 
+              Ciclo Ademico: {{materias.subject_matter_data.semester}}
+              <div *ngFor="let requi of materias.requirements; let i=index">
+                <br><b >
+                  Cadena: {{requi.name}} </b>
+              </div>
             </ng-template>
-            {{materias.name}}
+              {{materias.subject_matter_data.name}}
+            
           </mat-grid-tile>
 
         </mat-grid-list>
@@ -43,4 +50,15 @@
   </div>
 </div>
 </div>
-</section>
+</section> <!--*ngFor="let prueba of materias.requirements.length; let i=index"
+
+   <br><b *ngIf="i>-1 && i<materias.requirements.length ===0 ; let v=index">
+                Cadena: {{materias.requirements[v].name}} </b>
+            </ng-template>
+            {{materias.subject_matter_data.name}}
+          </mat-grid-tile>
+</mat-grid-tile>"
+
+
+
+<br><b *ngIf="i>-1 && i<materias.requirements.length===0 ; let v=index">-->

@@ -28,8 +28,8 @@ export class DataFrontpageService {
   public getMenu() { 
     return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/menu/', this.httpOptions);
   }
-  public getMaterias(){
-    return this.httpClient.get(this.apiUrl+'subject_matter/',this.httpOptions);
+  public getMallaCareer(idCareer:number){
+    return this.httpClient.get(this.apiUrl+'utils/detailed_subject_matters/?university_career_id='+idCareer,this.httpOptions);
   }
   public getRequirements(){
     return this.httpClient.get(this.apiUrl+'requirement/',this.httpOptions);
@@ -40,6 +40,7 @@ export class DataFrontpageService {
   public getPersonCareer(idCareer:number){
     return this.httpClient.get<any[]>(this.apiUrl+'utils/university_career_authorities/?university_career_id='+idCareer,this.httpOptions);
   }
+
   /*
   public getMensajes(){
     return this.httpClient.get<Content[]>(this.apiUrl+'itemcategoryMensajes/', this.httpOptions);

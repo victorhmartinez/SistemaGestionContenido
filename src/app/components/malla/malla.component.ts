@@ -18,9 +18,9 @@ export class MallaComponent implements OnInit {
 
   ngOnInit() {
     this.updateListMenu();
-    this.getListMaterias();
-    this.getListRequirements();
-    console.log(this.listMaterias)
+    this.getListMaterias(1);
+    //console.log(this.listMaterias);
+  
   }
   updateListMenu() {
     this.menuService.getMenu().subscribe(menu => {
@@ -31,12 +31,11 @@ export class MallaComponent implements OnInit {
       }
     );
   }
-  getListMaterias(){
-    this.dataFronpage.getMaterias().subscribe((materias:any) =>this.listMaterias=materias);
-    this.dataFronpage.getMaterias().subscribe(materias =>console.log(materias));
+  getListMaterias(idCarrer:number){
+    this.dataFronpage.getMallaCareer(idCarrer).subscribe((materias:any) =>this.listMaterias=materias);
+    this.dataFronpage.getMallaCareer(idCarrer).subscribe(materias =>console.log('Estas son las materias',materias));
+    // console.log('prueba')
   }
-  getListRequirements(){
-    this.dataFronpage.getRequirements().subscribe(requirements =>console.log(requirements));
-    this.dataFronpage.getRequirements().subscribe((requirements:any)=> this.listRequirements=requirements)
-  }
+
+ 
 }
