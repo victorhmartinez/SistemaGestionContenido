@@ -45,7 +45,7 @@ public is_Admin:boolean;
 logout(){
   localStorage.removeItem('ACCESS_TOKEN');
   localStorage.removeItem('currentUser');
-  this.router.navigateByUrl('');
+  this.router.navigateByUrl('/Sitemas');
  
 }
 

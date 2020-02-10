@@ -23,6 +23,7 @@ export class PersonsectionComponent implements OnInit {
   listSection: Section[] = [];
   listPersonSection: PersonSection[] = [];
   personSectionForm: FormGroup;
+  career:number;
   data:MatTableDataSource<any>;
 
   constructor(
@@ -41,8 +42,8 @@ export class PersonsectionComponent implements OnInit {
     });
   }
 
-  updateListSection() {
-    this.sectionService.getSection().subscribe(section => {
+  updateListSection(id:number) {
+    this.sectionService.getSection(id).subscribe(section => {
       this.listSection = section;
     });
   }
@@ -79,9 +80,12 @@ export class PersonsectionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.career=parseInt(localStorage.getItem('career'));
     this.updateListPersons();
-    this.updateListSection() ;
+    this.updateListSection(this.career) ;
     this.updateListPersonSection();
+  
+    
   }
 
   displayedColumns: string[] = ['person', 'section', 'delete', 'update'];

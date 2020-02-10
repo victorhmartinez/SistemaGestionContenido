@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu';
 import { MenuService } from 'src/app/services/menu.service';
 import{DataFrontpageService}from 'src/app/services/data-frontpage.service'
+import { ItemCategory } from 'src/app/models/itemCategory';
 @Component({
   selector: 'app-malla',
   templateUrl: './malla.component.html',
   styleUrls: ['./malla.component.css']
 })
 export class MallaComponent implements OnInit {
-  listMenu: Menu[] = [];
+  listMenu: ItemCategory[] = [];
   listMaterias  = [];
   listRequirements = [];
   constructor(
@@ -23,7 +24,7 @@ export class MallaComponent implements OnInit {
   
   }
   updateListMenu() {
-    this.menuService.getMenu().subscribe(menu => {
+    this.dataFronpage.getMenu().subscribe(menu => {
       this.listMenu = menu;
     },
       error => {

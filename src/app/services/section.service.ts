@@ -34,8 +34,8 @@ export class SectionService {
       return this.httpClient.delete(this.apiUrl+'section/'+id+'/', this.httpOptions);
     }
 
-    public getSection() { 
-      return this.httpClient.get<Section[]>(this.apiUrl+'section/', this.httpOptions);
+    public getSection(id: number) { 
+      return this.httpClient.get<Section[]>(this.apiUrl+'career/section/?university_career_id='+id, this.httpOptions);
     }
     /*public getSectionID(university_career_id: number):Observable<Section[]> { 
       http://3.134.77.123:8000/api/utils/find_item_category/?name=Sistemas

@@ -26,6 +26,7 @@ export class SectionComponent implements OnInit {
   listItemUniversityCareer: ItemCategory[] = [];
   listSection: Section[] = [];
   sectionForm: FormGroup;
+  career:number;
   data:MatTableDataSource<any>;
 
   constructor(
@@ -53,8 +54,8 @@ export class SectionComponent implements OnInit {
 
 
   //All 
-  updateListSection() {
-    this.sectionService.getSection().subscribe(section => {
+  updateListSection(id:number) {
+    this.sectionService.getSection(id).subscribe(section => {
       this.listSection = section;
       this.data= new MatTableDataSource<Section>(this.listSection);
       this.data.paginator=this.paginator;
@@ -69,9 +70,9 @@ export class SectionComponent implements OnInit {
 applyFilter(filterValue: string) {
   this.data.filter = filterValue.trim().toLowerCase();
 }
-  deleteSection(id: number) {
+  deleteSection(id: number,idCarrer:number) {
     this.sectionService.deleteSection(id).subscribe(section => {
-      this.updateListSection();
+      this.updateListSection(idCarrer);
     },
       error => {
         alert(JSON.stringify(error));
@@ -83,7 +84,8 @@ applyFilter(filterValue: string) {
   }
 
   ngOnInit() {
-    this.updateListSection();
+    this.career=parseInt(localStorage.getItem('career'));
+    this.updateListSection(this.career);
     this.updateListUniversityC();
   }
 
@@ -116,11 +118,11 @@ applyFilter(filterValue: string) {
   }
 
   //submit form
-  submitForm() {
+  submitForm(idCarrer:number) {
     if (this.sectionForm.value.section_id == null) {
       if (this.sectionForm.valid) {
         this.sectionService.createSection(this.sectionForm.value).subscribe(section => {
-          this.updateListSection();
+          this.updateListSection(idCarrer);
         }, error => {
           alert(JSON.stringify(error));
         })
@@ -130,7 +132,7 @@ applyFilter(filterValue: string) {
     else {
       if (this.sectionForm.valid) {
         this.sectionService.updateSection(this.sectionForm.value).subscribe(section => {
-          this.updateListSection();
+          this.updateListSection(idCarrer);
         })
         this.resetForm();
       }

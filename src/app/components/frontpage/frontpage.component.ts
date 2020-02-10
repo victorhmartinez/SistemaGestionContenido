@@ -76,9 +76,9 @@ export class FrontpageComponent implements OnInit {
       name: this.rutaActiva.snapshot.params.name
     };
     console.log('ruta', this.carrera.name);
-    //this.getUnicaCarrera(this.carrera.name);
+  
     this.pruba(this.carrera.name);
-    //console.log('ds',this.prueba.item_category_id);
+ 
 
   }
   async pruba(name: string) {
@@ -88,6 +88,8 @@ export class FrontpageComponent implements OnInit {
 
       console.log('Prueba', this.bandera.name);
       console.log('El id', this.bandera.item_category_id);
+    let career=this.bandera.item_category_id.toString();
+      localStorage.setItem('career',career);
       //return this.bandera.item_category_id;
     },
       error => {
@@ -139,6 +141,7 @@ this.frontPageDataService.getSeccionesCareer(id).subscribe(secciones =>{
       this.authService.login(form.value).subscribe(res => {
         this.router.navigateByUrl(this.carrera.name + '/administracion');
         this.modalService.dismissAll();
+
       },
         error => {
           this.isError = true;
