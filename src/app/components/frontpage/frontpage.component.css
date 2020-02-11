@@ -23,15 +23,15 @@ body { font-family: 'PT Sans', sans-serif; }
 .text-gray { color: #9B9B9B }
 .text-oscuro { color: #151515 }
 
-/*para fondo menu talvez*/
+/*para fondo menu talvez rgb(223, 225, 226)}*/
 .navbar { padding: 30px 15px; 
   padding-top: 0rem;
-background: rgb(223, 225, 226)}
+background: rgb(7, 51, 87)}
 
 .navbar-nav .active {
   background-color: #FDCB14;
   font-weight: bold;
-  border-radius: 18px;
+  border-radius: 58px;
 }
 
 .nav-link {
@@ -81,11 +81,12 @@ background: rgb(223, 225, 226)}
   margin: 0 0.3rem !important;
 }
 
+
 .swiper-pagination-bullet-active { background-color: #FDCB14 }
 
-#evento1 { background-image: url('../../../../images/code-coding-computer-574071.jpg') }
+#evento1 { background-image: url('../../../../images/img2.jpg') }
 #evento2 { background-image: url('../../../../images/widdisonphotography_0023-900x720.jpg') }
-#evento3 { background-image: url('../../../../images/tj-jen-presenting.jpg') }
+#evento3 { background-image: url('../../../../images/img1.jpg')}
 
 .imagen-evento {
   height: 13rem;
@@ -123,7 +124,9 @@ background: rgb(223, 225, 226)}
   text-align: left;
 }
 
-
+#letra{
+  font-family:Arial, Helvetica, sans-serif;
+}
 
 
 .texto-about, .texto-cita {
@@ -139,7 +142,7 @@ background: rgb(223, 225, 226)}
 .titulo4 {
   margin-top: 15px;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   letter-spacing: 2.4px;
   line-height: 24px;

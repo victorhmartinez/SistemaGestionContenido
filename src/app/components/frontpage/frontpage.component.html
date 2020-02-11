@@ -15,8 +15,11 @@
           <li class="nav-item active mr-2" *ngFor="let menu of  listMenu">
             <!--
             <a class="nav-link py-2 px-4" routerLink="{{menu.url}}">{{menu.name}}<span-->
-            <a class="nav-link py-2 px-4">{{menu.name}}<span class="sr-only">(current)</span></a>
+            <a class="nav-link py-2 px-4" href="#autoridades">{{menu.name}}<span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item active mr-2">
+              <a class="nav-link py-2 px-4" [routerLink]="['/Sistemas/malla']" tabindex="-1" aria-disabled="true">Malla</a>
+            </li>
           <li class="nav-item active mr-2">
             <a class="nav-link py-2 px-4" (click)="open(content)" tabindex="-1" aria-disabled="true">Login</a>
           </li>
@@ -30,7 +33,7 @@
 </div>
 
 <!-- slider eventos y noticias  (click)="open(content)" -->
-<div class="container-fluid">
+<div class="container-fluid" id="eventos">
   <div class="row">
     <div class="col-12 col-md-8 col-lg-9 pl-0 pr-0 pr-md-3">
       <section class="eventos swiper-container" id="animacion">
@@ -73,10 +76,20 @@
         <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento2" *ngIf="i>2 && i<6">
           <h3 class="mb-0 box-evento p-1">{{mensaje.title}}</h3>
       -->
-      <div class="row" >
+      <div class="row mt-md-0 col-lg-12" >
         <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento2" >
-          <h3 class="mb-0 box-evento p-1">Titulo</h3>
+          <h3 class="mb-0 box-evento p-1">Seminario Python</h3>
         </div>
+      </div>
+      <div class="row mt-md-2 col-lg-12" >
+          <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento1" >
+            <h3 class="mb-0 box-evento p-1">Curso Gratuito</h3>
+          </div>
+      </div>
+      <div class="row mt-md-2 col-lg-12" >
+            <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento3" >
+              <h3 class="mb-0 box-evento p-1">Emprende</h3>
+            </div>
       </div>
 
     </div>
@@ -97,9 +110,11 @@
         <div class="row">
           <div class="col-md-12">
             <ng-container>
-              <p class="texto-about text-justify text-black">{{messageWelcome.description}}.
-              </p>
+              <em><p id="letra" class="texto-about text-justify text-black">{{messageWelcome.description}}.
+              </p></em>
             </ng-container>
+            <footer class="blockquote-footer float-right"><cite title="Source Title">Fernanda Maricela Soto</cite>
+            </footer>
           </div>
           <!--
             <div class="col-md-6 d-flex align-items-center">
@@ -183,9 +198,10 @@
                   <hr class="bg-warning w-25">
                   <div class="box-autoridad-cuerpo text-center">
                     <!-- <p class="mb-0">ING. {{person.first_name}} {{person.second_name}} {{person.first_last_name}}-->
-                    <p class="mb-0">ING. {{person.personal_info.first_name}} {{person.personal_info.second_name}}  {{person.personal_info.first_last_name}}  {{person.personal_info.second_last_name}} </p>
-                    <p class="mb-0">PROJECT MANAGER</p>
-                    <p class="mb-0 text-warning">{{person.user_info.email}}</p>
+                    <p class="mb-0">ING. {{person.personal_info.first_name}} {{person.personal_info.second_name}}  
+                      {{person.personal_info.first_last_name}}  {{person.personal_info.second_last_name}} </p>
+                    <b><p class="mb-0">PROJECT MANAGER</p></b>
+                    <em><p class="mb-0 text-warning">{{person.user_info.email}}</p></em>
                   </div>
                 </div>
               </div>
@@ -277,7 +293,7 @@
       <div class="container">
         <div class="row py-1 d-flex align-items-center">
 
-          <div id="ico1" class="btn btn-warning" href="https://www.utpl.edu.ec/decidesermas">
+          <div id="ico1" class="btn btn-warning" >
             <a href="#"></a>
           </div>
           <div id="ico2" class="btn btn-warning">

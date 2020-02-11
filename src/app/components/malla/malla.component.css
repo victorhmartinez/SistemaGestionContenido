@@ -33,8 +33,28 @@ body { font-family: 'PT Sans', sans-serif; }
 .text-gray { color: #9B9B9B }
 .text-oscuro { color: #151515 }
 
+/*para fondo menu talvez rgb(223, 225, 226)}*/
+.navbar { padding: 30px 15px; 
+  padding-top: 0rem;
+background: rgb(7, 51, 87)}
 
+.navbar-nav .active {
+  background-color: #FDCB14;
+  font-weight: bold;
+  border-radius: 58px;
+}
 
+.nav-link {
+  font-weight: 700;
+  border: 3px solid #FDCB14;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  
+}
+.nav-link:hover { border: 3px solid #2c3e50; }
+
+.linea { height: 3px; }
 
 .linea { height: 3px; }
 
@@ -283,7 +303,7 @@ body { font-family: 'PT Sans', sans-serif; }
 
 
 
-/*Estilos para menu 2 */
+/*Estilos para menu 2 
 nav {
 	margin: 27px auto 0;
 	position: relative;
@@ -357,13 +377,13 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 	left: 620px;
 	background-color: rgb(228, 187, 39);
 }
-
+*/
 #nuevo {
-  padding-top:1rem;
-  padding-bottom: 2rem;
+  padding-top:0rem;
+  padding-bottom: 0rem;
 	font-size: 12px;
 	font-family: sans-serif;
-  background: #2c3e50;
+  background:rgb(223, 225, 226);/*#2c3e50*/
   position: relative;
   width: 100%;
   left: 0;
