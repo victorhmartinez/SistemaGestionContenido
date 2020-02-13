@@ -15,7 +15,7 @@
           <li class="nav-item active mr-2" *ngFor="let menu of  listMenu">
             <!--
             <a class="nav-link py-2 px-4" routerLink="{{menu.url}}">{{menu.name}}<span-->
-            <a class="nav-link py-2 px-4" href="#autoridades">{{menu.name}}<span class="sr-only">(current)</span></a>
+            <a class="nav-link py-2 px-4" href="{{this.carrera.name}}#{{menu.name}}">{{menu.name}}<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active mr-2">
               <a class="nav-link py-2 px-4" [routerLink]="['/Sistemas/malla']" tabindex="-1" aria-disabled="true">Malla</a>
@@ -139,7 +139,7 @@
   </div>
 </section>
 <!-- Secciones -->
-<section id="departamentos" class="bg-primary">
+<section id="Secciones" class="bg-primary">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
@@ -180,7 +180,7 @@
 </section>
 
 <!--Autoridades-->
-<section id="autoridades">
+<section id="Autoridades">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
@@ -220,7 +220,7 @@
   </div>
 </section>
 <!--Testimonios-->
-<section id="grupos" class="bg-primary">
+<section id="Testimonios" class="bg-primary">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
