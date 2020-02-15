@@ -18,7 +18,7 @@
             <a class="nav-link py-2 px-4" href="{{this.carrera.name}}#{{menu.name}}">{{menu.name}}<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active mr-2">
-              <a class="nav-link py-2 px-4" [routerLink]="['/Sistemas/malla']" tabindex="-1" aria-disabled="true">Malla</a>
+              <a class="nav-link py-2 px-4" routerLink='/{{this.carrera.name}}/malla' tabindex="-1" aria-disabled="true">Malla</a>
             </li>
           <li class="nav-item active mr-2">
             <a class="nav-link py-2 px-4" (click)="open(content)" tabindex="-1" aria-disabled="true">Login</a>
@@ -42,19 +42,18 @@
           <!--CAROUSEL bootstrap
             https://scontent.fuio13-1.fna.fbcdn.net/v/t31.0-8/27624973_10156301175060921_3441525261015536028_o.jpg?_nc_cat=110&_nc_oc=AQkZO6s6EW35Ekf7-jVULF_NVRp99iWvjApbdKLedmn3XR-CCiDDy1wWAjfT7uO_kAQ&_nc_ht=scontent.fuio13-1.fna&oh=0150f4672f5e69e27f2d81cd8f9c2568&oe=5DEDD783-->
           <ngb-carousel>
-            <ng-container>
-              <!-- <ng-container *ngFor="let mensaje of listMensajes;  let i=index"> 
-              <ng-template ngbSlide *ngIf="i<3">
--->
-              <ng-template ngbSlide>
+           
+              <ng-container *ngFor="let mensaje of listMessage;  let i=index"> 
+            <!--  <ng-template ngbSlide *ngIf="i<3">-->
+
+              <ng-template ngbSlide >
                 <img
                   src="https://scontent.fgye8-1.fna.fbcdn.net/v/t1.0-0/p640x640/51582920_10157224767420921_8108694604678692864_o.png?_nc_cat=107&_nc_ohc=7A_HolKMm_8AX8DIegt&_nc_ht=scontent.fgye8-1.fna&oh=633648d1a2739a10bbc2cb20116241bf&oe=5EC89BC1"
                   alt="Random third slide" />
                 <div class="carousel-caption">
-                  <!--<h3>{{mensaje.title}}</h3>
-                  <p>{{mensaje.description}}</p>-->
-                  <h3>Mensaje</h3>
-                  <p>Este es el Mensaje</p>
+                  <h3>{{mensaje.title}}</h3>
+                  <p>{{mensaje.description}}</p>
+                  
                 </div>
               </ng-template>
             </ng-container>
@@ -149,20 +148,21 @@
             <ng-container *ngFor="let secciones of  listSecciones;let i=index">
 
             
-          <div class="col-md-3 box-departamento" *ngIf="i<3">
+          <div class="col-md-6 box-departamento" *ngIf="i<4">
             <div class="text-center">
               <i class="fas fa-laptop text-white fa-3x"></i>
+              <h4 class="titulo3 text-white text-center">{{secciones.name}}</h4>
             </div>
+            
+          
             <hr class="bg-warning">
             <div>
-              <h4 class="titulo4 text-white text-center">{{secciones.name}}</h4>
-              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Este departamento consta de personal
-                calificado para
-                el diseño e implementacion de sitios orientados a la web.
-                Entre el personal tenemos a jovenes estudiantes</p>
+              
+              <p class="mt-3 mb-0 text-center text-gray texto-departamento">{{secciones.description}}</p>
              
             </div>
           </div>
+          
         </ng-container>
          
       
@@ -207,11 +207,7 @@
               </div>
             </div>
             <!-- boton-->
-            <div class="d-flex justify-content-center">
-              <button class="btn btn-warning" routerLink="/autoridades">
-                Ver más
-              </button>
-            </div>
+            
           </div>
 
         </div>

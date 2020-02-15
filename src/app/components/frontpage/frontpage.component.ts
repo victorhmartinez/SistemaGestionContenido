@@ -43,6 +43,7 @@ export class FrontpageComponent implements OnInit {
   listSecciones:Section [] = [];
   carreraUnica: ItemCategory[] = [];
   messageWelcome: Content [] = [];
+  listMessage: Content [] = [];
   public isError = false;
 
 
@@ -101,6 +102,8 @@ export class FrontpageComponent implements OnInit {
         this.getMessageWelcome(this.bandera.item_category_id);
         this.getSeccionesCareer(this.bandera.item_category_id);
         this.getAutoridadesCareer(this.bandera.item_category_id);
+        this.updateListMensajes(this.bandera.item_category_id);
+        this.updateListTestimonios(this.bandera.item_category_id)
         //presentarMensaje(textoBienvenida);
 
 
@@ -173,10 +176,10 @@ this.frontPageDataService.getSeccionesCareer(id).subscribe(secciones =>{
       }
     );
   }
-  /*
+  
   // Lista testimonios
-  updateListTestimonios() {
-    this.frontPageDataService.getTestimonios().subscribe(testimonio => {
+  updateListTestimonios(id:number) {
+    this.frontPageDataService.getTestimonios(id).subscribe(testimonio => {
       this.listTestimonios = testimonio;
     },
       error => {
@@ -185,14 +188,15 @@ this.frontPageDataService.getSeccionesCareer(id).subscribe(secciones =>{
     );
   }
   //Lista de mensajes
-  updateListMensajes() {
-    this.frontPageDataService.getMensajes().subscribe(mensajes => {
-      this.listMensajes = mensajes;
+  updateListMensajes(id:number) {
+    this.frontPageDataService.getMessages(id).subscribe(mensajes => {
+      this.listMessage = mensajes;
+      console.log('mensaje',this.listMessage)
     },
       error => {
         alert(JSON.stringify(error));
       }
     );
-  }*/
+  }
 
 }

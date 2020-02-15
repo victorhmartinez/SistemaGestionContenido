@@ -34,20 +34,24 @@ export class DataFrontpageService {
   public getRequirements(){
     return this.httpClient.get(this.apiUrl+'requirement/',this.httpOptions);
   }
+  public getMessages(id:number){
+    return this.httpClient.get<Content [] >(this.apiUrl+'utils/news/?university_career_id='+id,this.httpOptions);
+  }
   public getSeccionesCareer(idCareer:number){
     return this.httpClient.get<Section[]>(this.apiUrl+'utils/university_career_sections/?university_career_id='+idCareer,this.httpOptions);
   }
   public getPersonCareer(idCareer:number){
     return this.httpClient.get<any[]>(this.apiUrl+'utils/university_career_authorities/?university_career_id='+idCareer,this.httpOptions);
   }
+  public getTestimonios(id:number){
+    return this.httpClient.get<Content[]>(this.apiUrl+'utils/testimonials/?university_career_id='+id, this.httpOptions);
+   }
 
   /*
   public getMensajes(){
     return this.httpClient.get<Content[]>(this.apiUrl+'itemcategoryMensajes/', this.httpOptions);
    }
-  public getTestimonios(){
-    return this.httpClient.get<Content[]>(this.apiUrl+'itemcategoryTestimonios/', this.httpOptions);
-   }
+
   //public getDataQuienesSomos(){
     //return this.httpClient.get<InfoSite[]>(this.apiUrl+'infoSiteQuienesSomos/', this.httpOptions);
    //}
