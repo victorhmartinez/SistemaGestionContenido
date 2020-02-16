@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+    <!--The content below is only a placeholder and can be replaced.-->
 
 <!--Menus-->
 <div id="nuevo">
@@ -44,15 +44,15 @@
           <ngb-carousel>
            
               <ng-container *ngFor="let mensaje of listMessage;  let i=index"> 
-            <!--  <ng-template ngbSlide *ngIf="i<3">-->
+            <!--  src="https://scontent.fgye8-1.fna.fbcdn.net/v/t1.0-0/p640x640/51582920_10157224767420921_8108694604678692864_o.png?_nc_cat=107&_nc_ohc=7A_HolKMm_8AX8DIegt&_nc_ht=scontent.fgye8-1.fna&oh=633648d1a2739a10bbc2cb20116241bf&oe=5EC89BC1"
+                  alt="Random third slide" /> <ng-template ngbSlide *ngIf="i<3">-->
 
               <ng-template ngbSlide >
                 <img
-                  src="https://scontent.fgye8-1.fna.fbcdn.net/v/t1.0-0/p640x640/51582920_10157224767420921_8108694604678692864_o.png?_nc_cat=107&_nc_ohc=7A_HolKMm_8AX8DIegt&_nc_ht=scontent.fgye8-1.fna&oh=633648d1a2739a10bbc2cb20116241bf&oe=5EC89BC1"
-                  alt="Random third slide" />
+                  src="https://scontent.fgye8-1.fna.fbcdn.net/v/t1.0-0/p180x540/67834871_10157647021680921_8007173122673344512_o.jpg?_nc_cat=104&_nc_ohc=hac_cQWtHw4AX83CgcZ&_nc_ht=scontent.fgye8-1.fna&_nc_tp=6&oh=bf5e9b9f5337cee16c83c1b97dc062ae&oe=5EC5AAA3" />
                 <div class="carousel-caption">
-                  <h3>{{mensaje.title}}</h3>
-                  <p>{{mensaje.description}}</p>
+                  <h3 class="mb-0 box-evento p-1">{{mensaje.content_info.title}}</h3>
+                  <p class="mb-0 box-evento p-1">{{mensaje.content_info.description}}</p>
                   
                 </div>
               </ng-template>
@@ -87,7 +87,7 @@
       </div>
       <div class="row mt-md-2 col-lg-12" >
             <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento3" >
-              <h3 class="mb-0 box-evento p-1">Emprende</h3>
+              <h3 class="mb-0 box-evento p-1">Emprende MAS!</h3>
             </div>
       </div>
 
@@ -148,7 +148,7 @@
             <ng-container *ngFor="let secciones of  listSecciones;let i=index">
 
             
-          <div class="col-md-6 box-departamento" *ngIf="i<4">
+          <div class="col-md-5 box-departamento" *ngIf="i<4">
             <div class="text-center">
               <i class="fas fa-laptop text-white fa-3x"></i>
               <h4 class="titulo3 text-white text-center">{{secciones.name}}</h4>
@@ -224,6 +224,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="row">
+
+
+
               <div class="col-md-12" *ngFor=" let testimonios of listTestimonios;  let i=index">
                 <div class="row" *ngIf="i<1">
                   <div class="col-md-6 px-0">
@@ -234,30 +237,39 @@
 
                     </div>
                   </div>
-                  <div class="col-md-6 d-flex bg-white">
+
+
+                  <div class="col-md-6 box-departamento">
                     <div class="info my-auto">
-                      <h2 class="text-center">{{testimonios.title}}</h2>
-                      <hr class="bg-warning w-25">
-                      <p class="w-75 mx-auto text-justify">{{testimonios.description}}.</p>
+                      <h2 class="titulo3 text-white text-center">{{testimonios.content_info.title}}</h2>
+                      <hr class="bg-warning">
+                      <em><p class="mt-3 mb-0 text-center text-white texto-departamento">{{testimonios.content_info.description}}.</p></em>
                       <div class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-warning">Leer más</a>
+                        <!--<a href="#" class="btn btn-warning">Leer más</a>-->
                       </div>
                     </div>
                   </div>
+
+
                 </div>
               </div>
+
+
+
+
               <div class="col-md-12" *ngFor=" let testimonios of listTestimonios;let i=index">
                 <div class="row" *ngIf="i>0 && i<2">
-                  <div class="col-md-6 d-flex bg-white px-0">
+                  <div class="col-md-6 box-departamento">
                     <div class="info my-auto">
-                      <h2 class="text-center">{{testimonios.title}}</h2>
-                      <hr class="bg-warning w-25">
-                      <p class="w-75 mx-auto text-justify">{{testimonios.description}}</p>
+                      <h2 class="titulo3 text-white text-center">{{testimonios.content_info.title}}</h2>
+                      <hr class="bg-warning">
+                      <em><p class="mt-3 mb-0 text-center text-white texto-departamento">{{testimonios.content_info.description}}.</p></em>
                       <div class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-warning">Leer más</a>
+                        <!--<a href="#" class="btn btn-warning">Leer más</a>-->
                       </div>
                     </div>
                   </div>
+
                   <div class="col-md-6 px-0">
                     <div>
                       <iframe width="562" height="435" src="https://www.youtube.com/embed/sUhJwmuBzp4" frameborder="0"
@@ -268,11 +280,15 @@
                   </div>
                 </div>
               </div>
+
+
+
+
             </div>
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <a routerLink="/testimonios" class="btn btn-warning">Ver más</a>
+          <!--<a routerLink="/testimonios" class="btn btn-warning">Ver más</a>-->
         </div>
       </div>
 

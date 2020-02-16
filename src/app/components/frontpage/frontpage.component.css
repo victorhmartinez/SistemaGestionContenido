@@ -85,11 +85,11 @@ background: rgb(7, 51, 87)}
 .swiper-pagination-bullet-active { background-color: #FDCB14 }
 
 #evento1 { background-image: url('../../../../images/img2.jpg') }
-#evento2 { background-image: url('../../../../images/widdisonphotography_0023-900x720.jpg') }
-#evento3 { background-image: url('../../../../images/img1.jpg')}
+#evento2 { background-image: url('../../../../images/img3.jpg') }
+#evento3 { background-image: url('../../../../images/widdisonphotography_0023-900x720.jpg')}
 
 .imagen-evento {
-  height: 13rem;
+  height: 10.9rem;
   text-align: left;
   color: #fff;
   background-size: cover;

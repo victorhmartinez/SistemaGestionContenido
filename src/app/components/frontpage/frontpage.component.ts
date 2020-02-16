@@ -181,6 +181,7 @@ this.frontPageDataService.getSeccionesCareer(id).subscribe(secciones =>{
   updateListTestimonios(id:number) {
     this.frontPageDataService.getTestimonios(id).subscribe(testimonio => {
       this.listTestimonios = testimonio;
+      console.log('holabola',this.listTestimonios)
     },
       error => {
         alert(JSON.stringify(error));
