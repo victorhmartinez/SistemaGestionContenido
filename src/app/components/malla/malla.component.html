@@ -20,7 +20,7 @@
             <li class="nav-item active mr-2" *ngFor="let menu of  listMenu">
               <!--
               <a class="nav-link py-2 px-4" routerLink="{{menu.url}}">{{menu.name}}<span-->
-              <a class="nav-link py-2 px-4" [routerLink]="['/Sistemas']" >{{menu.name}}<span class="sr-only">(current)</span></a>
+              <a class="nav-link py-2 px-4" href="{{this.carrera.name}}#{{menu.name}}" >{{menu.name}}<span class="sr-only">(current)</span></a>
             </li>
             <!--<li class="nav-item active mr-2">
                 <a class="nav-link py-2 px-4" [routerLink]="['/Sistemas/malla']" tabindex="-1" aria-disabled="true">Malla</a>

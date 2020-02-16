@@ -25,7 +25,7 @@ export class MenuService {
     }
 
     public updateMenu(menu: Menu) {
-      return this.httpClient.put(this.apiUrl+'menu/'+menu.menu_id+'/', menu,this.httpOptions);
+      return this.httpClient.put(this.apiUrl+'menu/'+menu.menu_item_id+'/', menu,this.httpOptions);
     }
 
     public deleteMenu(id: number) { 

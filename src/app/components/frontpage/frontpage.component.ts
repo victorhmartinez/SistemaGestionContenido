@@ -37,7 +37,7 @@ export class FrontpageComponent implements OnInit {
   carrera: { name: string };//APLICACION CARRERAS
 
   listAutoridades = [];
-  listMenu: ItemCategory[] = [];
+  listMenu: Menu[] = [];
   listTestimonios: Content[] = [];
   
   listSecciones:Section [] = [];

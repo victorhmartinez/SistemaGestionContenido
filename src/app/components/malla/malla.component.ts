@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MallaComponent implements OnInit {
   carrera: { name: string };//APLICACION CARRERAS
-  listMenu: ItemCategory[] = [];
+  listMenu: Menu[] = [];
   listMaterias  = [];
   listRequirements = [];
   public bandera = new ItemCategory();

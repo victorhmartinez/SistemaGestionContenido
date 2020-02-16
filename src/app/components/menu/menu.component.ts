@@ -84,6 +84,9 @@ applyFilter(filterValue: string) {
       order: new FormControl('', [
         Validators.required,
       ]),
+      url: new FormControl('', [
+        Validators.required,
+      ]),
       item_category_id: new FormControl('', [
         Validators.required,
       ]), 
@@ -93,8 +96,9 @@ applyFilter(filterValue: string) {
   //Load data in form
   loadData(menuEdit: Menu) {
     this.menuForm.setValue({
-      menu_id: menuEdit.menu_id,
+      menu_id: menuEdit.menu_item_id,
       name: menuEdit.name,
+      url:menuEdit.url,
       order: menuEdit.order,
       item_category_id: menuEdit.item_category_id,
       

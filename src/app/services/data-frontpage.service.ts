@@ -26,7 +26,7 @@ export class DataFrontpageService {
     return this.httpClient.get<Content [] >(this.apiUrl+'utils/welcome_message/?university_career_id='+idCareer, this.httpOptions);
   }
   public getMenu() { 
-    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'utils/menu/', this.httpOptions);
+    return this.httpClient.get<Menu[]>(this.apiUrl+'utils/menu_item/', this.httpOptions);
   }
   public getMallaCareer(idCareer:number){
     return this.httpClient.get(this.apiUrl+'utils/detailed_subject_matters/?university_career_id='+idCareer,this.httpOptions);
