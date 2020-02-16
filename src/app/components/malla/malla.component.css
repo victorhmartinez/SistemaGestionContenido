@@ -6,17 +6,21 @@
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
+#popTitle{
+  color:red;
 
+}
 mat-grid-tile {
-  background: #E0EA84;  /*#E0EA84margin: 1rem;
+  background: #0D8AAF;  /*#E0EA84margin: 1rem;
   padding: 1rem;
   */
-  border-radius: 5%;
-  align-content: center;
-  font-family: fantasy;
 
+  border-radius: 5%;
+  
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
   text-align: center;
-  border: 1px solid #003F72;
+
   
 
 }
@@ -105,7 +109,9 @@ background: rgb(7, 51, 87)}
   background-size: cover;
   background-position: center center;
 }
-
+#colorCuerpo{
+  color:yellow;
+}
 .box-evento {
   width: 100%;
   background-color: rgba(0,0,0, 0.5);
@@ -125,11 +131,13 @@ background: rgb(7, 51, 87)}
 
 .titulo{
   margin-bottom: 0;
-  font-size: 45px;
+  font-size: 38px;
   font-weight: 700;
   letter-spacing: 2.4px;
   line-height: 56px;
   text-align: center;
+
+  color: #000000;
 }
 
 .titulo-quienes-somos, .titulo-autoridades, .titulo-grupos { margin-bottom: 34px; }
@@ -142,8 +150,9 @@ background: rgb(7, 51, 87)}
 }
 
 .box-departamento {
-  padding: 40px 20px;
-  border: 3px solid rgba(255,255,255, .2);
+  padding:10px;
+  border: 2px solid rgba(3,3,3);
+  border-radius: 15px;
 }
 
 .titulo4 {

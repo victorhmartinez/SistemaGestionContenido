@@ -49,7 +49,7 @@ const routes: Routes = [
   { path: '', component: FrontpageComponent, pathMatch: 'full',},
  // { path: '', redirectTo: '/frontpage', pathMatch: 'full' },
   { path: 'isic', component: FrontpageComponent},
-  {path:'::name/malla', component:MallaComponent},
+  {path:':name/malla', component:MallaComponent},
 
   {path:'autoridades', component:VermasAutoridadesComponent},
   {path:'testimonios' , component:VermasTestimoniosComponent},

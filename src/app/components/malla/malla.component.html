@@ -52,20 +52,20 @@
           </ul>-->
           <br>
           <div>
-          <h2 class="titulo">Malla Académica de Sistemas</h2><br>
+          <h2 class="titulo">Malla Académica de {{this.bandera.name}}</h2><br>
         </div>
-        <br>
-        <div class="redondeo">
+        
+        <div class="col-md-12 box-departamento">
         <mat-grid-list cols="6" rowHeight="60px">
 
           <mat-grid-tile *ngFor="let materias of listMaterias"  [ngbPopover]="popContent"
-            popoverTitle="{{materias.subject_matter_data.name}}" triggers="mouseenter:mouseleave" i="6">
-
+          [popoverTitle]="popTitle"  popoverClass="popTitle" triggers="mouseenter:mouseleave" i="6">
+            <ng-template #popTitle><b>{{materias.subject_matter_data.name}}</b></ng-template>
             <ng-template  #popContent> 
-              Ciclo Ademico: {{materias.subject_matter_data.semester}}
+              <b>Ciclo Ademico:  </b>{{materias.subject_matter_data.semester}}
               <div *ngFor="let requi of materias.requirements; let i=index">
                 <br><b >
-                  Requisito: {{requi.name}} </b>
+                  Requisito:</b>{{requi.name}}
               </div>
             </ng-template>
               {{materias.subject_matter_data.name}}
